@@ -1,0 +1,230 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.hc_media_browser_image
+    - field.field.node.hc_standard_homepage.field_hc_header_image
+    - field.field.node.hc_standard_homepage.field_hc_header_video
+    - field.field.node.hc_standard_homepage.field_hc_hide_header_image
+    - field.field.node.hc_standard_homepage.field_hc_intro_background_image
+    - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_text
+    - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_title
+    - field.field.node.hc_standard_homepage.field_hc_intro_text
+    - field.field.node.hc_standard_homepage.field_hc_intro_title
+    - field.field.node.hc_standard_homepage.field_hc_ks_widgets
+    - field.field.node.hc_standard_homepage.field_hc_metatags
+    - node.type.hc_standard_homepage
+  module:
+    - entity_browser
+    - field_group
+    - metatag
+    - paragraphs
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_header_media:
+      children:
+        - field_hc_hide_header_image
+        - field_hc_header_image
+        - field_hc_header_video
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        label: 'Header Media'
+        open: true
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Header Media'
+      region: content
+    group_introduction:
+      children:
+        - field_hc_intro_background_image
+        - field_hc_intro_title
+        - field_hc_intro_text
+        - field_hc_intro_sidebar_title
+        - field_hc_intro_sidebar_text
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        label: Introduction
+        open: true
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Introduction
+      region: content
+    group_kitchen_sink:
+      children:
+        - field_hc_ks_widgets
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        label: 'Kitchen Sink'
+        open: true
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Kitchen Sink'
+      region: content
+_core:
+  default_config_hash: U5tSjvUSfLFmV31lXRStmVcmWnPLwo6H-QCzW1iF7d0
+id: node.hc_standard_homepage.default
+targetEntityType: node
+bundle: hc_standard_homepage
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_hc_header_image:
+    weight: 14
+    settings:
+      entity_browser: hc_media_browser_image
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_hc_header_video:
+    weight: 15
+    settings:
+      entity_browser: hc_media_browser_video
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_hc_hide_header_image:
+    weight: 13
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_hc_intro_background_image:
+    weight: 26
+    settings:
+      entity_browser: hc_media_browser_image
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_hc_intro_sidebar_text:
+    weight: 30
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_hc_intro_sidebar_title:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hc_intro_text:
+    weight: 28
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_hc_intro_title:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hc_ks_widgets:
+    type: entity_reference_paragraphs
+    weight: 10
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  field_hc_metatags:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  path:
+    type: path
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

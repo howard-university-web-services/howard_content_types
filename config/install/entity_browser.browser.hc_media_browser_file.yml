@@ -1,0 +1,42 @@
+uuid: 0d96affc-84ff-4f7e-8b07-1cee3104fca9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hc_media_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: hc_media_browser_file
+label: 'HC Media Browser File'
+display: modal
+display_configuration:
+  width: '800'
+  height: '800'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  168b37eb-f83e-4153-974d-29a2d5098347:
+    settings:
+      view: hc_media_browser
+      view_display: entity_browser_file
+      submit_text: 'Select File'
+      auto_select: false
+    uuid: 168b37eb-f83e-4153-974d-29a2d5098347
+    weight: 1
+    label: 'File Library'
+    id: view
+  7beb9639-c4c1-40a5-8757-8ad34f936064:
+    settings:
+      entity_type: media
+      bundle: file
+      form_mode: default
+      submit_text: 'Save File'
+    uuid: 7beb9639-c4c1-40a5-8757-8ad34f936064
+    weight: 2
+    label: 'Add File'
+    id: entity_form

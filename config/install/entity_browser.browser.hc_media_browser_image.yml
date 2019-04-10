@@ -1,0 +1,42 @@
+uuid: 7053a8cc-edf8-4e33-8418-fdb2201459ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hc_media_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: hc_media_browser_image
+label: 'HC Media Browser Image'
+display: modal
+display_configuration:
+  width: '800'
+  height: '800'
+  link_text: 'Select Images'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  79bc26b1-51aa-49f5-97ca-94cc1c3fed0e:
+    settings:
+      view: hc_media_browser
+      view_display: entity_browser_image
+      submit_text: 'Select Image'
+      auto_select: false
+    uuid: 79bc26b1-51aa-49f5-97ca-94cc1c3fed0e
+    weight: 1
+    label: 'Image Library'
+    id: view
+  915653bd-5cd3-4a76-85e2-42b409c37626:
+    settings:
+      entity_type: media
+      bundle: image
+      form_mode: default
+      submit_text: 'Save entity'
+    uuid: 915653bd-5cd3-4a76-85e2-42b409c37626
+    weight: 2
+    label: 'Add Image'
+    id: entity_form

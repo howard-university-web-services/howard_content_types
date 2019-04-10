@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.hc_article
+  module:
+    - text
+_core:
+  default_config_hash: kBh5E1LZ3I0Jx3Sohk_bc7ugT3UFbcJJThe8SBHkdHw
+id: node.hc_article.body
+field_name: body
+entity_type: node
+bundle: hc_article
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

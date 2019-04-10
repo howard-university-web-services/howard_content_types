@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies: {  }
+name: hc_carousel_image
+label: 'HC Carousel Image'
+effects:
+  7fe6d2e9-157f-4168-b6d2-25b972409571:
+    uuid: 7fe6d2e9-157f-4168-b6d2-25b972409571
+    id: image_scale
+    weight: 1
+    data:
+      width: 800
+      height: 800
+      upscale: false
+pipeline: __default__

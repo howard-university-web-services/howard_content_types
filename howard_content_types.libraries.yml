@@ -1,0 +1,9 @@
+view:
+  css:
+    theme:
+      assets/css/howard_content_types.view.css: {}
+  js:
+    assets/js/howard_content_types.view.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

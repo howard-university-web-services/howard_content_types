@@ -1,0 +1,70 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hc_announcement.field_hc_end_date
+    - field.field.node.hc_announcement.field_hc_featured
+    - field.field.node.hc_announcement.field_hc_links
+    - field.field.node.hc_announcement.field_hc_start_date
+    - field.field.node.hc_announcement.field_hc_summary
+    - node.type.hc_announcement
+  module:
+    - datetime
+    - link
+    - user
+id: node.hc_announcement.default
+targetEntityType: node
+bundle: hc_announcement
+mode: default
+content:
+  field_hc_end_date:
+    weight: 103
+    label: hidden
+    settings:
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_plain
+    region: content
+  field_hc_featured:
+    weight: 106
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_hc_links:
+    weight: 104
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+  field_hc_start_date:
+    weight: 102
+    label: hidden
+    settings:
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_plain
+    region: content
+  field_hc_summary:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

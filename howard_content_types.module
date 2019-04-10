@@ -1,0 +1,89 @@
+<?php
+
+/**
+ * @file
+ * Howard Content Types module file.
+ */
+
+ use Drupal\Core\Routing\RouteMatchInterface;
+ use Drupal\media\Entity\Media;
+ use Drupal\image\Entity\ImageStyle;
+ use Drupal\Core\Cache\CacheableMetadata;
+
+  /**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function howard_content_types_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.howard_content_types':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+ }
+
+ /**
+  * Implements hook_preprocess_node().
+  * @param $variables
+  */
+ function howard_content_types_preprocess_node(&$variables) {
+
+    $node = $variables['elements']['#node'];
+    $view_mode = $variables['view_mode'];
+    $bundle = $node->bundle();
+
+    // Hero Images
+    $variables['hero_image'] = '/themes/contrib/hu_general/idfive-component-library/build/img/graduates_talking.jpg';
+    if ($node->hasField('field_hc_header_image')) {
+      $hero_image = $node->get('field_hc_header_image')->getValue();
+      if ($hero_image && !empty($hero_image)) {
+        $entity = Media::load($hero_image[0]['target_id']);
+        if($entity->field_media_image->entity !== null && $entity->field_media_image->entity->getFileUri() !== null) {
+          $variables['hero_image'] = ImageStyle::load('hc_hero_image')->buildUrl($entity->field_media_image->entity->getFileUri());
+        }
+      }
+    }
+    $variables['show_hero_image'] = true;
+    if ($node->hasField('field_hc_hide_header_image')) {
+      $value = $node->get('field_hc_hide_header_image')->getValue();
+      if($value[0]['value'] == '1') {
+        $variables['show_hero_image'] = false;
+      }
+    }
+
+    // Homepage Intro Background Image
+    if($bundle == 'hc_standard_homepage') {
+      $variables['home_intro_image'] = '/themes/contrib/hu_general/idfive-component-library/build/img/graduates_talking.jpg';
+      if ($node->hasField('field_hc_intro_background_image')) {
+        $bckrd_image = $node->get('field_hc_intro_background_image')->getValue();
+        if ($bckrd_image && !empty($bckrd_image)) {
+          $entity = Media::load($bckrd_image[0]['target_id']);
+          if(isset($entity->field_media_image->entity)) {
+            $variables['home_intro_image'] = ImageStyle::load('hc_hero_image')->buildUrl($entity->field_media_image->entity->getFileUri());
+          }
+        }
+      }
+    }
+    
+ }
+
+ /**
+ * Implements hook_preprocess_views_view().
+ */
+function howard_content_types_preprocess_views_view(&$variables) {
+  if ($variables['view']->id() === 'hc_media_browser') {
+    $variables['view_array']['#attached']['library'][] = 'howard_content_types/view';
+  }
+}

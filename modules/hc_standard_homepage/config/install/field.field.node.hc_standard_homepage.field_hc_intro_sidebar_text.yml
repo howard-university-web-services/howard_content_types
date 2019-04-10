@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_intro_sidebar_text
+    - node.type.hc_standard_homepage
+  module:
+    - text
+id: node.hc_standard_homepage.field_hc_intro_sidebar_text
+field_name: field_hc_intro_sidebar_text
+entity_type: node
+bundle: hc_standard_homepage
+label: 'Intro Sidebar Text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

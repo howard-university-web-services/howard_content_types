@@ -1,0 +1,42 @@
+uuid: 325b4ecd-780f-4f38-adae-6b78a89abd89
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hc_media_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: hc_media_browser_audio
+label: 'HC Media Browser Audio'
+display: modal
+display_configuration:
+  width: '800'
+  height: '800'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  563620fe-a205-4775-9582-56f41f5620f4:
+    settings:
+      view: hc_media_browser
+      view_display: entity_browser_audio
+      submit_text: 'Select Audio File'
+      auto_select: false
+    uuid: 563620fe-a205-4775-9582-56f41f5620f4
+    weight: 1
+    label: 'Audio Library'
+    id: view
+  eb457109-07fd-414a-9105-eb0058e31c37:
+    settings:
+      entity_type: media
+      bundle: audio
+      form_mode: default
+      submit_text: 'Save Audio File'
+    uuid: eb457109-07fd-414a-9105-eb0058e31c37
+    weight: 2
+    label: 'Add Audio File'
+    id: entity_form

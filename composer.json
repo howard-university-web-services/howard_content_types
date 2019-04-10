@@ -1,0 +1,14 @@
+{
+    "name": "howard/howard_content_types",
+    "type": "drupal-module",
+    "description": "This module is designed to provide default content types for Howard University",
+    "keywords": ["Drupal"],
+    "homepage": "https://bitbucket.org/idfivellc/idfive_move_description",
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+        "8.x-1.x": "1.x-dev"
+        }
+    }
+}

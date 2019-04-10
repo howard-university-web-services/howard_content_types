@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hc_article.body
+    - field.field.node.hc_article.field_hc_featured_image
+    - field.field.node.hc_article.field_hc_header_image
+    - field.field.node.hc_article.field_hc_hide_header_image
+    - node.type.hc_article
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: 5JFVygaddeZDOWkCY4FwFO29Y8Ymn-L1Yox-fwHzl_o
+id: node.hc_article.teaser
+targetEntityType: node
+bundle: hc_article
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_hc_featured_image: true
+  field_hc_header_image: true
+  field_hc_hide_header_image: true

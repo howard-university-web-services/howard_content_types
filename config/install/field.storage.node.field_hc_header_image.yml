@@ -1,0 +1,22 @@
+uuid: cfb5a309-5379-4225-af91-5dc3ed50e4c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+_core:
+  default_config_hash: MTI2F3qtJH7nGN4kYPoB2mO9B80dbuFeG7awIKWFCMc
+id: node.field_hc_header_image
+field_name: field_hc_header_image
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

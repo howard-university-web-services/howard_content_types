@@ -1,0 +1,110 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_ks_widgets_full
+    - node.type.hc_page
+    - paragraphs.paragraphs_type.hp_callout
+    - paragraphs.paragraphs_type.hp_twitter_feed
+  module:
+    - entity_reference_revisions
+id: node.hc_page.field_hc_ks_widgets_full
+field_name: field_hc_ks_widgets_full
+entity_type: node
+bundle: hc_page
+label: 'KS Widgets Full'
+description: 'This section appears at the bottom of the page, just above the footer, and is used for full width callouts/etc'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      hp_callout: hp_callout
+      hp_twitter_feed: hp_twitter_feed
+    target_bundles_drag_drop:
+      home_callout:
+        weight: 28
+        enabled: false
+      home_slideshow_slide:
+        weight: 29
+        enabled: false
+      hp_announcements:
+        weight: 30
+        enabled: false
+      hp_callout:
+        enabled: true
+        weight: 31
+      hp_card:
+        weight: 32
+        enabled: false
+      hp_cards:
+        weight: 33
+        enabled: false
+      hp_carousel_with_caption:
+        weight: 34
+        enabled: false
+      hp_carousel_with_caption_slide:
+        weight: 35
+        enabled: false
+      hp_carousel_with_modal:
+        weight: 36
+        enabled: false
+      hp_carousel_with_modal_slide:
+        weight: 37
+        enabled: false
+      hp_embed:
+        weight: 38
+        enabled: false
+      hp_events_feed:
+        weight: 39
+        enabled: false
+      hp_featured_article:
+        weight: 40
+        enabled: false
+      hp_html:
+        weight: 41
+        enabled: false
+      hp_media:
+        weight: 42
+        enabled: false
+      hp_news_feed:
+        weight: 43
+        enabled: false
+      hp_profiles_feed:
+        weight: 44
+        enabled: false
+      hp_promo_space:
+        weight: 45
+        enabled: false
+      hp_testimonial:
+        weight: 46
+        enabled: false
+      hp_twitter_feed:
+        enabled: true
+        weight: 47
+      ip_accordion:
+        weight: 48
+        enabled: false
+      ip_accordion_item:
+        weight: 49
+        enabled: false
+      ip_button_link:
+        weight: 50
+        enabled: false
+      ip_table:
+        weight: 51
+        enabled: false
+      ip_views_embed:
+        weight: 52
+        enabled: false
+      ip_webform_embed:
+        weight: 53
+        enabled: false
+      sponsors:
+        weight: 54
+        enabled: false
+field_type: entity_reference_revisions

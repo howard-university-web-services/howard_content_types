@@ -1,0 +1,20 @@
+uuid: fe677660-c385-404d-a9cd-fb309456caa6
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_hc_end_date
+field_name: field_hc_end_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

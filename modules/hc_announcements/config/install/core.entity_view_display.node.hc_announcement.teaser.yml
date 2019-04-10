@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hc_announcement.field_hc_end_date
+    - field.field.node.hc_announcement.field_hc_links
+    - field.field.node.hc_announcement.field_hc_start_date
+    - node.type.hc_announcement
+  module:
+    - user
+id: node.hc_announcement.teaser
+targetEntityType: node
+bundle: hc_announcement
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_hc_end_date: true
+  field_hc_links: true
+  field_hc_start_date: true

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_end_date
+    - node.type.hc_announcement
+  module:
+    - datetime
+id: node.hc_announcement.field_hc_end_date
+field_name: field_hc_end_date
+entity_type: node
+bundle: hc_announcement
+label: 'End date'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: relative
+    default_date: '+4 hours'
+default_value_callback: ''
+settings: {  }
+field_type: datetime

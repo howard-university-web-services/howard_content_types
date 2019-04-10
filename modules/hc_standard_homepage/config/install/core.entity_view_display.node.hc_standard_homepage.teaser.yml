@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hc_standard_homepage.field_hc_header_image
+    - field.field.node.hc_standard_homepage.field_hc_header_video
+    - field.field.node.hc_standard_homepage.field_hc_hide_header_image
+    - field.field.node.hc_standard_homepage.field_hc_intro_background_image
+    - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_text
+    - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_title
+    - field.field.node.hc_standard_homepage.field_hc_intro_text
+    - field.field.node.hc_standard_homepage.field_hc_intro_title
+    - field.field.node.hc_standard_homepage.field_hc_ks_widgets
+    - node.type.hc_standard_homepage
+  module:
+    - user
+_core:
+  default_config_hash: RFUX-y-eA1dpMTHYKVC5eqosAtUWJaVDNFawJxKE3h0
+id: node.hc_standard_homepage.teaser
+targetEntityType: node
+bundle: hc_standard_homepage
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_hc_header_image: true
+  field_hc_header_video: true
+  field_hc_hide_header_image: true
+  field_hc_intro_background_image: true
+  field_hc_intro_sidebar_text: true
+  field_hc_intro_sidebar_title: true
+  field_hc_intro_text: true
+  field_hc_intro_title: true
+  field_hc_ks_widgets: true

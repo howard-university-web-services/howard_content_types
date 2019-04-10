@@ -1,0 +1,31 @@
+uuid: 0b059c64-7d73-4268-86ca-cb37a84ca5fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hc_media_browser
+  module:
+    - views
+name: hc_media_browser_general
+label: 'HC Media Browser General'
+display: modal
+display_configuration:
+  width: '800'
+  height: '800'
+  link_text: 'Select Media'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  c2c62357-4e5c-43e8-ad52-a14e70fba806:
+    settings:
+      view: hc_media_browser
+      view_display: entity_browser_all
+      submit_text: 'Select Media'
+      auto_select: false
+    uuid: c2c62357-4e5c-43e8-ad52-a14e70fba806
+    weight: 1
+    label: 'All Media'
+    id: view

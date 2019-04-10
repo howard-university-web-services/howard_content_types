@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'HC Article Category'
+vid: hc_article_category
+description: 'This category is used for categorizing HC Articles.'
+hierarchy: 0
+weight: 0

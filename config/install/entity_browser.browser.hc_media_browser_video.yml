@@ -1,0 +1,52 @@
+uuid: 69bf19ff-c0e0-45df-b30f-5afa03c12d68
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hc_media_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: hc_media_browser_video
+label: 'HC Media Browser Video'
+display: modal
+display_configuration:
+  width: '800'
+  height: '800'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  1654d95c-b928-4ac7-bc73-7db5869b9817:
+    settings:
+      view: hc_media_browser
+      view_display: entity_browser_video
+      submit_text: 'Select Video'
+      auto_select: false
+    uuid: 1654d95c-b928-4ac7-bc73-7db5869b9817
+    weight: 1
+    label: 'Video Library'
+    id: view
+  bcbf00f0-34b8-417a-833a-18bf4445b362:
+    settings:
+      entity_type: media
+      bundle: video
+      form_mode: default
+      submit_text: 'Save Video'
+    uuid: bcbf00f0-34b8-417a-833a-18bf4445b362
+    weight: 2
+    label: 'Add Local Video'
+    id: entity_form
+  b5d84ac0-2508-46f1-84ec-b12c326faca0:
+    settings:
+      entity_type: media
+      bundle: remote_video
+      form_mode: default
+      submit_text: 'Save Video'
+    uuid: b5d84ac0-2508-46f1-84ec-b12c326faca0
+    weight: 3
+    label: 'Add Remote Video'
+    id: entity_form
