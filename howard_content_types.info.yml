@@ -1,6 +1,6 @@
 name: Howard Content Types
 type: module
-description: A suite of Content Types made for Howard projects.
+description: A suite of Content Types, and initial config for Howard University projects.
 version: '8.x-1.0'
 core: '8.x'
 
