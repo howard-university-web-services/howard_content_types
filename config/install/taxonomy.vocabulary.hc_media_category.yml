@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'HC Media Category'
+vid: hc_media_category
+description: 'This taxonomy defines the tags for media.'
+hierarchy: 0
+weight: 0
