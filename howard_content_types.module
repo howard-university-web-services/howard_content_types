@@ -9,6 +9,7 @@
  use Drupal\media\Entity\Media;
  use Drupal\image\Entity\ImageStyle;
  use Drupal\Core\Cache\CacheableMetadata;
+ use Drupal\taxonomy\Entity\Term;
 
   /**
  * Implements hook_help().
@@ -85,6 +86,49 @@ function howard_content_types_help($route_name, RouteMatchInterface $route_match
 function howard_content_types_preprocess_views_view(&$variables) {
   if ($variables['view']->id() === 'hc_media_browser') {
     $variables['view_array']['#attached']['library'][] = 'howard_content_types/view';
+  }
+}
+
+/**
+ * Implements hook_install().
+ * Creates stock media browser terms.
+ */
+function howard_content_types_install() {
+  _howard_content_types_create_media_browser_terms();
+}
+
+
+// CUSTOM
+//////////////////////////////////////////////////////
+
+
+/**
+ * Updates to media browser, taxonomies, etc.
+ */
+function _howard_content_types_create_media_browser_terms() {
+  $categories = [
+    'Students', 
+    'Alumni', 
+    'Faculty & Staff', 
+    'Events', 
+    'Campus Landmarks', 
+    'University Figures',
+    'Campus Life', 
+    'Homecoming', 
+    'Commencement',
+    'Opening Convocation', 
+    'Charter Day', 
+    'Undergraduate',
+    'Graduate/Professional', 
+    'Community Service', 
+    'Local & Regional'
+  ]; 
+  foreach ($categories as $category) {
+    $term = Term::create(array(
+      'parent' => array(),
+      'name' => $category,
+      'vid' => 'hc_media_category',
+    ))->save();
   }
 }
 
