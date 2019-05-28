@@ -144,3 +144,18 @@ function howard_content_types_update_8001() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'howard_content_types');
   _howard_content_types_create_media_browser_terms();
 }
+
+/**
+ * Updates to media, need files copied to all sites files folders.
+ */
+function howard_content_types_update_8002() {
+  $source = drupal_get_path('module', 'media') . '/images/icons';
+  $destination = \Drupal::config('media.settings')->get('icon_base_uri');
+  file_prepare_directory($destination, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
+  $files = file_scan_directory($source, '/.*\.(svg|png|jpg|jpeg|gif)$/');
+  foreach ($files as $file) {
+    if (!file_exists($destination . DIRECTORY_SEPARATOR . $file->filename)) {
+      file_unmanaged_copy($file->uri, $destination, FILE_EXISTS_ERROR);
+   }
+  }
+}
