@@ -10,6 +10,7 @@
  use Drupal\image\Entity\ImageStyle;
  use Drupal\Core\Cache\CacheableMetadata;
  use Drupal\taxonomy\Entity\Term;
+ use Drupal\Core\Form\FormStateInterface;
 
   /**
  * Implements hook_help().
@@ -96,6 +97,15 @@ function howard_content_types_preprocess_views_view(&$variables) {
 function howard_content_types_install() {
   _howard_content_types_create_media_browser_terms();
 }
+
+/**
+  * Implements hook_form_alter().
+  */
+  function howard_content_types_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    if($form_id == 'node_hc_standard_homepage_edit_form') {
+      $form['field_hc_header_video']['widget']['#description'] = '<p>This feature is not yet operational. Any video added here will not yet work. Please contact web services with any questions.</p>';
+    }
+  }
 
 
 // CUSTOM
