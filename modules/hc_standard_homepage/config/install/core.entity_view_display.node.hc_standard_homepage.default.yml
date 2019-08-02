@@ -5,6 +5,8 @@ dependencies:
     - field.field.node.hc_standard_homepage.field_hc_header_image
     - field.field.node.hc_standard_homepage.field_hc_header_video
     - field.field.node.hc_standard_homepage.field_hc_hide_header_image
+    - field.field.node.hc_standard_homepage.field_hc_hide_intro_section
+    - field.field.node.hc_standard_homepage.field_hc_hide_intro_sidebar
     - field.field.node.hc_standard_homepage.field_hc_intro_background_image
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_text
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_title
@@ -45,6 +47,26 @@ content:
   field_hc_hide_header_image:
     weight: 106
     label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_hc_hide_intro_section:
+    weight: 112
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_hc_hide_intro_sidebar:
+    weight: 113
+    label: above
     settings:
       format: default
       format_custom_false: ''
