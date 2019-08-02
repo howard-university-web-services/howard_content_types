@@ -64,8 +64,8 @@ function hc_standard_homepage_preprocess_node(&$variables) {
 
 
 /**
- * Updates to allow hiding sections.
+ * Updates to allow hiding sections. Update 8001 contained errors, so jumping a level here.
  */
-function hc_standard_homepage_update_8001() {
+function hc_standard_homepage_update_8002() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
 }

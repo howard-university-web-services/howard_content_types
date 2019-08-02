@@ -10,7 +10,7 @@ field_name: field_hc_header_image
 entity_type: node
 bundle: hc_standard_homepage
 label: 'Header Image'
-description: '<em>Purpose:</em> A <em>full-width, vertically centered, background image</em> that appears at the top of the page.<br><br><br><br>\r\n<em>Dimensions:</em> 1920x1080 pixels;\r\n<br><br>\r\n<em>File Size:</em> < 300kb, if possible\r\n<em>Note:</em> The size of the user's browser window will determine how much of the image is visible.<br><br>'
+description: '<em>Purpose:</em> A background image that appears behind text and complements the message and the Homepage Header Image. Low contrast recommended.<br><br><em>Dimensions:</em> 1920x1080 pixels;<br><br><em>File Size:</em> < 300kb, if possible<br><br><em>Note:</em> The size of the users browser window will determine how much of the image is visible.<br><br>'
 required: false
 translatable: true
 default_value: {  }
