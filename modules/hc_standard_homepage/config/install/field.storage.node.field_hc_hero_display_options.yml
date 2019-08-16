@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_hc_hero_display_options
+field_name: field_hc_hero_display_options
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: standard_intro
+      label: 'Option 1: Introduction'
+    -
+      value: media
+      label: 'Option 2: Full Width Image or Background Video'
+    -
+      value: none
+      label: 'Option 3: None'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

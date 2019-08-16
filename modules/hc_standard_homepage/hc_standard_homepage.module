@@ -6,6 +6,7 @@
  */
 
  use Drupal\Core\Routing\RouteMatchInterface;
+ use Drupal\media\Entity\Media;
 
 
  /**
@@ -40,12 +41,18 @@ function hc_standard_homepage_preprocess_node(&$variables) {
 
   $node = $variables['elements']['#node'];
 
-  $variables['show_intro_section'] = true;
-  if ($node->hasField('field_hc_hide_intro_section')) {
-    $value = $node->get('field_hc_hide_intro_section')->getValue();
-    if($value[0]['value'] == '1') {
-      $variables['show_intro_section'] = false;
-    }
+  $variables['hero_display_type'] = 'standard_intro';
+  if ($node->hasField('field_hc_hero_display_options')) {
+    $value = $node->get('field_hc_hero_display_options')->getValue();
+    $value = $value[0]['value'];
+    $variables['hero_display_type'] = $value;
+  }
+
+  $variables['hero_media_display_type'] = 'image';
+  if ($node->hasField('field_hc_media_display_options')) {
+    $value = $node->get('field_hc_media_display_options')->getValue();
+    $value = $value[0]['value'];
+    $variables['hero_media_display_type'] = $value;
   }
 
   $variables['show_intro_sidebar'] = true;
@@ -56,6 +63,30 @@ function hc_standard_homepage_preprocess_node(&$variables) {
     }
   }
 
+  $variables['hero_media_video'] = _hc_standard_homepage_load_vimeo_video_background($node, 'field_hc_header_video');
+
+}
+
+/**
+* Gets vimeo video and modifies for background use.
+*
+*/
+function _hc_standard_homepage_load_vimeo_video_background($node, $field) {
+  if ($node->hasField($field)) {
+    $video = $node->get($field)->getValue();
+    if ($video && !empty($video)) {
+      $entity = Media::load($video[0]['target_id']);
+      if ($entity->hasField('field_media_oembed_video')) {
+        // If remote video
+        $video_url = $entity->field_media_oembed_video->value;
+        // If vimeo
+        if (strpos($video_url, 'vimeo') !== false) {
+          $video_url = preg_replace('/[^0-9]/', '', $video_url);
+          return $video_url;
+        }
+      } 
+    }
+  }
 }
 
 
@@ -67,5 +98,8 @@ function hc_standard_homepage_preprocess_node(&$variables) {
  * Updates to allow hiding sections. Update 8001 contained errors, so jumping a level here.
  */
 function hc_standard_homepage_update_8002() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
+}
+function hc_standard_homepage_update_8003() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
 }

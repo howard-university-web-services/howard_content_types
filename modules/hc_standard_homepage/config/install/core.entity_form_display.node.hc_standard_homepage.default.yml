@@ -5,15 +5,16 @@ dependencies:
     - entity_browser.browser.hc_media_browser_image
     - field.field.node.hc_standard_homepage.field_hc_header_image
     - field.field.node.hc_standard_homepage.field_hc_header_video
-    - field.field.node.hc_standard_homepage.field_hc_hide_header_image
-    - field.field.node.hc_standard_homepage.field_hc_hide_intro_section
+    - field.field.node.hc_standard_homepage.field_hc_hero_display_options
     - field.field.node.hc_standard_homepage.field_hc_hide_intro_sidebar
     - field.field.node.hc_standard_homepage.field_hc_intro_background_image
+    - field.field.node.hc_standard_homepage.field_hc_intro_image_text
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_text
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_title
     - field.field.node.hc_standard_homepage.field_hc_intro_text
     - field.field.node.hc_standard_homepage.field_hc_intro_title
     - field.field.node.hc_standard_homepage.field_hc_ks_widgets
+    - field.field.node.hc_standard_homepage.field_hc_media_display_options
     - field.field.node.hc_standard_homepage.field_hc_metatags
     - node.type.hc_standard_homepage
   module:
@@ -27,45 +28,44 @@ third_party_settings:
   field_group:
     group_header_media:
       children:
+        - field_hc_media_display_options
         - field_hc_hide_header_image
+        - field_hc_intro_image_text
         - field_hc_header_image
         - field_hc_header_video
-      parent_name: ''
-      weight: 1
+      parent_name: group_hero_area
+      weight: 43
       format_type: details
       format_settings:
-        label: 'Header Media'
-        open: true
+        label: 'Option 2: Full Width Image or Background Video'
         required_fields: true
         id: ''
         classes: ''
-      label: 'Header Media'
+        open: false
+      label: 'Option 2: Full Width Image or Background Video'
       region: content
     group_introduction:
       children:
-        - field_hc_hide_intro_section
         - field_hc_intro_background_image
         - field_hc_intro_title
         - field_hc_intro_text
-        - field_hc_hide_intro_sidebar
-        - field_hc_intro_sidebar_title
-        - field_hc_intro_sidebar_text
-      parent_name: ''
-      weight: 2
+        - group_sidebar
+      parent_name: group_hero_area
+      weight: 42
       format_type: details
       format_settings:
-        label: Introduction
-        open: true
+        label: 'Option 1: Introduction'
         required_fields: true
         id: ''
         classes: ''
-      label: Introduction
+        open: false
+      label: 'Option 1: Introduction'
       region: content
     group_kitchen_sink:
       children:
         - field_hc_ks_widgets
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: details
       format_settings:
         label: 'Kitchen Sink'
@@ -75,8 +75,37 @@ third_party_settings:
         classes: ''
       label: 'Kitchen Sink'
       region: content
+    group_hero_area:
+      children:
+        - field_hc_hero_display_options
+        - group_introduction
+        - group_header_media
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        label: 'Hero Area'
+        open: true
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Hero Area'
+    group_sidebar:
+      children:
+        - field_hc_hide_intro_sidebar
+        - field_hc_intro_sidebar_title
+        - field_hc_intro_sidebar_text
+      parent_name: group_introduction
+      weight: 44
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: 'Optionally, you may show more content in a sidebar.'
+        required_fields: true
+      label: Sidebar
 _core:
-  default_config_hash: U5tSjvUSfLFmV31lXRStmVcmWnPLwo6H-QCzW1iF7d0
+  default_config_hash: z5QzOGVEq5u8c6HthK__9aQzbYSigyTfwxAvBGUWiyY
 id: node.hc_standard_homepage.default
 targetEntityType: node
 bundle: hc_standard_homepage
@@ -84,12 +113,12 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_hc_header_image:
-    weight: 14
+    weight: 53
     settings:
       entity_browser: hc_media_browser_image
       field_widget_display: label
@@ -103,7 +132,7 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_hc_header_video:
-    weight: 15
+    weight: 54
     settings:
       entity_browser: hc_media_browser_video
       field_widget_display: label
@@ -116,22 +145,14 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
-  field_hc_hide_header_image:
-    weight: 13
-    settings:
-      display_label: true
+  field_hc_hero_display_options:
+    weight: 41
+    settings: {  }
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_hc_hide_intro_section:
-    weight: 39
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
+    type: options_select
     region: content
   field_hc_hide_intro_sidebar:
-    weight: 43
+    weight: 44
     settings:
       display_label: true
     third_party_settings: {  }
@@ -151,8 +172,16 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
+  field_hc_intro_image_text:
+    weight: 52
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
   field_hc_intro_sidebar_text:
-    weight: 45
+    weight: 46
     settings:
       rows: 5
       placeholder: ''
@@ -160,7 +189,7 @@ content:
     type: text_textarea
     region: content
   field_hc_intro_sidebar_title:
-    weight: 44
+    weight: 45
     settings:
       size: 60
       placeholder: ''
@@ -168,7 +197,7 @@ content:
     type: string_textfield
     region: content
   field_hc_intro_text:
-    weight: 42
+    weight: 43
     settings:
       rows: 5
       placeholder: ''
@@ -176,7 +205,7 @@ content:
     type: string_textarea
     region: content
   field_hc_intro_title:
-    weight: 41
+    weight: 42
     settings:
       size: 60
       placeholder: ''
@@ -195,15 +224,21 @@ content:
       default_paragraph_type: _none
     third_party_settings: {  }
     region: content
+  field_hc_media_display_options:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_hc_metatags:
-    weight: 31
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
     region: content
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -211,21 +246,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 10
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     region: content
     third_party_settings: {  }
   title:
@@ -238,7 +273,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60

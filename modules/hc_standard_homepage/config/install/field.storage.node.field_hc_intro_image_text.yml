@@ -3,11 +3,12 @@ status: true
 dependencies:
   module:
     - node
-id: node.field_hc_hide_intro_sidebar
-field_name: field_hc_hide_intro_sidebar
+id: node.field_hc_intro_image_text
+field_name: field_hc_intro_image_text
 entity_type: node
-type: boolean
-settings: {  }
+type: string_long
+settings:
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

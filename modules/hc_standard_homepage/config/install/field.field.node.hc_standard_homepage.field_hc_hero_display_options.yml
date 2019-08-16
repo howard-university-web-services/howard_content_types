@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_hero_display_options
+    - node.type.hc_standard_homepage
+  module:
+    - options
+id: node.hc_standard_homepage.field_hc_hero_display_options
+field_name: field_hc_hero_display_options
+entity_type: node
+bundle: hc_standard_homepage
+label: 'Hero Display Options'
+description: "You have three display options for the hero area:\r\n<ol>\r\n<li><strong>Introduction</strong>: An introduction section with a heading, subheading, subtle background image, and an optional sidebar. This is the preferred and most flexible option, allowing for more descriptive intro statements and option for contact information in the sidebar.</li>\r\n<li><strong>Full width image or background video</strong>: A full width image or background video with a short intro statement. This is best if you have high quality, impactful media.</li>\r\n<li><strong>None</strong>:  Choose this option if you wish the Kitchen Sink widgets to placed at the top, with no introduction or media above it.</li>\r\n</ol>\r\n"
+required: true
+translatable: false
+default_value:
+  -
+    value: standard_intro
+default_value_callback: ''
+settings: {  }
+field_type: list_string

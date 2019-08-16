@@ -27,6 +27,8 @@ dependencies:
     - paragraphs.paragraphs_type.ip_webform_embed
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: jmcpGejHbMV3Ffr77wQ52MYHbwd4kLjVGj246dAJ3bk
 id: node.hc_standard_homepage.field_hc_ks_widgets
 field_name: field_hc_ks_widgets
 entity_type: node

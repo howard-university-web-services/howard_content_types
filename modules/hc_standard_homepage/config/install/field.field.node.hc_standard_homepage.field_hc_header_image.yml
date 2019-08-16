@@ -5,12 +5,14 @@ dependencies:
     - field.storage.node.field_hc_header_image
     - media.type.image
     - node.type.hc_standard_homepage
+_core:
+  default_config_hash: YTeTSJ-ZETHtWALdK51urx4fWDa7LP9csipc_YqG0FA
 id: node.hc_standard_homepage.field_hc_header_image
 field_name: field_hc_header_image
 entity_type: node
 bundle: hc_standard_homepage
 label: 'Header Image'
-description: '<em>Purpose:</em> A background image that appears behind text and complements the message and the Homepage Header Image. Low contrast recommended.<br><br><em>Dimensions:</em> 1920x1080 pixels;<br><br><em>File Size:</em> < 300kb, if possible<br><br><em>Note:</em> The size of the users browser window will determine how much of the image is visible.<br><br>'
+description: "<p><em>Purpose:</em> A <em>full-width, vertically centered, background image</em> that appears at the top of the page. Image should meet the following guidelines:</p>\r\n<ul>\r\n<li><em>Dimensions:</em> 1920x1080 pixels</li>\r\n<li><em>File Size:</em> < 300kb, if possible</li>\r\n</ul>\r\n<p><em>Note:</em> The size of the users browser window will determine how much of the image is visible.</p>"
 required: false
 translatable: true
 default_value: {  }

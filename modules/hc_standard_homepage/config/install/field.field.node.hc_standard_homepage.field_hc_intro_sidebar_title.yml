@@ -4,13 +4,15 @@ dependencies:
   config:
     - field.storage.node.field_hc_intro_sidebar_title
     - node.type.hc_standard_homepage
+_core:
+  default_config_hash: qOwvSO8VwTnvtsfOhbGOk8Ojv2_aVKux77axO_9-whk
 id: node.hc_standard_homepage.field_hc_intro_sidebar_title
 field_name: field_hc_intro_sidebar_title
 entity_type: node
 bundle: hc_standard_homepage
 label: 'Intro Sidebar Title'
 description: ''
-required: true
+required: false
 translatable: false
 default_value:
   -

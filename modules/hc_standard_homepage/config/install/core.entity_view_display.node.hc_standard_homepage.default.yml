@@ -4,24 +4,26 @@ dependencies:
   config:
     - field.field.node.hc_standard_homepage.field_hc_header_image
     - field.field.node.hc_standard_homepage.field_hc_header_video
-    - field.field.node.hc_standard_homepage.field_hc_hide_header_image
-    - field.field.node.hc_standard_homepage.field_hc_hide_intro_section
+    - field.field.node.hc_standard_homepage.field_hc_hero_display_options
     - field.field.node.hc_standard_homepage.field_hc_hide_intro_sidebar
     - field.field.node.hc_standard_homepage.field_hc_intro_background_image
+    - field.field.node.hc_standard_homepage.field_hc_intro_image_text
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_text
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_title
     - field.field.node.hc_standard_homepage.field_hc_intro_text
     - field.field.node.hc_standard_homepage.field_hc_intro_title
     - field.field.node.hc_standard_homepage.field_hc_ks_widgets
+    - field.field.node.hc_standard_homepage.field_hc_media_display_options
     - field.field.node.hc_standard_homepage.field_hc_metatags
     - node.type.hc_standard_homepage
   module:
     - entity_reference_revisions
     - metatag
+    - options
     - text
     - user
 _core:
-  default_config_hash: kvQWYVVjVUei1lbYW4_n0-X5ynejKm7fTvHWhOccI0U
+  default_config_hash: NJ5LxgtbA5PMJ8COMUk3FVUSQeZxhd94RhY2nfOEook
 id: node.hc_standard_homepage.default
 targetEntityType: node
 bundle: hc_standard_homepage
@@ -44,25 +46,12 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-  field_hc_hide_header_image:
-    weight: 106
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_hc_hide_intro_section:
-    weight: 112
+  field_hc_hero_display_options:
+    weight: 114
     label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
+    settings: {  }
     third_party_settings: {  }
-    type: boolean
+    type: list_default
     region: content
   field_hc_hide_intro_sidebar:
     weight: 113
@@ -82,6 +71,13 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
+    region: content
+  field_hc_intro_image_text:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_hc_intro_sidebar_text:
     weight: 105
@@ -121,6 +117,13 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_hc_media_display_options:
+    weight: 115
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
   field_hc_metatags:
     weight: 111

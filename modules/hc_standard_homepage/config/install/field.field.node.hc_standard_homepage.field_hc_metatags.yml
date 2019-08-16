@@ -6,6 +6,8 @@ dependencies:
     - node.type.hc_standard_homepage
   module:
     - metatag
+_core:
+  default_config_hash: mU6CBs7LefhMbcljVJpTaJSaC4mjFzDkVYDr7TXAW04
 id: node.hc_standard_homepage.field_hc_metatags
 field_name: field_hc_metatags
 entity_type: node
