@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.hc_page.field_hc_header_image
     - field.field.node.hc_page.field_hc_hide_header_image
+    - field.field.node.hc_page.field_hc_hide_sidebar
     - field.field.node.hc_page.field_hc_ks_widgets
     - field.field.node.hc_page.field_hc_ks_widgets_full
     - field.field.node.hc_page.field_hc_metatags
@@ -30,6 +31,16 @@ content:
   field_hc_hide_header_image:
     weight: 104
     label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_hc_hide_sidebar:
+    weight: 107
+    label: above
     settings:
       format: default
       format_custom_false: ''

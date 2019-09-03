@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_hide_sidebar
+    - node.type.hc_page
+id: node.hc_page.field_hc_hide_sidebar
+field_name: field_hc_hide_sidebar
+entity_type: node
+bundle: hc_page
+label: 'Hide Sidebar'
+description: 'Choosing this option will hide the sidebar, making the page function more like a landing page, with content being full width.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

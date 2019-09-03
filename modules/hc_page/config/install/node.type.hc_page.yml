@@ -8,6 +8,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
+_core:
+  default_config_hash: OmXOjD7kjlG1csUWMEDPbF-jcEbTYoO7PnJ2feNq6Q4
 name: 'HC Page'
 type: hc_page
 description: 'This content type holds basic pages for Howard Sites.'

@@ -5,26 +5,3 @@ version: '8.x-1.0'
 core: '8.x'
 
 package: Howard University
-dependencies:
-  - howard_content_types
-  - howard_paragraphs
-  - hp_accordion
-  - hp_announcements
-  - hp_button_link
-  - hp_callout
-  - hp_cards
-  - hp_carousel_with_caption
-  - hp_carousel_with_modal
-  - hp_embed
-  - hp_events_feed
-  - hp_featured_article
-  - hp_html
-  - hp_media
-  - hp_news_feed
-  - hp_profiles_feed
-  - hp_promo_space
-  - hp_table
-  - hp_testimonial
-  - hp_twitter_feed
-  - hp_views_embed
-  - hp_webform_embed

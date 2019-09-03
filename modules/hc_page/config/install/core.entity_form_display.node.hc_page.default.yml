@@ -2,9 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_entity_browser
+    - entity_browser.browser.hc_media_browser_image
     - field.field.node.hc_page.field_hc_header_image
     - field.field.node.hc_page.field_hc_hide_header_image
+    - field.field.node.hc_page.field_hc_hide_sidebar
     - field.field.node.hc_page.field_hc_ks_widgets
     - field.field.node.hc_page.field_hc_ks_widgets_full
     - field.field.node.hc_page.field_hc_metatags
@@ -35,7 +36,7 @@ third_party_settings:
       children:
         - field_hc_ks_widgets
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: details
       format_settings:
         id: ''
@@ -48,7 +49,7 @@ third_party_settings:
       children:
         - field_hc_ks_widgets_full
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: details
       format_settings:
         id: ''
@@ -57,6 +58,18 @@ third_party_settings:
         required_fields: true
       label: 'Rounding Out the Page'
       region: content
+    group_page_options:
+      children:
+        - field_hc_hide_sidebar
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: 'Page Options'
 _core:
   default_config_hash: OBrGzi5M8sou4x8hUwuR7BfgVLZ08voOL6Uyt8--TgA
 id: node.hc_page.default
@@ -66,7 +79,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -91,6 +104,13 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_hc_hide_sidebar:
+    weight: 12
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_hc_ks_widgets:
     weight: 9
     settings:
@@ -109,21 +129,21 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: closed
+      edit_mode: open
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
   field_hc_metatags:
-    weight: 27
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
     region: content
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -131,21 +151,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 10
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     region: content
     third_party_settings: {  }
   title:
@@ -158,7 +178,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60

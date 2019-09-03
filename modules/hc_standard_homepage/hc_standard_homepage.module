@@ -40,31 +40,33 @@ function hc_standard_homepage_embed_help($route_name, RouteMatchInterface $route
 function hc_standard_homepage_preprocess_node(&$variables) {
 
   $node = $variables['elements']['#node'];
-
-  $variables['hero_display_type'] = 'standard_intro';
-  if ($node->hasField('field_hc_hero_display_options')) {
-    $value = $node->get('field_hc_hero_display_options')->getValue();
-    $value = $value[0]['value'];
-    $variables['hero_display_type'] = $value;
-  }
-
-  $variables['hero_media_display_type'] = 'image';
-  if ($node->hasField('field_hc_media_display_options')) {
-    $value = $node->get('field_hc_media_display_options')->getValue();
-    $value = $value[0]['value'];
-    $variables['hero_media_display_type'] = $value;
-  }
-
-  $variables['show_intro_sidebar'] = true;
-  if ($node->hasField('field_hc_hide_intro_sidebar')) {
-    $value = $node->get('field_hc_hide_intro_sidebar')->getValue();
-    if($value[0]['value'] == '1') {
-      $variables['show_intro_sidebar'] = false;
+  $bundle = $node->bundle();
+  if ($bundle == 'hc_standard_homepage') {
+    $variables['hero_display_type'] = 'standard_intro';
+    if ($node->hasField('field_hc_hero_display_options')) {
+      $value = $node->get('field_hc_hero_display_options')->getValue();
+      $value = $value[0]['value'];
+      $variables['hero_display_type'] = $value;
     }
+
+    $variables['hero_media_display_type'] = 'image';
+    if ($node->hasField('field_hc_media_display_options')) {
+      $value = $node->get('field_hc_media_display_options')->getValue();
+      $value = $value[0]['value'];
+      $variables['hero_media_display_type'] = $value;
+    }
+
+    $variables['show_intro_sidebar'] = true;
+    if ($node->hasField('field_hc_hide_intro_sidebar')) {
+      $value = $node->get('field_hc_hide_intro_sidebar')->getValue();
+      if($value[0]['value'] == '1') {
+        $variables['show_intro_sidebar'] = false;
+      }
+    }
+
+    $variables['hero_media_video'] = _hc_standard_homepage_load_vimeo_video_background($node, 'field_hc_header_video');
+
   }
-
-  $variables['hero_media_video'] = _hc_standard_homepage_load_vimeo_video_background($node, 'field_hc_header_video');
-
 }
 
 /**
