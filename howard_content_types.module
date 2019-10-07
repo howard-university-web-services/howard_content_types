@@ -101,7 +101,7 @@ function howard_content_types_install() {
 /**
   * Implements hook_node_form_alter().
   */
-function howard_content_types_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function howard_content_types_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['#attached']['library'][] = 'howard_content_types/admin';
   if($form_id == 'node_hc_standard_homepage_edit_form') {
     $form['field_hc_header_video']['widget']['#description'] = '<p>This feature is not yet operational. Any video added here will not yet work. Please contact web services with any questions.</p>';
