@@ -7,3 +7,7 @@ view:
   dependencies:
     - core/jquery
     - core/drupal
+admin:
+  css:
+    theme:
+      assets/css/howard_content_types.admin.css: {}
