@@ -5,13 +5,15 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.hc_page.field_hc_header_image
     - field.field.node.hc_page.field_hc_hide_header_image
+    - field.field.node.hc_page.field_hc_hide_sidebar
     - field.field.node.hc_page.field_hc_ks_widgets
     - field.field.node.hc_page.field_hc_ks_widgets_full
+    - field.field.node.hc_page.field_hc_metatags
     - node.type.hc_page
   module:
     - user
 _core:
-  default_config_hash: k9jIu0cK9-8S1fBmnGwY8Sht1no7U1YfB0s2EztzcTE
+  default_config_hash: tLz7Ft9FuZFIOUvtJpmYy8E6jyMEa5aXvBfxVDFhZO8
 id: node.hc_page.teaser
 targetEntityType: node
 bundle: hc_page
@@ -25,5 +27,7 @@ content:
 hidden:
   field_hc_header_image: true
   field_hc_hide_header_image: true
+  field_hc_hide_sidebar: true
   field_hc_ks_widgets: true
   field_hc_ks_widgets_full: true
+  field_hc_metatags: true

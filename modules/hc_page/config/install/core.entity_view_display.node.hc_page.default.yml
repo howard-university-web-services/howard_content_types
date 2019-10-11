@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.hc_page.field_hc_hide_sidebar
     - field.field.node.hc_page.field_hc_ks_widgets
     - field.field.node.hc_page.field_hc_ks_widgets_full
+    - field.field.node.hc_page.field_hc_lead_in
     - field.field.node.hc_page.field_hc_metatags
     - node.type.hc_page
   module:
@@ -14,7 +15,7 @@ dependencies:
     - metatag
     - user
 _core:
-  default_config_hash: vBM_zgMLaHtCLU33Xy5LgCNZKPQYRghZBZWvFtckGjY
+  default_config_hash: csfQH8WQbASCTXQdHVxoxeVdL7io879sO6VLhOjvW-I
 id: node.hc_page.default
 targetEntityType: node
 bundle: hc_page
@@ -40,7 +41,7 @@ content:
     region: content
   field_hc_hide_sidebar:
     weight: 107
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -60,15 +61,22 @@ content:
   field_hc_ks_widgets_full:
     type: entity_reference_revisions_entity_view
     weight: 105
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
+  field_hc_lead_in:
+    weight: 108
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_hc_metatags:
     weight: 106
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter

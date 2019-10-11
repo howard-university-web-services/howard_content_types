@@ -9,7 +9,7 @@ third_party_settings:
       - main
     parent: 'main:'
 _core:
-  default_config_hash: OmXOjD7kjlG1csUWMEDPbF-jcEbTYoO7PnJ2feNq6Q4
+  default_config_hash: 9lNy3gPwl3MPU-kNxu5njyYge4K3G7m6PJjt7u3pfCg
 name: 'HC Page'
 type: hc_page
 description: 'This content type holds basic pages for Howard Sites.'

@@ -62,3 +62,10 @@ function hc_page_update_8001() {
 function hc_page_update_8002() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
 }
+
+/**
+ * Updates to add the lead-in text field.
+ */
+function hc_page_update_8003() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
+}

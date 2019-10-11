@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_lead_in
+    - node.type.hc_page
+id: node.hc_page.field_hc_lead_in
+field_name: field_hc_lead_in
+entity_type: node
+bundle: hc_page
+label: 'Lead In'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Optional. Provide a lead-in sentence or two that will be displayed in large text above the widgets.'
+default_value_callback: ''
+settings: {  }
+field_type: string_long
