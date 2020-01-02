@@ -2,12 +2,12 @@
 
 /**
  * @file
- * hc_page module file.
+ * Hc_page module file.
  */
 
- use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 
- /**
+/**
  * Implements hook_help().
  *
  * @inheritdoc
@@ -31,27 +31,27 @@ function hc_page_help($route_name, RouteMatchInterface $route_match) {
   return NULL;
 }
 
-
- /**
-  * Implements hook_preprocess_node().
-  * @param $variables
-  */
-  function hc_page_preprocess_node(&$variables) {
-    $node = $variables['elements']['#node'];
-    $bundle = $node->bundle();
-    if ($bundle == 'hc_page') {
-      $variables['show_sidebar'] = true;
-      if ($node->hasField('field_hc_hide_sidebar')) {
-        $value = $node->get('field_hc_hide_sidebar')->getValue();
-        if($value[0]['value'] == '1') {
-          $variables['show_sidebar'] = false;
-        }
+/**
+ * Implements hook_preprocess_node().
+ *
+ * @param $variables
+ */
+function hc_page_preprocess_node(&$variables) {
+  $node = $variables['elements']['#node'];
+  $bundle = $node->bundle();
+  if ($bundle == 'hc_page') {
+    $variables['show_sidebar'] = TRUE;
+    if ($node->hasField('field_hc_hide_sidebar')) {
+      $value = $node->get('field_hc_hide_sidebar')->getValue();
+      if (isset($value[0]) && $value[0]['value'] == '1') {
+        $variables['show_sidebar'] = FALSE;
       }
     }
   }
+}
 
 // UPDATES
-//////////////////////////////////////////////////////
+// .
 
 /**
  * Updates to allow hiding the sidebar.
@@ -59,6 +59,10 @@ function hc_page_help($route_name, RouteMatchInterface $route_match) {
 function hc_page_update_8001() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
 }
+
+/**
+ * Updates to allow hiding the sidebar.
+ */
 function hc_page_update_8002() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
 }

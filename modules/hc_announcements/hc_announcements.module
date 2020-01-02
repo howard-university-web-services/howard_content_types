@@ -2,12 +2,12 @@
 
 /**
  * @file
- * hc_announcements module file.
+ * Hc_announcements module file.
  */
 
- use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 
- /**
+/**
  * Implements hook_help().
  *
  * @inheritdoc

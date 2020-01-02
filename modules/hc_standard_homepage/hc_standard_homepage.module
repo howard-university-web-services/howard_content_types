@@ -2,14 +2,13 @@
 
 /**
  * @file
- * hc_standard_homepage module file.
+ * Hc_standard_homepage module file.
  */
 
- use Drupal\Core\Routing\RouteMatchInterface;
- use Drupal\media\Entity\Media;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\media\Entity\Media;
 
-
- /**
+/**
  * Implements hook_help().
  *
  * @inheritdoc
@@ -34,9 +33,10 @@ function hc_standard_homepage_embed_help($route_name, RouteMatchInterface $route
 }
 
 /**
-* Implements hook_preprocess_node().
-* @param $variables
-*/
+ * Implements hook_preprocess_node().
+ *
+ * @param $variables
+ */
 function hc_standard_homepage_preprocess_node(&$variables) {
 
   $node = $variables['elements']['#node'];
@@ -56,11 +56,11 @@ function hc_standard_homepage_preprocess_node(&$variables) {
       $variables['hero_media_display_type'] = $value;
     }
 
-    $variables['show_intro_sidebar'] = true;
+    $variables['show_intro_sidebar'] = TRUE;
     if ($node->hasField('field_hc_hide_intro_sidebar')) {
       $value = $node->get('field_hc_hide_intro_sidebar')->getValue();
-      if($value[0]['value'] == '1') {
-        $variables['show_intro_sidebar'] = false;
+      if ($value[0]['value'] == '1') {
+        $variables['show_intro_sidebar'] = FALSE;
       }
     }
 
@@ -70,31 +70,28 @@ function hc_standard_homepage_preprocess_node(&$variables) {
 }
 
 /**
-* Gets vimeo video and modifies for background use.
-*
-*/
+ * Gets vimeo video and modifies for background use.
+ */
 function _hc_standard_homepage_load_vimeo_video_background($node, $field) {
   if ($node->hasField($field)) {
     $video = $node->get($field)->getValue();
     if ($video && !empty($video)) {
       $entity = Media::load($video[0]['target_id']);
       if ($entity->hasField('field_media_oembed_video')) {
-        // If remote video
+        // If remote video.
         $video_url = $entity->field_media_oembed_video->value;
-        // If vimeo
-        if (strpos($video_url, 'vimeo') !== false) {
+        // If vimeo.
+        if (strpos($video_url, 'vimeo') !== FALSE) {
           $video_url = preg_replace('/[^0-9]/', '', $video_url);
           return $video_url;
         }
-      } 
+      }
     }
   }
 }
 
-
 // UPDATES
-//////////////////////////////////////////////////////
-
+// .
 
 /**
  * Updates to allow hiding sections. Update 8001 contained errors, so jumping a level here.
@@ -102,6 +99,10 @@ function _hc_standard_homepage_load_vimeo_video_background($node, $field) {
 function hc_standard_homepage_update_8002() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
 }
+
+/**
+ *
+ */
 function hc_standard_homepage_update_8003() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
 }
