@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'HC Resource Category'
+vid: hc_resource_category
+description: 'This category is used for categorizing HC Resources.'
+weight: 0

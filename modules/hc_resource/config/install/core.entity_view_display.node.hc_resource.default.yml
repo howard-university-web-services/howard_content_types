@@ -1,0 +1,111 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hc_resource.body
+    - field.field.node.hc_resource.field_hc_header_image
+    - field.field.node.hc_resource.field_hc_lead_in
+    - field.field.node.hc_resource.field_hc_resource_category
+    - field.field.node.hc_resource.field_hc_resource_contact_addres
+    - field.field.node.hc_resource.field_hc_resource_contact_email
+    - field.field.node.hc_resource.field_hc_resource_contact_name
+    - field.field.node.hc_resource.field_hc_resource_cta_link
+    - field.field.node.hc_resource.field_hc_resource_documents
+    - field.field.node.hc_resource.field_hc_resource_sidebar_title
+    - node.type.hc_resource
+  module:
+    - link
+    - text
+    - user
+id: node.hc_resource.default
+targetEntityType: node
+bundle: hc_resource
+mode: default
+content:
+  body:
+    weight: 103
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hc_header_image:
+    weight: 101
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_hc_lead_in:
+    weight: 104
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_hc_resource_category:
+    weight: 102
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_hc_resource_contact_addres:
+    weight: 109
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_hc_resource_contact_email:
+    weight: 108
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  field_hc_resource_contact_name:
+    weight: 107
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hc_resource_cta_link:
+    weight: 106
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_hc_resource_documents:
+    type: entity_reference_entity_view
+    weight: 105
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_hc_resource_sidebar_title:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

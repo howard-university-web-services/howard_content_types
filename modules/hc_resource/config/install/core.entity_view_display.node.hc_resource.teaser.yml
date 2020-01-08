@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hc_resource.body
+    - field.field.node.hc_resource.field_hc_header_image
+    - field.field.node.hc_resource.field_hc_lead_in
+    - field.field.node.hc_resource.field_hc_resource_category
+    - field.field.node.hc_resource.field_hc_resource_contact_addres
+    - field.field.node.hc_resource.field_hc_resource_contact_email
+    - field.field.node.hc_resource.field_hc_resource_contact_name
+    - field.field.node.hc_resource.field_hc_resource_cta_link
+    - field.field.node.hc_resource.field_hc_resource_documents
+    - field.field.node.hc_resource.field_hc_resource_sidebar_title
+    - node.type.hc_resource
+  module:
+    - user
+id: node.hc_resource.teaser
+targetEntityType: node
+bundle: hc_resource
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_hc_header_image: true
+  field_hc_lead_in: true
+  field_hc_resource_category: true
+  field_hc_resource_contact_addres: true
+  field_hc_resource_contact_email: true
+  field_hc_resource_contact_name: true
+  field_hc_resource_cta_link: true
+  field_hc_resource_documents: true
+  field_hc_resource_sidebar_title: true

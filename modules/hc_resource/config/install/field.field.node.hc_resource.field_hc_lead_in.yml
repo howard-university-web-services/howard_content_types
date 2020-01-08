@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_lead_in
+    - node.type.hc_resource
+id: node.hc_resource.field_hc_lead_in
+field_name: field_hc_lead_in
+entity_type: node
+bundle: hc_resource
+label: 'Lead In'
+description: 'Optional. Provide a lead-in sentence or two that will be displayed in large text.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

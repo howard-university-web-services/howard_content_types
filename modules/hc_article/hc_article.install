@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Hc_article install file.
+ */
+
+use Drupal\taxonomy\Entity\Vocabulary;
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Removes content type.
+ */
+function hc_article_uninstall() {
+  _hc_article_remove_entity_and_content();
+}
+
+/**
+ * Remove all article nodes, remove content type, remove vocabulary.
+ */
+function _hc_article_remove_entity_and_content() {
+  // Delete hc_resource nodes.
+  $storage_handler = \Drupal::entityTypeManager()
+    ->getStorage('node');
+  $nodes = $storage_handler->loadByProperties(['type' => 'hc_article']);
+  $storage_handler->delete($nodes);
+  // Delete hc_resource content type.
+  $content_type = \Drupal::entityTypeManager()
+    ->getStorage('node_type')
+    ->load('hc_article');
+  $content_type->delete();
+  // Delete hc_resource_category vocabulary.
+  $vocab = Vocabulary::load('hc_article_category');
+  if ($vocab) {
+    $vocab->delete();
+  }
+}

@@ -34,8 +34,6 @@ function hc_standard_homepage_embed_help($route_name, RouteMatchInterface $route
 
 /**
  * Implements hook_preprocess_node().
- *
- * @param $variables
  */
 function hc_standard_homepage_preprocess_node(&$variables) {
 
@@ -88,21 +86,4 @@ function _hc_standard_homepage_load_vimeo_video_background($node, $field) {
       }
     }
   }
-}
-
-// UPDATES
-// .
-
-/**
- * Updates to allow hiding sections. Update 8001 contained errors, so jumping a level here.
- */
-function hc_standard_homepage_update_8002() {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
-}
-
-/**
- *
- */
-function hc_standard_homepage_update_8003() {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
 }

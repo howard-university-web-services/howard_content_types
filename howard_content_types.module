@@ -8,7 +8,6 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\media\Entity\Media;
 use Drupal\image\Entity\ImageStyle;
-use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -37,11 +36,8 @@ function howard_content_types_help($route_name, RouteMatchInterface $route_match
 
 /**
  * Implements hook_preprocess_node().
- *
- * @param $variables
  */
 function howard_content_types_preprocess_node(&$variables) {
-
   $node = $variables['elements']['#node'];
   $view_mode = $variables['view_mode'];
   $bundle = $node->bundle();
@@ -64,7 +60,6 @@ function howard_content_types_preprocess_node(&$variables) {
       $variables['show_hero_image'] = FALSE;
     }
   }
-
   // Homepage Intro Background Image.
   if ($bundle == 'hc_standard_homepage') {
     $variables['home_intro_image'] = '/themes/contrib/hu_general/idfive-component-library/build/img/graduates_talking.jpg';
@@ -78,7 +73,6 @@ function howard_content_types_preprocess_node(&$variables) {
       }
     }
   }
-
 }
 
 /**
@@ -91,78 +85,11 @@ function howard_content_types_preprocess_views_view(&$variables) {
 }
 
 /**
- * Implements hook_install().
- * Creates stock media browser terms.
- */
-function howard_content_types_install() {
-  _howard_content_types_create_media_browser_terms();
-}
-
-/**
  * Implements hook_node_form_alter().
  */
 function howard_content_types_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['#attached']['library'][] = 'howard_content_types/admin';
   if ($form_id == 'node_hc_standard_homepage_edit_form') {
     $form['field_hc_header_video']['widget']['#description'] = '<p>This feature is not yet operational. Any video added here will not yet work. Please contact web services with any questions.</p>';
-  }
-}
-
-// CUSTOM
-// .
-
-/**
- * Updates to media browser, taxonomies, etc.
- */
-function _howard_content_types_create_media_browser_terms() {
-  $categories = [
-    'Students',
-    'Alumni',
-    'Faculty & Staff',
-    'Events',
-    'Campus Landmarks',
-    'University Figures',
-    'Campus Life',
-    'Homecoming',
-    'Commencement',
-    'Opening Convocation',
-    'Charter Day',
-    'Undergraduate',
-    'Graduate/Professional',
-    'Community Service',
-    'Local & Regional',
-  ];
-  foreach ($categories as $category) {
-    $term = Term::create([
-      'parent' => [],
-      'name' => $category,
-      'vid' => 'hc_media_category',
-    ])->save();
-  }
-}
-
-// UPDATES
-// .
-
-/**
- * Updates to media browser, taxonomies, etc.
- */
-function howard_content_types_update_8001() {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'howard_content_types');
-  _howard_content_types_create_media_browser_terms();
-}
-
-/**
- * Updates to media, need files copied to all sites files folders.
- */
-function howard_content_types_update_8002() {
-  $source = drupal_get_path('module', 'media') . '/images/icons';
-  $destination = \Drupal::config('media.settings')->get('icon_base_uri');
-  file_prepare_directory($destination, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
-  $files = file_scan_directory($source, '/.*\.(svg|png|jpg|jpeg|gif)$/');
-  foreach ($files as $file) {
-    if (!file_exists($destination . DIRECTORY_SEPARATOR . $file->filename)) {
-      file_unmanaged_copy($file->uri, $destination, FILE_EXISTS_ERROR);
-    }
   }
 }

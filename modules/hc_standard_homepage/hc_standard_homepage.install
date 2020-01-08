@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Hc_standard_homepage install file.
+ */
+
+/**
+ * Updates to allow hiding sections.
+ *
+ * Update 8001 contained errors, so jumping a level here.
+ */
+function hc_standard_homepage_update_8002() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
+}
+
+/**
+ * Updates to background/video header choices.
+ */
+function hc_standard_homepage_update_8003() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
+}

@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Hc_page install file.
+ */
+
+/**
+ * Updates to allow hiding the sidebar.
+ */
+function hc_page_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
+}
+
+/**
+ * Updates to allow hiding the sidebar.
+ */
+function hc_page_update_8002() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
+}
+
+/**
+ * Updates to add the lead-in text field.
+ */
+function hc_page_update_8003() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
+}
