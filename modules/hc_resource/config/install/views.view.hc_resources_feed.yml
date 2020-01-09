@@ -7,9 +7,10 @@ dependencies:
     - taxonomy.vocabulary.hc_resource_category
   module:
     - node
-    - search
     - taxonomy
     - user
+_core:
+  default_config_hash: W75qHboq6rvNXgbn8c-emX-Khvn-5oMowG9RV6V9omY
 id: hc_resources_feed
 label: 'HC Resources Feed'
 module: views
@@ -252,26 +253,26 @@ display:
             operator_limit_selection: false
             operator_list: {  }
           group: 1
-        keys:
-          id: keys
-          table: node_search_index
-          field: keys
+        combine:
+          id: combine
+          table: views
+          field: combine
           relationship: none
           group_type: group
           admin_label: ''
-          operator: optional
+          operator: word
           value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: keys_op
+            operator_id: combine_op
             label: Keyword
             description: ''
             use_operator: false
-            operator: keys_op
+            operator: combine_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: keys
+            identifier: search
             required: false
             remember: false
             multiple: false
@@ -280,6 +281,7 @@ display:
               anonymous: '0'
               administrator: '0'
               site_builder: '0'
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -292,7 +294,9 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_keywords
+          fields:
+            title: title
+          plugin_id: combine
         field_hc_resource_category_target_id:
           id: field_hc_resource_category_target_id
           table: node__field_hc_resource_category
