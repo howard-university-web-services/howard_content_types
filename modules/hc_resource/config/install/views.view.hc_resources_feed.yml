@@ -104,13 +104,10 @@ display:
           id: title
           table: node_field_data
           field: title
-          settings:
-            link_to_entity: true
-          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: Resource
           exclude: false
           alter:
             alter_text: false
@@ -153,6 +150,8 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
+          settings:
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -163,6 +162,7 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          plugin_id: field
         field_hc_resource_category:
           id: field_hc_resource_category
           table: node__field_hc_resource_category
@@ -170,7 +170,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: Topic
           exclude: false
           alter:
             alter_text: false
