@@ -1,14 +1,19 @@
 /**
  * @media-entity howard_content_types.view.css
- * Extends defailt media entity browser for custom view
+ * Extends default media entity browser for custom views
  */
 
+.view-media-entity-browser .pager,
 .view-hc-media-browser .pager {
   padding: 20px;
 }
+
+.view-media-entity-browser .view-content,
 .view-hc-media-browser .view-content {
   overflow: hidden;
 }
+
+.view-media-entity-browser .views-row,
 .view-hc-media-browser .views-row {
   box-sizing: border-box;
   position: relative;
@@ -17,7 +22,11 @@
   border: 2px solid #b8b8b8;
   transition: .2s;
 }
-@media screen and (min-width:37.5em) { /* 600px */
+
+@media screen and (min-width:37.5em) {
+
+  /* 600px */
+  .view-media-entity-browser .views-row,
   .view-hc-media-browser .views-row {
     width: 20%;
     height: 120px;
@@ -25,17 +34,25 @@
     overflow: hidden;
   }
 }
+
+.view-media-entity-browser .views-row.checked,
 .view-hc-media-browser .views-row.checked {
   border: 2px solid #37802f;
 }
+
+.view-media-entity-browser .views-row img,
 .view-hc-media-browser .views-row img {
   vertical-align: bottom;
   width: 100%;
   height: auto;
 }
+
+.view-media-entity-browser .views-row img::selection,
 .view-hc-media-browser .views-row img::selection {
   background: transparent;
 }
+
+.view-media-entity-browser .views-row .views-field-entity-browser-select,
 .view-hc-media-browser .views-row .views-field-entity-browser-select {
   position: absolute !important;
   height: 1px;
@@ -43,6 +60,8 @@
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
+
+.view-media-entity-browser .views-row:after,
 .view-hc-media-browser .views-row:after {
   content: " ";
   width: 100%;
@@ -55,27 +74,33 @@
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
+
+.view-media-entity-browser .views-row.checked:after,
 .view-hc-media-browser .views-row.checked:after {
   background-size: 80px 80px;
 }
+
 .media-info {
   box-sizing: border-box;
   position: absolute;
   z-index: 1;
   width: 100%;
   bottom: 0;
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0, 0, 0, .8);
   padding: 5px 10px;
   color: white;
   text-align: left;
 }
+
 .media-info span {
   display: none;
 }
+
 input[type="submit"][name="filter"] {
   margin-left: 10px;
   margin-top: 30px;
 }
+
 .media-entity-browser-actions {
   position: fixed;
   bottom: 0;

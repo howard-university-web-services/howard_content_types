@@ -79,7 +79,7 @@ function howard_content_types_preprocess_node(&$variables) {
  * Implements hook_preprocess_views_view().
  */
 function howard_content_types_preprocess_views_view(&$variables) {
-  if ($variables['view']->id() === 'hc_media_browser') {
+  if ($variables['view']->id() === 'hc_media_browser' || $variables['view']->id() === 'media_entity_browser') {
     $variables['view_array']['#attached']['library'][] = 'howard_content_types/view';
   }
 }
