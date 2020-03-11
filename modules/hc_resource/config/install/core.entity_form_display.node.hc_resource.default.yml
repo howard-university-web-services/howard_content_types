@@ -5,6 +5,7 @@ dependencies:
     - entity_browser.browser.hc_media_browser_file
     - field.field.node.hc_resource.body
     - field.field.node.hc_resource.field_hc_header_image
+    - field.field.node.hc_resource.field_hc_ks_widgets
     - field.field.node.hc_resource.field_hc_lead_in
     - field.field.node.hc_resource.field_hc_resource_category
     - field.field.node.hc_resource.field_hc_resource_contact_addres
@@ -18,6 +19,7 @@ dependencies:
     - entity_browser
     - field_group
     - link_target
+    - paragraphs
     - path
     - text
 third_party_settings:
@@ -81,6 +83,8 @@ third_party_settings:
         id: ''
         classes: ''
       label: Category
+_core:
+  default_config_hash: FH-FTLn4zJYcGwyZXEjNvmn3Mj6Rb21Hd7QTWq6G3ww
 id: node.hc_resource.default
 targetEntityType: node
 bundle: hc_resource
@@ -115,6 +119,18 @@ content:
       field_widget_display_settings: {  }
     third_party_settings: {  }
     type: entity_browser_entity_reference
+    region: content
+  field_hc_ks_widgets:
+    weight: 10
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
     region: content
   field_hc_lead_in:
     weight: 8
