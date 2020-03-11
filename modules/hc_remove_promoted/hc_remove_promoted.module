@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Implements various hooks and functions to run the Remove Promoted.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_form_alter().
+ *
+ */
+
+function hc_remove_promoted_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+    if (isset($form['promote'])) {
+        unset($form['promote']);
+    }
+    if (isset($form['sticky'])) {
+        unset($form['sticky']);
+    }
+}
+
+/**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function hc_remove_promoted_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        case 'help.page.hc_remove_promotes':
+            $text = file_get_contents(dirname(__FILE__) . "/README.md");
+            if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+                return '<pre>' . $text . '</pre>';
+            } else {
+                // Use the Markdown filter to render the README.
+                $filter_manager = \Drupal::service('plugin.manager.filter');
+                $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+                $config = ['settings' => $settings];
+                $filter = $filter_manager->createInstance('markdown', $config);
+                return $filter->process($text, 'en');
+            }
+    }
+    return NULL;
+}
