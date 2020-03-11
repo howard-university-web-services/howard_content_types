@@ -1,7 +1,0 @@
-name: 'Howard Content Types: Remove Promotion Options'
-type: module
-description: 'Custom module to remove promotion options from node pages.'
-core: 8.x
-version: VERSION
-package: 'Howard University'
-
