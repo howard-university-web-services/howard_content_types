@@ -8,7 +8,7 @@ id: node.hc_page.field_hc_hide_sidebar
 field_name: field_hc_hide_sidebar
 entity_type: node
 bundle: hc_page
-label: 'Hide Sidebar'
+label: 'Hide Left Sidebar Navigation'
 description: 'Choosing this option will hide the sidebar, making the page function more like a landing page, with content being full width.'
 required: false
 translatable: false
