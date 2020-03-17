@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.hc_resource.field_hc_resource_cta_link
     - field.field.node.hc_resource.field_hc_resource_documents
     - field.field.node.hc_resource.field_hc_resource_sidebar_title
+    - field.field.node.hc_resource.field_hc_resources_related
     - node.type.hc_resource
   module:
     - entity_browser
@@ -83,8 +84,22 @@ third_party_settings:
         id: ''
         classes: ''
       label: Category
+    group_related_resources:
+      children:
+        - field_hc_resources_related
+      parent_name: ''
+      weight: 15
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+        open: false
+      label: 'Related Resources'
 _core:
-  default_config_hash: FH-FTLn4zJYcGwyZXEjNvmn3Mj6Rb21Hd7QTWq6G3ww
+  default_config_hash: c_aDNPTjInt2iEruAEy7pU5bU5Niz2mCNTN_M_Q7zJc
 id: node.hc_resource.default
 targetEntityType: node
 bundle: hc_resource
@@ -200,6 +215,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_hc_resources_related:
+    weight: 16
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   path:
     type: path

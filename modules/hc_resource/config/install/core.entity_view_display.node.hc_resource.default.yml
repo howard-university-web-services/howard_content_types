@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.hc_resource.field_hc_resource_cta_link
     - field.field.node.hc_resource.field_hc_resource_documents
     - field.field.node.hc_resource.field_hc_resource_sidebar_title
+    - field.field.node.hc_resource.field_hc_resources_related
     - node.type.hc_resource
   module:
     - entity_reference_revisions
@@ -20,7 +21,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: poSHbgkqltraJxlEEYvvP5vJdSIAqNRkvHDQb8S2L8E
+  default_config_hash: mnNMpfKQ6iVisZtMCmuPxsUNf9WkERrovJZRRaJrz2Y
 id: node.hc_resource.default
 targetEntityType: node
 bundle: hc_resource
@@ -115,6 +116,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_hc_resources_related:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 100
