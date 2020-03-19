@@ -28,7 +28,6 @@ The following sub-modules are available:
 - Page: Creates the "HC Basic Page" Content Type.
 - Resource: Creates the "HC Resource" Content Type.
 - Standard Homepage: Creates the "HC Standard Homepage" Content Type.
-- Remove Promoted: Removed the promoted and the sticky form checkboxes.
 
 ## Configuration Overrides
 
