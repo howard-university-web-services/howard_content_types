@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.hc_resource.body
     - field.field.node.hc_resource.field_hc_header_image
+    - field.field.node.hc_resource.field_hc_hide_header_image
     - field.field.node.hc_resource.field_hc_ks_widgets
     - field.field.node.hc_resource.field_hc_lead_in
     - field.field.node.hc_resource.field_hc_resource_category
@@ -21,7 +22,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: mnNMpfKQ6iVisZtMCmuPxsUNf9WkERrovJZRRaJrz2Y
+  default_config_hash: TYsbMgsFtBUFVM2aX77onQxOSViVwoHfCMJK7stBKaw
 id: node.hc_resource.default
 targetEntityType: node
 bundle: hc_resource
@@ -41,6 +42,16 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_hc_hide_header_image:
+    weight: 113
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_hc_ks_widgets:
     weight: 111
