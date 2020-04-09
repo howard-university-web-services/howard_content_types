@@ -12,14 +12,14 @@ use Drupal\Core\Routing\RouteMatchInterface;
  *
  * @inheritdoc
  */
-function hc_resource_help($route_name, RouteMatchInterface $route_match) {
+function hc_resource_help($route_name, RouteMatchInterface $route_match)
+{
   switch ($route_name) {
     case 'help.page.hc_resource':
       $text = file_get_contents(dirname(__FILE__) . "/README.md");
       if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
         return '<pre>' . $text . '</pre>';
-      }
-      else {
+      } else {
         // Use the Markdown filter to render the README.
         $filter_manager = \Drupal::service('plugin.manager.filter');
         $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
@@ -29,4 +29,11 @@ function hc_resource_help($route_name, RouteMatchInterface $route_match) {
       }
   }
   return NULL;
+}
+/**
+ * Updates changing format of contact address.
+ */
+function hc_resource_update_8001()
+{
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_resource');
 }
