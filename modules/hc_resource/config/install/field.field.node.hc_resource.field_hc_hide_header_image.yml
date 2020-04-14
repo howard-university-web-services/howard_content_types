@@ -3,20 +3,17 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_hc_hide_header_image
-    - node.type.hc_article
-_core:
-  default_config_hash: d7tLfdS-UsSpR_Ao6GOOZp5hU05OlNqjbooVed0CFII
-id: node.hc_article.field_hc_hide_header_image
+    - node.type.hc_resource
+id: node.hc_resource.field_hc_hide_header_image
 field_name: field_hc_hide_header_image
 entity_type: node
-bundle: hc_article
+bundle: hc_resource
 label: 'Hide Header Image'
-description: 'Choose this option if you wish to hide the header image for this page.'
+description: ''
 required: false
 translatable: true
 default_value:
-  -
-    value: 0
+  - value: 0
 default_value_callback: ''
 settings:
   on_label: 'On'
