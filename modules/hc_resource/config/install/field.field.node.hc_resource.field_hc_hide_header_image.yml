@@ -9,7 +9,7 @@ field_name: field_hc_hide_header_image
 entity_type: node
 bundle: hc_resource
 label: 'Hide Header Image'
-description: ''
+description: 'Choose this option if you wish to hide the header image for this page.'
 required: false
 translatable: true
 default_value:
