@@ -5,6 +5,7 @@ dependencies:
     - entity_browser.browser.hc_media_browser_file
     - field.field.node.hc_resource.body
     - field.field.node.hc_resource.field_hc_header_image
+    - field.field.node.hc_resource.field_hc_hide_header_image
     - field.field.node.hc_resource.field_hc_ks_widgets
     - field.field.node.hc_resource.field_hc_lead_in
     - field.field.node.hc_resource.field_hc_resource_category
