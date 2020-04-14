@@ -33,7 +33,96 @@ function hc_resource_help($route_name, RouteMatchInterface $route_match)
 /**
  * Updates changing format of contact address.
  */
-function hc_resource_update_8001()
+/**
+ * Change format of contact address to a text_long.
+ */
+function hc_resources_update_8001()
 {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_resource');
+  $fields = [
+    'field_hc_resource_contact_addres' => [
+      'table' => 'node__field_hc_resource_contact_addres',
+      'revision_table' => 'node_revision__field_hc_resource_contact_addres',
+    ],
+  ];
+
+  $database = \Drupal::database();
+
+  foreach ($fields as $field_name => $f) {
+    $table = $f['table'];
+    $revision_table = $f['revision_table'];
+    $entity_type = 'node';
+
+    // Get field storage.
+    $field_storage = FieldStorageConfig::loadByName($entity_type, $field_name);
+
+    // Check if field exist.
+    if (is_null($field_storage)) {
+      continue;
+    }
+
+    // Store data to an array so that we can restore it once the update is complete.
+    $rows = NULL;
+    $revision_rows = NULL;
+    if ($database->schema()->tableExists($table)) {
+      $rows = $database->select($table, 'n')->fields('n')->execute()
+        ->fetchAll();
+      $revision_rows = $database->select($revision_table, 'n')->fields('n')->execute()
+        ->fetchAll();
+    }
+
+    // Save new field configs & delete existing fields.
+    $new_fields = array();
+    foreach ($field_storage->getBundles() as $bundle => $label) {
+      $field = FieldConfig::loadByName($entity_type, $bundle, $field_name);
+      $new_field = $field->toArray();
+      $new_field['field_type'] = 'text_long';
+      $new_fields[] = $new_field;
+      // Delete field.
+      $field->delete();
+    }
+
+    // Create new storage configs from existing.
+    $new_field_storage = $field_storage->toArray();
+    $new_field_storage['type'] = 'text_long';
+    $new_field_storage['module'] = 'text_long';
+
+    // Purge deleted fields data to create new fields.
+    field_purge_batch(250);
+
+    // Create new fieldstorage.
+    FieldStorageConfig::create($new_field_storage)->save();
+
+    // Create new fields for all bundles.
+    foreach ($new_fields as $new_field) {
+      $new_field = FieldConfig::create($new_field);
+      $new_field->save();
+    }
+    // Restore existing data in fields & revision tables.
+    if (!is_null($rows)) {
+      foreach ($rows as $row) {
+        $row = (array) $row;
+        $database->insert($table)->fields($row)->execute();
+      }
+    }
+    if (!is_null($revision_rows)) {
+      foreach ($revision_rows as $row) {
+        $row = (array) $row;
+        $database->insert($revision_table)->fields($row)->execute();
+      }
+    }
+  }
+  \Drupal::entityTypeManager()
+    ->getStorage('entity_form_display')
+    ->load('node.hc_resource.default')
+    ->setComponent('field_hc_resource_contact_addres', [
+      'weight' => 2,
+    ])->save();
+
+  \Drupal::entityTypeManager()
+    ->getStorage('entity_view_display')
+    ->load('node.hc_resource.default')
+    ->setComponent('field_hc_resource_contact_addres', [
+      'type' => 'text_default',
+      'label' => 'hidden',
+    ])->save();
 }
