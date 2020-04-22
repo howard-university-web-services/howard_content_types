@@ -128,3 +128,11 @@ function hc_resources_update_8001()
       'label' => 'hidden',
     ])->save();
 }
+
+/**
+ * Updates change display form
+ */
+function hc_resources_update_8002()
+{
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hp_resources');
+}
