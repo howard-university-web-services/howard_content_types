@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.hc_resource.field_hc_resource_documents
     - field.field.node.hc_resource.field_hc_resource_sidebar_title
     - field.field.node.hc_resource.field_hc_resources_related
+    - field.field.node.hc_resource.field_site_section
     - node.type.hc_resource
   module:
     - entity_browser
@@ -33,21 +34,21 @@ third_party_settings:
         - field_hc_resource_contact_email
         - field_hc_resource_contact_addres
       parent_name: ''
-      weight: 13
+      weight: 6
       format_type: details
       region: content
       format_settings:
         description: ''
-        open: true
         required_fields: true
         id: ''
         classes: ''
+        open: false
       label: Contact
     group_documents:
       children:
         - field_hc_resource_documents
       parent_name: ''
-      weight: 15
+      weight: 9
       format_type: details
       region: content
       format_settings:
@@ -61,35 +62,35 @@ third_party_settings:
       children:
         - field_hc_resource_cta_link
       parent_name: ''
-      weight: 14
+      weight: 8
       format_type: details
       region: content
       format_settings:
         description: ''
-        open: true
         required_fields: true
         id: ''
         classes: ''
+        open: false
       label: Links
     group_category:
       children:
         - field_hc_resource_category
       parent_name: ''
-      weight: 12
+      weight: 4
       format_type: details
       region: content
       format_settings:
         description: ''
-        open: true
         required_fields: true
         id: ''
         classes: ''
+        open: false
       label: Category
     group_related_resources:
       children:
         - field_hc_resources_related
       parent_name: ''
-      weight: 16
+      weight: 10
       format_type: details
       region: content
       format_settings:
@@ -101,28 +102,43 @@ third_party_settings:
       label: 'Related Resources'
     group_header_image:
       children:
-        - field_hc_header_image
         - field_hc_hide_header_image
+        - field_hc_header_image
       parent_name: ''
-      weight: 7
+      weight: 2
       format_type: details
       region: content
       format_settings:
         description: ''
-        open: true
         required_fields: true
         id: ''
         classes: ''
+        open: false
       label: 'Header Image'
+    group_kitchen_sink:
+      children:
+        - field_hc_lead_in
+        - field_hc_ks_widgets
+      parent_name: ''
+      weight: 5
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Kitchen Sink'
 _core:
-  default_config_hash: c_aDNPTjInt2iEruAEy7pU5bU5Niz2mCNTN_M_Q7zJc
+  default_config_hash: Lw8s0BTn6-HRoC-wSdRJrJFC7Tp09Dt1Y0xbpZSYcT0
 id: node.hc_resource.default
 targetEntityType: node
 bundle: hc_resource
 mode: default
 content:
   body:
-    weight: 10
+    weight: 3
     settings:
       rows: 9
       summary_rows: 3
@@ -133,12 +149,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   field_hc_header_image:
-    weight: 8
+    weight: 10
     settings:
       entity_browser: hc_media_browser_image
       field_widget_display: label
@@ -159,7 +175,7 @@ content:
     type: boolean_checkbox
     region: content
   field_hc_ks_widgets:
-    weight: 11
+    weight: 8
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -171,7 +187,7 @@ content:
     type: entity_reference_paragraphs
     region: content
   field_hc_lead_in:
-    weight: 9
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
@@ -179,7 +195,7 @@ content:
     type: string_textarea
     region: content
   field_hc_resource_category:
-    weight: 10
+    weight: 18
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -190,7 +206,7 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
+    type: text_textarea
     region: content
   field_hc_resource_contact_email:
     weight: 29
@@ -249,9 +265,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_site_section:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -259,26 +281,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 3
+    weight: 13
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 16
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 14
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60
@@ -286,7 +308,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 11
     settings:
       match_operator: CONTAINS
       size: 60

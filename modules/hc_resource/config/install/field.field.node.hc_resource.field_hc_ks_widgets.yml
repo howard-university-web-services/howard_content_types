@@ -4,8 +4,36 @@ dependencies:
   config:
     - field.storage.node.field_hc_ks_widgets
     - node.type.hc_resource
+    - paragraphs.paragraphs_type.hp_announcements
+    - paragraphs.paragraphs_type.hp_articles
+    - paragraphs.paragraphs_type.hp_callout
+    - paragraphs.paragraphs_type.hp_cards
+    - paragraphs.paragraphs_type.hp_carousel_with_caption
+    - paragraphs.paragraphs_type.hp_carousel_with_modal
+    - paragraphs.paragraphs_type.hp_deadline_feed
+    - paragraphs.paragraphs_type.hp_embed
+    - paragraphs.paragraphs_type.hp_events_feed
+    - paragraphs.paragraphs_type.hp_featured_article
+    - paragraphs.paragraphs_type.hp_featured_student_alumni_feed
+    - paragraphs.paragraphs_type.hp_html
+    - paragraphs.paragraphs_type.hp_magazine_feed
+    - paragraphs.paragraphs_type.hp_media
+    - paragraphs.paragraphs_type.hp_news_feed
+    - paragraphs.paragraphs_type.hp_parallax
+    - paragraphs.paragraphs_type.hp_photoshelter_feed
+    - paragraphs.paragraphs_type.hp_profiles_feed
+    - paragraphs.paragraphs_type.hp_promo_space
+    - paragraphs.paragraphs_type.hp_testimonial
+    - paragraphs.paragraphs_type.hp_twitter_feed
+    - paragraphs.paragraphs_type.ip_accordion
+    - paragraphs.paragraphs_type.ip_button_link
+    - paragraphs.paragraphs_type.ip_table
+    - paragraphs.paragraphs_type.ip_views_embed
+    - paragraphs.paragraphs_type.ip_webform_embed
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: dvonkU91EJzXZrmw9axaRU5l3tOsHupPlGAoVtwqVCM
 id: node.hc_resource.field_hc_ks_widgets
 field_name: field_hc_ks_widgets
 entity_type: node
@@ -20,77 +48,100 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 0
-    target_bundles: null
+    target_bundles:
+      hp_announcements: hp_announcements
+      hp_articles: hp_articles
+      hp_callout: hp_callout
+      hp_cards: hp_cards
+      hp_carousel_with_caption: hp_carousel_with_caption
+      hp_carousel_with_modal: hp_carousel_with_modal
+      hp_deadline_feed: hp_deadline_feed
+      hp_embed: hp_embed
+      hp_events_feed: hp_events_feed
+      hp_featured_article: hp_featured_article
+      hp_featured_student_alumni_feed: hp_featured_student_alumni_feed
+      hp_html: hp_html
+      hp_magazine_feed: hp_magazine_feed
+      hp_media: hp_media
+      hp_news_feed: hp_news_feed
+      hp_parallax: hp_parallax
+      hp_photoshelter_feed: hp_photoshelter_feed
+      hp_profiles_feed: hp_profiles_feed
+      hp_promo_space: hp_promo_space
+      hp_testimonial: hp_testimonial
+      hp_twitter_feed: hp_twitter_feed
+      ip_accordion: ip_accordion
+      ip_button_link: ip_button_link
+      ip_table: ip_table
+      ip_views_embed: ip_views_embed
+      ip_webform_embed: ip_webform_embed
     target_bundles_drag_drop:
       hp_announcements:
+        enabled: true
         weight: 35
-        enabled: false
       hp_articles:
+        enabled: true
         weight: 36
-        enabled: false
       hp_callout:
+        enabled: true
         weight: 37
-        enabled: false
       hp_card:
         weight: 38
         enabled: false
       hp_cards:
+        enabled: true
         weight: 39
-        enabled: false
       hp_carousel_with_caption:
+        enabled: true
         weight: 40
-        enabled: false
       hp_carousel_with_caption_slide:
         weight: 41
         enabled: false
       hp_carousel_with_modal:
+        enabled: true
         weight: 42
-        enabled: false
       hp_carousel_with_modal_slide:
         weight: 43
         enabled: false
       hp_deadline_feed:
+        enabled: true
         weight: 44
-        enabled: false
       hp_embed:
+        enabled: true
         weight: 45
-        enabled: false
       hp_events_feed:
+        enabled: true
         weight: 46
-        enabled: false
       hp_facebook_feed:
         weight: 47
         enabled: false
       hp_featured_article:
+        enabled: true
         weight: 48
-        enabled: false
       hp_featured_student_alumni_feed:
+        enabled: true
         weight: 49
-        enabled: false
       hp_html:
+        enabled: true
         weight: 50
-        enabled: false
       hp_magazine_feed:
+        enabled: true
         weight: 51
-        enabled: false
       hp_media:
+        enabled: true
         weight: 52
-        enabled: false
       hp_news_feed:
+        enabled: true
         weight: 53
-        enabled: false
       hp_parallax:
+        enabled: true
         weight: 54
-        enabled: false
       hp_photoshelter_feed:
+        enabled: true
         weight: 55
-        enabled: false
-      hp_photoshelter_feed_grid:
-        weight: 56
-        enabled: false
       hp_profiles_feed:
+        enabled: true
         weight: 57
-        enabled: false
       hp_program:
         weight: 58
         enabled: false
@@ -98,30 +149,30 @@ settings:
         weight: 59
         enabled: false
       hp_promo_space:
+        enabled: true
         weight: 60
-        enabled: false
       hp_testimonial:
+        enabled: true
         weight: 61
-        enabled: false
       hp_twitter_feed:
+        enabled: true
         weight: 62
-        enabled: false
       ip_accordion:
+        enabled: true
         weight: 63
-        enabled: false
       ip_accordion_item:
         weight: 64
         enabled: false
       ip_button_link:
+        enabled: true
         weight: 65
-        enabled: false
       ip_table:
+        enabled: true
         weight: 66
-        enabled: false
       ip_views_embed:
+        enabled: true
         weight: 67
-        enabled: false
       ip_webform_embed:
+        enabled: true
         weight: 68
-        enabled: false
 field_type: entity_reference_revisions
