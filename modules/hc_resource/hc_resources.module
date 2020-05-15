@@ -130,9 +130,17 @@ function hc_resources_update_8001()
 }
 
 /**
- * Updates change display form
+ * Change display form to close ks widgets
  */
-function hc_resources_update_8003()
+function hc_resources_update_8007()
+{
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_resources');
+}
+
+/**
+ * Enable paragraph types by default and improve form, view
+ */
+function hc_resources_update_8008()
 {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_resources');
 }
