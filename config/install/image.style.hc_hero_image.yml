@@ -1,14 +1,19 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - focal_point
+_core:
+  default_config_hash: y_V1Houb8w_UxY3ygY54L8ur9ocqp60uNdJuasN3VWM
 name: hc_hero_image
 label: 'HC Hero Image'
 effects:
-  d298b922-4509-4d42-b945-f35756bdcd5c:
-    uuid: d298b922-4509-4d42-b945-f35756bdcd5c
-    id: image_scale_and_crop
-    weight: 1
+  bb32b4d9-578f-427f-980b-9cfa27ebc068:
+    uuid: bb32b4d9-578f-427f-980b-9cfa27ebc068
+    id: focal_point_scale_and_crop
+    weight: 2
     data:
       width: 1600
       height: 400
-      anchor: center-center
+      crop_type: focal_point
+pipeline: __default__

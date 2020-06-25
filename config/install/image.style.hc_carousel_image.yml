@@ -1,15 +1,19 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - focal_point
+_core:
+  default_config_hash: yo4K-QL8vT3-wgMlOSh4pApwhIU99yYDjqUs0kuzvss
 name: hc_carousel_image
 label: 'HC Carousel Image'
 effects:
-  7fe6d2e9-157f-4168-b6d2-25b972409571:
-    uuid: 7fe6d2e9-157f-4168-b6d2-25b972409571
-    id: image_scale
-    weight: 1
+  73e362ef-5197-4bc1-bad7-12ac39ea9d34:
+    uuid: 73e362ef-5197-4bc1-bad7-12ac39ea9d34
+    id: focal_point_scale_and_crop
+    weight: 2
     data:
       width: 800
       height: 800
-      upscale: false
+      crop_type: focal_point
 pipeline: __default__

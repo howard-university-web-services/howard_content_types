@@ -10,6 +10,7 @@ dependencies:
   - field
   - file
   - filter
+  - focal_point
   - image
   - media
   - link

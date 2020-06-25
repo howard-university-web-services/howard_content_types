@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies: {  }
+name: hc_focal_point_preview
+label: 'HC Focal Point Preview'
+effects:
+  6cb24456-5826-4972-ab2e-1278456db44d:
+    uuid: 6cb24456-5826-4972-ab2e-1278456db44d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      anchor: center-center
+pipeline: __default__
