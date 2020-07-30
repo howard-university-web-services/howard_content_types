@@ -30,3 +30,13 @@ function hc_article_help($route_name, RouteMatchInterface $route_match) {
   }
   return NULL;
 }
+
+/**
+ *
+ */
+function hc_article_preprocess_node__hc_article(&$variables) {
+  $node = $variables['elements']['#node'];
+  $timestamp = new DateTime();
+  $timestamp->setTimestamp($node->created->value);
+  $variables['publish_date'] = $timestamp->format('F j, Y');
+}
