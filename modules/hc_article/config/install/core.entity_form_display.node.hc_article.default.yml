@@ -5,14 +5,12 @@ dependencies:
     - entity_browser.browser.media_entity_browser
     - field.field.node.hc_article.body
     - field.field.node.hc_article.field_hc_article_category
-    - field.field.node.hc_article.field_hc_article_date
     - field.field.node.hc_article.field_hc_featured_image
     - field.field.node.hc_article.field_hc_header_image
     - field.field.node.hc_article.field_hc_hide_header_image
     - field.field.node.hc_article.field_hc_metatags
     - node.type.hc_article
   module:
-    - datetime
     - entity_browser
     - field_group
     - metatag

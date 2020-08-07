@@ -4,14 +4,12 @@ dependencies:
   config:
     - field.field.node.hc_article.body
     - field.field.node.hc_article.field_hc_article_category
-    - field.field.node.hc_article.field_hc_article_date
     - field.field.node.hc_article.field_hc_featured_image
     - field.field.node.hc_article.field_hc_header_image
     - field.field.node.hc_article.field_hc_hide_header_image
     - field.field.node.hc_article.field_hc_metatags
     - node.type.hc_article
   module:
-    - datetime
     - metatag
     - text
     - user
@@ -25,18 +23,9 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 99
+    weight: 101
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_hc_article_date:
-    weight: 101
-    label: hidden
-    settings:
-      timezone_override: ''
-      date_format: 'D, F, d Y'
-    third_party_settings: {  }
-    type: datetime_custom
     region: content
   field_hc_article_category:
     weight: 106
