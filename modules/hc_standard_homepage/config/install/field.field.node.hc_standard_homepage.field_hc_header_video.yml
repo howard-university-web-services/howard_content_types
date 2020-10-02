@@ -6,13 +6,13 @@ dependencies:
     - media.type.remote_video
     - node.type.hc_standard_homepage
 _core:
-  default_config_hash: aRj7W7qb11gzapsRG0Cb9Z55JsqrOYoUaCS6kgI8iEs
+  default_config_hash: oj9ERnPTLt2zUL8vt_NUHlCStCDFPs2LZqwFx6o80iE
 id: node.hc_standard_homepage.field_hc_header_video
 field_name: field_hc_header_video
 entity_type: node
 bundle: hc_standard_homepage
 label: 'Header Video'
-description: "By default, the ability to add a video is disabled for content managers in COAS department sites.\r\n\r\nA DSWS (Digital Strategy and Web Services) site administrator must upload the video in this field for it to be able to be displayed.\r\n\r\nIn order for this to happen, the video must meet the following requirements/specs:\r\n<ul>\r\n<li>High definition (16:9 aspect ratio and 1080p resolution)</li>\r\n<li>Streams from a Vimeo Pro account (cost: $20/month - https://vimeo.com/upgrade)</li>\r\n<li>.mp4 file format</li>\r\n<li>15-20 second maximum duration (running time affects download time, so the shorter the better)</li>\r\n<li>No audio track</li>\r\n<li>Video contains only subject that is appropriate for a particular department, which could include generic Howard b-roll, and the quality of videography must be acceptable</li>\r\n</ul>\r\n\r\nIf video meets above specs, submit a request to <a href=\"https://www2.howard.edu/webservices/contact\">DSWS’s webform</a> to ask for further review for approval, and activation of video upload functionality. DSWS will either confirm and do so, or follow up for discussion."
+description: "Videos must meet the following requirements/specs:\r\n<ul>\r\n<li>High definition (16:9 aspect ratio and 1080p resolution)</li>\r\n<li>Streams from a Vimeo Pro account (cost: $20/month - https://vimeo.com/upgrade)</li>\r\n<li>.mp4 file format</li>\r\n<li>15-20 second maximum duration (running time affects download time, so the shorter the better)</li>\r\n<li>No audio track</li>\r\n<li>Video contains only subject that is appropriate for a particular department, which could include generic Howard b-roll, and the quality of videography must be acceptable</li>\r\n</ul>\r\n\r\nIf video meets above specs, submit a request to <a href=\"https://www2.howard.edu/webservices/contact\">DSWS’s webform</a> to ask for further review for approval, and activation of video upload functionality. DSWS will either confirm and do so, or follow up for discussion."
 required: false
 translatable: false
 default_value: {  }

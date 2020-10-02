@@ -6,6 +6,8 @@ dependencies:
     - node.type.hc_standard_homepage
   module:
     - options
+_core:
+  default_config_hash: ag44al-Fyn9unJ_uDiEru1-gf48xPgyShp3KFq_iytI
 id: node.hc_standard_homepage.field_hc_media_display_options
 field_name: field_hc_media_display_options
 entity_type: node

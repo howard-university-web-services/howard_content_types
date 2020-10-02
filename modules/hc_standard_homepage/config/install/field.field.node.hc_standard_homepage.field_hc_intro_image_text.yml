@@ -4,6 +4,8 @@ dependencies:
   config:
     - field.storage.node.field_hc_intro_image_text
     - node.type.hc_standard_homepage
+_core:
+  default_config_hash: nJM3bveahEHddzJrzYtLKPfBWGYmxmegkuP3dFw7sBI
 id: node.hc_standard_homepage.field_hc_intro_image_text
 field_name: field_hc_intro_image_text
 entity_type: node

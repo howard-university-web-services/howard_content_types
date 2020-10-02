@@ -6,7 +6,7 @@ dependencies:
     - media.type.image
     - node.type.hc_standard_homepage
 _core:
-  default_config_hash: YTeTSJ-ZETHtWALdK51urx4fWDa7LP9csipc_YqG0FA
+  default_config_hash: e8Uk7eVpmG3BrjKP7ITd4SXa3Hyizwll3v7ER-A8OZI
 id: node.hc_standard_homepage.field_hc_header_image
 field_name: field_hc_header_image
 entity_type: node

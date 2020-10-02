@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.hc_standard_homepage.field_hc_header_video
     - field.field.node.hc_standard_homepage.field_hc_hero_display_options
     - field.field.node.hc_standard_homepage.field_hc_hide_intro_sidebar
+    - field.field.node.hc_standard_homepage.field_hc_hide_overlay
     - field.field.node.hc_standard_homepage.field_hc_intro_background_image
     - field.field.node.hc_standard_homepage.field_hc_intro_image_text
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_text
@@ -18,6 +19,7 @@ dependencies:
     - field.field.node.hc_standard_homepage.field_hc_metatags
     - node.type.hc_standard_homepage
   module:
+    - content_moderation
     - entity_browser
     - field_group
     - metatag
@@ -29,15 +31,14 @@ third_party_settings:
     group_header_media:
       children:
         - field_hc_media_display_options
-        - field_hc_hide_header_image
         - field_hc_intro_image_text
         - field_hc_header_image
         - field_hc_header_video
+        - group_advanced
       parent_name: group_hero_area
       weight: 43
       format_type: details
       format_settings:
-        label: 'Option 2: Full Width Image or Background Video'
         required_fields: true
         id: ''
         classes: ''
@@ -54,7 +55,6 @@ third_party_settings:
       weight: 42
       format_type: details
       format_settings:
-        label: 'Option 1: Introduction'
         required_fields: true
         id: ''
         classes: ''
@@ -68,7 +68,6 @@ third_party_settings:
       weight: 4
       format_type: details
       format_settings:
-        label: 'Kitchen Sink'
         open: true
         required_fields: true
         id: ''
@@ -84,19 +83,19 @@ third_party_settings:
       weight: 2
       format_type: details
       format_settings:
-        label: 'Hero Area'
         open: true
         required_fields: true
         id: ''
         classes: ''
       label: 'Hero Area'
+      region: content
     group_sidebar:
       children:
         - field_hc_hide_intro_sidebar
         - field_hc_intro_sidebar_title
         - field_hc_intro_sidebar_text
       parent_name: group_introduction
-      weight: 44
+      weight: 53
       format_type: fieldset
       format_settings:
         id: ''
@@ -104,8 +103,23 @@ third_party_settings:
         description: 'Optionally, you may show more content in a sidebar.'
         required_fields: true
       label: Sidebar
+      region: content
+    group_advanced:
+      children:
+        - field_hc_hide_overlay
+      parent_name: group_header_media
+      weight: 55
+      format_type: details
+      region: content
+      format_settings:
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: Advanced
 _core:
-  default_config_hash: z5QzOGVEq5u8c6HthK__9aQzbYSigyTfwxAvBGUWiyY
+  default_config_hash: bxFdonEYdUyXGtbA4LOxSaWIzcZRxqWwSxv8aDSsKYc
 id: node.hc_standard_homepage.default
 targetEntityType: node
 bundle: hc_standard_homepage
@@ -158,8 +172,15 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_hc_hide_overlay:
+    weight: 52
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_hc_intro_background_image:
-    weight: 40
+    weight: 49
     settings:
       entity_browser: hc_media_browser_image
       field_widget_display: label
@@ -173,7 +194,7 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_hc_intro_image_text:
-    weight: 52
+    weight: 51
     settings:
       rows: 5
       placeholder: ''
@@ -181,7 +202,7 @@ content:
     type: string_textarea
     region: content
   field_hc_intro_sidebar_text:
-    weight: 46
+    weight: 47
     settings:
       rows: 5
       placeholder: ''
@@ -189,7 +210,7 @@ content:
     type: text_textarea
     region: content
   field_hc_intro_sidebar_title:
-    weight: 45
+    weight: 46
     settings:
       size: 60
       placeholder: ''
@@ -197,7 +218,7 @@ content:
     type: string_textfield
     region: content
   field_hc_intro_text:
-    weight: 43
+    weight: 52
     settings:
       rows: 5
       placeholder: ''
@@ -205,7 +226,7 @@ content:
     type: string_textarea
     region: content
   field_hc_intro_title:
-    weight: 42
+    weight: 51
     settings:
       size: 60
       placeholder: ''
@@ -232,10 +253,17 @@ content:
     region: content
   field_hc_metatags:
     weight: 11
-    settings: {  }
+    settings:
+      sidebar: true
     third_party_settings: {  }
     type: metatag_firehose
     region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
     weight: 9
@@ -278,6 +306,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
 hidden: {  }

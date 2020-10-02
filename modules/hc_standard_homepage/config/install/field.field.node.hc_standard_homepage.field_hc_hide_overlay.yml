@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_hide_overlay
+    - node.type.hc_standard_homepage
+id: node.hc_standard_homepage.field_hc_hide_overlay
+field_name: field_hc_hide_overlay
+entity_type: node
+bundle: hc_standard_homepage
+label: 'Hide overlay on image/video'
+description: 'IMPORTANT: If you wish to hide the blue overlay that appears on full-width image/video, choose this option. This should not be undertaken without a specific reason, as it may cause accessibility errors. It should only be used when no text is being displayed.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

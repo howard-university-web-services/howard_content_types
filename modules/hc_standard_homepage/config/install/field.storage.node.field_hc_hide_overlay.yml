@@ -1,13 +1,10 @@
-uuid: 3f894f7e-4af0-401c-9b0b-5a1f5e75a73d
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: LXqz3Lqh21qrVgT2PxfLTPHYs02caIgPHxd0nUnOkW0
-id: node.field_hc_hide_intro_section
-field_name: field_hc_hide_intro_section
+id: node.field_hc_hide_overlay
+field_name: field_hc_hide_overlay
 entity_type: node
 type: boolean
 settings: {  }

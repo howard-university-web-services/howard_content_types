@@ -7,7 +7,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: KLgPUvXZGf2caIqMg9nVESdNMGPEsaiDvwO2lNJWNLo
+  default_config_hash: rr8G8p70VI14I2ejuMz8waSMOyeHl_ZCcg0ayv0iujk
 id: node.hc_standard_homepage.field_hc_intro_sidebar_text
 field_name: field_hc_intro_sidebar_text
 entity_type: node

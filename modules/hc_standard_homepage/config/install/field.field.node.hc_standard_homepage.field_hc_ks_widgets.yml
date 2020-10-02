@@ -6,16 +6,17 @@ dependencies:
     - node.type.hc_standard_homepage
     - paragraphs.paragraphs_type.hp_announcements
     - paragraphs.paragraphs_type.hp_callout
-    - paragraphs.paragraphs_type.hp_card
     - paragraphs.paragraphs_type.hp_cards
     - paragraphs.paragraphs_type.hp_carousel_with_caption
     - paragraphs.paragraphs_type.hp_carousel_with_modal
     - paragraphs.paragraphs_type.hp_embed
     - paragraphs.paragraphs_type.hp_events_feed
     - paragraphs.paragraphs_type.hp_featured_article
+    - paragraphs.paragraphs_type.hp_graph
     - paragraphs.paragraphs_type.hp_html
     - paragraphs.paragraphs_type.hp_media
     - paragraphs.paragraphs_type.hp_news_feed
+    - paragraphs.paragraphs_type.hp_parallax
     - paragraphs.paragraphs_type.hp_profiles_feed
     - paragraphs.paragraphs_type.hp_promo_space
     - paragraphs.paragraphs_type.hp_testimonial
@@ -28,7 +29,7 @@ dependencies:
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: jmcpGejHbMV3Ffr77wQ52MYHbwd4kLjVGj246dAJ3bk
+  default_config_hash: BMrJIRiUVSvFg30kn48kWW26NgXfE1fyxxmFFV4wlEE
 id: node.hc_standard_homepage.field_hc_ks_widgets
 field_name: field_hc_ks_widgets
 entity_type: node
@@ -46,7 +47,6 @@ settings:
     target_bundles:
       hp_announcements: hp_announcements
       hp_callout: hp_callout
-      hp_card: hp_card
       hp_cards: hp_cards
       hp_carousel_with_caption: hp_carousel_with_caption
       hp_carousel_with_modal: hp_carousel_with_modal
@@ -65,22 +65,21 @@ settings:
       ip_table: ip_table
       ip_views_embed: ip_views_embed
       ip_webform_embed: ip_webform_embed
+      hp_graph: hp_graph
+      hp_parallax: hp_parallax
     target_bundles_drag_drop:
-      home_callout:
-        weight: 28
-        enabled: false
-      home_slideshow_slide:
-        weight: 29
-        enabled: false
       hp_announcements:
         enabled: true
         weight: 30
+      hp_articles:
+        weight: 36
+        enabled: false
       hp_callout:
         enabled: true
         weight: 31
       hp_card:
-        enabled: true
         weight: 32
+        enabled: false
       hp_cards:
         enabled: true
         weight: 33
@@ -96,33 +95,72 @@ settings:
       hp_carousel_with_modal_slide:
         weight: 37
         enabled: false
+      hp_deadline_feed:
+        weight: 44
+        enabled: false
       hp_embed:
         enabled: true
         weight: 38
       hp_events_feed:
         enabled: true
         weight: 39
+      hp_facebook_feed:
+        weight: 47
+        enabled: false
       hp_featured_article:
         enabled: true
         weight: 40
+      hp_featured_student_alumni_feed:
+        weight: 49
+        enabled: false
+      hp_graph:
+        enabled: true
+        weight: 54
+      hp_graph_field:
+        weight: 55
+        enabled: false
       hp_html:
         enabled: true
         weight: 41
+      hp_magazine_feed:
+        weight: 51
+        enabled: false
       hp_media:
         enabled: true
         weight: 42
       hp_news_feed:
         enabled: true
         weight: 43
+      hp_parallax:
+        enabled: true
+        weight: 68
+      hp_photoshelter_feed:
+        weight: 54
+        enabled: false
+      hp_photoshelter_feed_grid:
+        weight: 55
+        enabled: false
       hp_profiles_feed:
         enabled: true
         weight: 44
+      hp_program:
+        weight: 57
+        enabled: false
+      hp_programs_feed:
+        weight: 58
+        enabled: false
       hp_promo_space:
         enabled: true
         weight: 45
       hp_testimonial:
         enabled: true
         weight: 46
+      hp_timeline:
+        weight: 68
+        enabled: false
+      hp_timeline_field:
+        weight: 69
+        enabled: false
       hp_twitter_feed:
         enabled: true
         weight: 47
@@ -144,7 +182,4 @@ settings:
       ip_webform_embed:
         enabled: true
         weight: 53
-      sponsors:
-        weight: 54
-        enabled: false
 field_type: entity_reference_revisions

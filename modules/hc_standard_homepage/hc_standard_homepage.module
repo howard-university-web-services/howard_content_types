@@ -7,6 +7,7 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\media\Entity\Media;
+use Drupal\image\Entity\ImageStyle;
 
 /**
  * Implements hook_help().
@@ -40,6 +41,7 @@ function hc_standard_homepage_preprocess_node(&$variables) {
   $node = $variables['elements']['#node'];
   $bundle = $node->bundle();
   if ($bundle == 'hc_standard_homepage') {
+    // Sets type, intro or video/image.
     $variables['hero_display_type'] = 'standard_intro';
     if ($node->hasField('field_hc_hero_display_options')) {
       $value = $node->get('field_hc_hero_display_options')->getValue();
@@ -47,6 +49,7 @@ function hc_standard_homepage_preprocess_node(&$variables) {
       $variables['hero_display_type'] = $value;
     }
 
+    // Sets type, image or video.
     $variables['hero_media_display_type'] = 'image';
     if ($node->hasField('field_hc_media_display_options')) {
       $value = $node->get('field_hc_media_display_options')->getValue();
@@ -54,6 +57,7 @@ function hc_standard_homepage_preprocess_node(&$variables) {
       $variables['hero_media_display_type'] = $value;
     }
 
+    // Adds ability to hide intro sidebar.
     $variables['show_intro_sidebar'] = TRUE;
     if ($node->hasField('field_hc_hide_intro_sidebar')) {
       $value = $node->get('field_hc_hide_intro_sidebar')->getValue();
@@ -62,7 +66,40 @@ function hc_standard_homepage_preprocess_node(&$variables) {
       }
     }
 
+    // Hide overlay on full width image/video.
+    $variables['hide_overlay'] = FALSE;
+    if ($node->hasField('field_hc_hide_overlay')) {
+      $value = $node->get('field_hc_hide_overlay')->getValue();
+      if ($value[0]['value'] == '1') {
+        $variables['hide_overlay'] = TRUE;
+      }
+    }
+
+    // Homepage background video.
     $variables['hero_media_video'] = _hc_standard_homepage_load_vimeo_video_background($node, 'field_hc_header_video');
+
+    // Homepage Intro Background Image.
+    $variables['home_intro_image'] = '/themes/contrib/hu_general/idfive-component-library/build/img/graduates_talking.jpg';
+    if ($node->hasField('field_hc_intro_background_image')) {
+      $bckrd_image = $node->get('field_hc_intro_background_image')->getValue();
+      if ($bckrd_image && !empty($bckrd_image)) {
+        $entity = Media::load($bckrd_image[0]['target_id']);
+        if (isset($entity->field_media_image->entity)) {
+          $variables['home_intro_image'] = ImageStyle::load('hc_hero_image')->buildUrl($entity->field_media_image->entity->getFileUri());
+        }
+      }
+    }
+
+    // Homepage Full width Background Image.
+    if ($node->hasField('field_hc_header_image')) {
+      $hero_image = $node->get('field_hc_header_image')->getValue();
+      if ($hero_image && !empty($hero_image)) {
+        $entity = Media::load($hero_image[0]['target_id']);
+        if (isset($entity) && $entity->field_media_image->entity !== NULL && $entity->field_media_image->entity->getFileUri() !== NULL) {
+          $variables['hero_image'] = file_create_url($entity->field_media_image->entity->getFileUri());
+        }
+      }
+    }
 
   }
 }

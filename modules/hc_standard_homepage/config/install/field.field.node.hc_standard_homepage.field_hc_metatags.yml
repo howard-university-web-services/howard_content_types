@@ -7,7 +7,7 @@ dependencies:
   module:
     - metatag
 _core:
-  default_config_hash: mU6CBs7LefhMbcljVJpTaJSaC4mjFzDkVYDr7TXAW04
+  default_config_hash: lbc48xtSmaQt3bker67VZThfEh6TYhZmZ5dp88BJpsU
 id: node.hc_standard_homepage.field_hc_metatags
 field_name: field_hc_metatags
 entity_type: node

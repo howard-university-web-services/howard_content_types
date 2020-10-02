@@ -6,6 +6,8 @@ dependencies:
     - node.type.hc_standard_homepage
   module:
     - options
+_core:
+  default_config_hash: g_y-tCqiMfAOFDQXkRdR3BY3BWwuutEn9oiaM2tVX3U
 id: node.hc_standard_homepage.field_hc_hero_display_options
 field_name: field_hc_hero_display_options
 entity_type: node

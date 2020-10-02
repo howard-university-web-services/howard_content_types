@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.hc_standard_homepage.field_hc_header_video
     - field.field.node.hc_standard_homepage.field_hc_hero_display_options
     - field.field.node.hc_standard_homepage.field_hc_hide_intro_sidebar
+    - field.field.node.hc_standard_homepage.field_hc_hide_overlay
     - field.field.node.hc_standard_homepage.field_hc_intro_background_image
     - field.field.node.hc_standard_homepage.field_hc_intro_image_text
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_text
@@ -23,7 +24,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: NJ5LxgtbA5PMJ8COMUk3FVUSQeZxhd94RhY2nfOEook
+  default_config_hash: M1K5cbUnPMEbRpBkWGP0W-vnVwvX0bUNDc4ZmC1tIKk
 id: node.hc_standard_homepage.default
 targetEntityType: node
 bundle: hc_standard_homepage
@@ -55,6 +56,16 @@ content:
     region: content
   field_hc_hide_intro_sidebar:
     weight: 113
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_hc_hide_overlay:
+    weight: 117
     label: above
     settings:
       format: default

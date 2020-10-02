@@ -5,7 +5,7 @@ dependencies:
     - field.storage.node.field_hc_intro_title
     - node.type.hc_standard_homepage
 _core:
-  default_config_hash: PoxnMH7loB4WA8uFMn-Scv_AZMzjprYjqA-9JPChcBs
+  default_config_hash: vNo8azUC1QmKRm0JeoWIK2CZIBKehPlUoez1jJfWfbg
 id: node.hc_standard_homepage.field_hc_intro_title
 field_name: field_hc_intro_title
 entity_type: node
