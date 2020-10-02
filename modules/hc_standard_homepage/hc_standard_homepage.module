@@ -92,11 +92,11 @@ function hc_standard_homepage_preprocess_node(&$variables) {
 
     // Homepage Full width Background Image.
     if ($node->hasField('field_hc_header_image')) {
-      $hero_image = $node->get('field_hc_header_image')->getValue();
-      if ($hero_image && !empty($hero_image)) {
-        $entity = Media::load($hero_image[0]['target_id']);
+      $home_hero_image = $node->get('field_hc_header_image')->getValue();
+      if ($home_hero_image && !empty($home_hero_image)) {
+        $entity = Media::load($home_hero_image[0]['target_id']);
         if (isset($entity) && $entity->field_media_image->entity !== NULL && $entity->field_media_image->entity->getFileUri() !== NULL) {
-          $variables['hero_image'] = file_create_url($entity->field_media_image->entity->getFileUri());
+          $variables['home_hero_image'] = file_create_url($entity->field_media_image->entity->getFileUri());
         }
       }
     }
