@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies: {  }
+name: hc_carousel_image_full
+label: 'HC Carousel Modal Image Full'
+effects:
+  02fa035b-56ce-4122-a8a2-109af27a26c8:
+    uuid: 02fa035b-56ce-4122-a8a2-109af27a26c8
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: null
+      upscale: false
+pipeline: __default__

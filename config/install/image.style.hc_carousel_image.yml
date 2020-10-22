@@ -6,7 +6,7 @@ dependencies:
 _core:
   default_config_hash: yo4K-QL8vT3-wgMlOSh4pApwhIU99yYDjqUs0kuzvss
 name: hc_carousel_image
-label: 'HC Carousel Image'
+label: 'HC Carousel Modal Image'
 effects:
   73e362ef-5197-4bc1-bad7-12ac39ea9d34:
     uuid: 73e362ef-5197-4bc1-bad7-12ac39ea9d34
