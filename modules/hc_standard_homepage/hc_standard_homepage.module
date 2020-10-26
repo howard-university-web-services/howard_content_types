@@ -101,6 +101,9 @@ function hc_standard_homepage_preprocess_node(&$variables) {
       }
     }
 
+    // Homepage school wide announcements.
+    $variables['announcements'] = \Drupal::service('howard.news')->getAnnouncements();
+
   }
 }
 
