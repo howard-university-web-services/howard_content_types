@@ -5,6 +5,7 @@ dependencies:
     - field.field.node.hc_standard_homepage.field_hc_header_image
     - field.field.node.hc_standard_homepage.field_hc_header_video
     - field.field.node.hc_standard_homepage.field_hc_hero_display_options
+    - field.field.node.hc_standard_homepage.field_hc_hide_announcements
     - field.field.node.hc_standard_homepage.field_hc_hide_intro_sidebar
     - field.field.node.hc_standard_homepage.field_hc_hide_overlay
     - field.field.node.hc_standard_homepage.field_hc_intro_background_image
@@ -24,7 +25,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: M1K5cbUnPMEbRpBkWGP0W-vnVwvX0bUNDc4ZmC1tIKk
+  default_config_hash: wJk8GO68rvFLXFWGGSOB_HSY_Bp10b76z1rpwiGfPiA
 id: node.hc_standard_homepage.default
 targetEntityType: node
 bundle: hc_standard_homepage
@@ -148,4 +149,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_hc_hide_announcements: true

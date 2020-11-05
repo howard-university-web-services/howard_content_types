@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.hc_standard_homepage.field_hc_header_image
     - field.field.node.hc_standard_homepage.field_hc_header_video
     - field.field.node.hc_standard_homepage.field_hc_hero_display_options
+    - field.field.node.hc_standard_homepage.field_hc_hide_announcements
     - field.field.node.hc_standard_homepage.field_hc_hide_intro_sidebar
     - field.field.node.hc_standard_homepage.field_hc_hide_overlay
     - field.field.node.hc_standard_homepage.field_hc_intro_background_image
@@ -65,7 +66,7 @@ third_party_settings:
       children:
         - field_hc_ks_widgets
       parent_name: ''
-      weight: 4
+      weight: 2
       format_type: details
       format_settings:
         open: true
@@ -80,7 +81,7 @@ third_party_settings:
         - group_introduction
         - group_header_media
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: details
       format_settings:
         open: true
@@ -118,8 +119,22 @@ third_party_settings:
         classes: ''
         open: false
       label: Advanced
+    group_advanced_options:
+      children:
+        - field_hc_hide_announcements
+      parent_name: ''
+      weight: 3
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Advanced Options'
 _core:
-  default_config_hash: bxFdonEYdUyXGtbA4LOxSaWIzcZRxqWwSxv8aDSsKYc
+  default_config_hash: GZmUVLC9qIei6cjXjU3VUpAFEuZSK7pfjs5SUyMRb2A
 id: node.hc_standard_homepage.default
 targetEntityType: node
 bundle: hc_standard_homepage
@@ -127,7 +142,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -165,6 +180,13 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_hc_hide_announcements:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_hc_hide_intro_sidebar:
     weight: 44
     settings:
@@ -252,7 +274,7 @@ content:
     type: options_select
     region: content
   field_hc_metatags:
-    weight: 11
+    weight: 10
     settings:
       sidebar: true
     third_party_settings: {  }
@@ -260,13 +282,13 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 11
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -274,21 +296,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 6
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
@@ -301,7 +323,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
@@ -309,4 +331,3 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
-hidden: {  }

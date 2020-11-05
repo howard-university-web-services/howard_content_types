@@ -70,7 +70,7 @@ function hc_standard_homepage_preprocess_node(&$variables) {
     $variables['hide_overlay'] = FALSE;
     if ($node->hasField('field_hc_hide_overlay')) {
       $value = $node->get('field_hc_hide_overlay')->getValue();
-      if ($value[0]['value'] == '1') {
+      if (isset($value[0]) && $value[0]['value'] == '1') {
         $variables['hide_overlay'] = TRUE;
       }
     }
@@ -103,6 +103,15 @@ function hc_standard_homepage_preprocess_node(&$variables) {
 
     // Homepage school wide announcements.
     $variables['announcements'] = \Drupal::service('howard.news')->getAnnouncements();
+
+    // Adds ability to hide school wide announcements.
+    $variables['show_announcements'] = TRUE;
+    if ($node->hasField('field_hc_hide_announcements')) {
+      $value = $node->get('field_hc_hide_announcements')->getValue();
+      if ($value[0]['value'] == '1') {
+        $variables['show_announcements'] = FALSE;
+      }
+    }
 
   }
 }

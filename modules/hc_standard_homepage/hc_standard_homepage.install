@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\field\Entity\FieldConfig;
+
 /**
  * @file
  * Hc_standard_homepage install file.
@@ -26,4 +28,19 @@ function hc_standard_homepage_update_8003() {
  */
 function hc_standard_homepage_update_8004() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
+}
+
+ /**
+ * Add boolean to show or hide announcements, remove some old fields.
+ */
+function hc_standard_homepage_update_8005() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
+  // Deleting old hide intro field on some sites.
+  if (FieldConfig::loadByName('node', 'hc_standard_homepage', 'field_hc_hide_intro_section') !== NULL ) {
+    FieldConfig::loadByName('node', 'hc_standard_homepage', 'field_hc_hide_intro_section')->delete();
+  }
+  // Remove hide hero field from homepage on some sites.
+  if (FieldConfig::loadByName('node', 'hc_standard_homepage', 'field_hc_hide_header_image') !== NULL ) {
+    FieldConfig::loadByName('node', 'hc_standard_homepage', 'field_hc_hide_header_image')->delete();
+  }
 }
