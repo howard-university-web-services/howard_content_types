@@ -108,7 +108,7 @@ function hc_standard_homepage_preprocess_node(&$variables) {
     $variables['show_announcements'] = TRUE;
     if ($node->hasField('field_hc_hide_announcements')) {
       $value = $node->get('field_hc_hide_announcements')->getValue();
-      if ($value[0]['value'] == '1') {
+      if (isset($value[0]) && $value[0]['value'] == '1') {
         $variables['show_announcements'] = FALSE;
       }
     }
