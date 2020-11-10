@@ -8,7 +8,7 @@ id: node.hc_standard_homepage.field_hc_hide_announcements
 field_name: field_hc_hide_announcements
 entity_type: node
 bundle: hc_standard_homepage
-label: 'Hide School-wide Announcements'
+label: 'Hide University-Wide Announcements'
 description: 'If this option is chosen, school-wide announcements from newsroom.howard.edu, will NOT be shown on the homepage.'
 required: false
 translatable: false

@@ -44,3 +44,10 @@ function hc_standard_homepage_update_8005() {
     FieldConfig::loadByName('node', 'hc_standard_homepage', 'field_hc_hide_header_image')->delete();
   }
 }
+
+/**
+ * Update config for new wording on hide university wide announcements.
+ */
+function hc_standard_homepage_update_8006() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
+}
