@@ -5,9 +5,12 @@ dependencies:
     - field.storage.node.field_hc_ks_widgets_full
     - node.type.hc_page
     - paragraphs.paragraphs_type.hp_callout
+    - paragraphs.paragraphs_type.hp_divider
     - paragraphs.paragraphs_type.hp_twitter_feed
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: B1BS4uo9v6LhgN_EUtI8moybYTYZGWhOwQTbW81JjVc
 id: node.hc_page.field_hc_ks_widgets_full
 field_name: field_hc_ks_widgets_full
 entity_type: node
@@ -25,15 +28,13 @@ settings:
     target_bundles:
       hp_callout: hp_callout
       hp_twitter_feed: hp_twitter_feed
+      hp_divider: hp_divider
     target_bundles_drag_drop:
-      home_callout:
-        weight: 28
-        enabled: false
-      home_slideshow_slide:
-        weight: 29
-        enabled: false
       hp_announcements:
         weight: 30
+        enabled: false
+      hp_articles:
+        weight: 41
         enabled: false
       hp_callout:
         enabled: true
@@ -56,17 +57,38 @@ settings:
       hp_carousel_with_modal_slide:
         weight: 37
         enabled: false
+      hp_deadline_feed:
+        weight: 49
+        enabled: false
+      hp_divider:
+        enabled: true
+        weight: 78
       hp_embed:
         weight: 38
         enabled: false
       hp_events_feed:
         weight: 39
         enabled: false
+      hp_facebook_feed:
+        weight: 52
+        enabled: false
       hp_featured_article:
         weight: 40
         enabled: false
+      hp_featured_student_alumni_feed:
+        weight: 54
+        enabled: false
+      hp_graph:
+        weight: 55
+        enabled: false
+      hp_graph_field:
+        weight: 56
+        enabled: false
       hp_html:
         weight: 41
+        enabled: false
+      hp_magazine_feed:
+        weight: 58
         enabled: false
       hp_media:
         weight: 42
@@ -74,14 +96,35 @@ settings:
       hp_news_feed:
         weight: 43
         enabled: false
+      hp_parallax:
+        weight: 61
+        enabled: false
+      hp_photoshelter_feed:
+        weight: 62
+        enabled: false
+      hp_photoshelter_feed_grid:
+        weight: 63
+        enabled: false
       hp_profiles_feed:
         weight: 44
+        enabled: false
+      hp_program:
+        weight: 65
+        enabled: false
+      hp_programs_feed:
+        weight: 66
         enabled: false
       hp_promo_space:
         weight: 45
         enabled: false
       hp_testimonial:
         weight: 46
+        enabled: false
+      hp_timeline:
+        weight: 69
+        enabled: false
+      hp_timeline_field:
+        weight: 70
         enabled: false
       hp_twitter_feed:
         enabled: true
@@ -103,8 +146,5 @@ settings:
         enabled: false
       ip_webform_embed:
         weight: 53
-        enabled: false
-      sponsors:
-        weight: 54
         enabled: false
 field_type: entity_reference_revisions

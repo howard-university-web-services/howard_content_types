@@ -51,3 +51,10 @@ function hc_standard_homepage_update_8005() {
 function hc_standard_homepage_update_8006() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
 }
+
+/**
+ * Update config for additional standard widgets.
+ */
+function hc_standard_homepage_update_8007() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
+}

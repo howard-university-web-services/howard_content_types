@@ -5,15 +5,19 @@ dependencies:
     - field.storage.node.field_hc_ks_widgets
     - node.type.hc_standard_homepage
     - paragraphs.paragraphs_type.hp_announcements
+    - paragraphs.paragraphs_type.hp_articles
     - paragraphs.paragraphs_type.hp_callout
     - paragraphs.paragraphs_type.hp_cards
     - paragraphs.paragraphs_type.hp_carousel_with_caption
     - paragraphs.paragraphs_type.hp_carousel_with_modal
+    - paragraphs.paragraphs_type.hp_deadline_feed
+    - paragraphs.paragraphs_type.hp_divider
     - paragraphs.paragraphs_type.hp_embed
     - paragraphs.paragraphs_type.hp_events_feed
     - paragraphs.paragraphs_type.hp_featured_article
     - paragraphs.paragraphs_type.hp_graph
     - paragraphs.paragraphs_type.hp_html
+    - paragraphs.paragraphs_type.hp_magazine_feed
     - paragraphs.paragraphs_type.hp_media
     - paragraphs.paragraphs_type.hp_news_feed
     - paragraphs.paragraphs_type.hp_parallax
@@ -29,7 +33,7 @@ dependencies:
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: BMrJIRiUVSvFg30kn48kWW26NgXfE1fyxxmFFV4wlEE
+  default_config_hash: GHsd_Q0tBnZpFd7aRPwdWTj__heocS5Lo15ri9I2rHw
 id: node.hc_standard_homepage.field_hc_ks_widgets
 field_name: field_hc_ks_widgets
 entity_type: node
@@ -49,6 +53,7 @@ settings:
       hp_callout: hp_callout
       hp_cards: hp_cards
       hp_carousel_with_caption: hp_carousel_with_caption
+      hp_articles: hp_articles
       hp_carousel_with_modal: hp_carousel_with_modal
       hp_embed: hp_embed
       hp_events_feed: hp_events_feed
@@ -57,12 +62,15 @@ settings:
       hp_media: hp_media
       hp_news_feed: hp_news_feed
       hp_profiles_feed: hp_profiles_feed
+      hp_deadline_feed: hp_deadline_feed
       hp_promo_space: hp_promo_space
       hp_testimonial: hp_testimonial
       hp_twitter_feed: hp_twitter_feed
       ip_accordion: ip_accordion
       ip_button_link: ip_button_link
+      hp_divider: hp_divider
       ip_table: ip_table
+      hp_magazine_feed: hp_magazine_feed
       ip_views_embed: ip_views_embed
       ip_webform_embed: ip_webform_embed
       hp_graph: hp_graph
@@ -72,8 +80,8 @@ settings:
         enabled: true
         weight: 30
       hp_articles:
+        enabled: true
         weight: 36
-        enabled: false
       hp_callout:
         enabled: true
         weight: 31
@@ -96,8 +104,11 @@ settings:
         weight: 37
         enabled: false
       hp_deadline_feed:
+        enabled: true
         weight: 44
-        enabled: false
+      hp_divider:
+        enabled: true
+        weight: 50
       hp_embed:
         enabled: true
         weight: 38
@@ -123,8 +134,8 @@ settings:
         enabled: true
         weight: 41
       hp_magazine_feed:
+        enabled: true
         weight: 51
-        enabled: false
       hp_media:
         enabled: true
         weight: 42
