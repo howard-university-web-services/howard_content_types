@@ -75,3 +75,31 @@ function howard_content_types_update_8002() {
 function howard_content_types_update_8003() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'howard_content_types');
 }
+
+/**
+ * Update to make focal point default image editor for media images.
+ */
+function howard_content_types_update_8004() {
+  $config = \Drupal::service('config.factory')->getEditable('core.entity_form_display.media.image.default');
+  $config->set('content.field_media_image.type', 'image_focal_point');
+  $config->save();
+}
+
+/**
+ * Update to rearrange entity embed displays for basic_html.
+ */
+function howard_content_types_update_8005() {
+  $config = \Drupal::service('config.factory')->getEditable('filter.format.basic_html');
+  $config->set('filters.entity_embed.weight', '10');
+  $config->save();
+}
+
+/**
+ * Update to make the original image be displayed by default for image media type.
+ */
+function howard_content_types_update_8006() {
+  $config = \Drupal::service('config.factory')->getEditable('core.entity_view_display.media.image.default');
+  $config->set('content.field_media_image.settings.image_style', '');
+  $config->save();
+}
+
