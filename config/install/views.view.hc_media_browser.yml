@@ -16,7 +16,7 @@ dependencies:
     - taxonomy
     - user
 _core:
-  default_config_hash: _ouvvjB-2mzyW_my2WhKPWGHdsWUYdHSagahvxOcYHk
+  default_config_hash: gkhoCtayQi7JaZ-_F2v9TyyOmC2kk-QXA-HCbVpGIQg
 id: hc_media_browser
 label: 'HC Media Browser'
 module: views
@@ -24,7 +24,6 @@ description: ''
 tag: ''
 base_table: media_field_data
 base_field: mid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -362,6 +361,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: true
           group_info:
             label: 'Publishing status'
@@ -411,6 +412,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -450,6 +453,8 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -490,6 +495,8 @@ display:
               authenticated: authenticated
               anonymous: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -505,7 +512,22 @@ display:
           entity_type: media
           entity_field: langcode
           plugin_id: language
-      sorts: {  }
+      sorts:
+        created:
+          id: created
+          table: media_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          entity_type: media
+          entity_field: created
+          plugin_id: date
       header: {  }
       footer: {  }
       empty: {  }
@@ -557,6 +579,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: true
           group_info:
             label: 'Publishing status'
@@ -606,6 +630,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -645,6 +671,8 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -687,6 +715,8 @@ display:
               administrator: '0'
               site_builder: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -755,6 +785,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: true
           group_info:
             label: 'Publishing status'
@@ -804,6 +836,8 @@ display:
               authenticated: authenticated
               anonymous: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -843,6 +877,8 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -885,6 +921,8 @@ display:
               administrator: '0'
               site_builder: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -953,6 +991,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: true
           group_info:
             label: 'Publishing status'
@@ -1002,6 +1042,8 @@ display:
               authenticated: authenticated
               anonymous: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1041,6 +1083,8 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1083,6 +1127,8 @@ display:
               administrator: '0'
               site_builder: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1151,6 +1197,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: true
           group_info:
             label: 'Publishing status'
@@ -1201,6 +1249,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1240,6 +1290,8 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1282,6 +1334,8 @@ display:
               administrator: '0'
               site_builder: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1350,6 +1404,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: true
           group_info:
             label: 'Publishing status'
@@ -1400,6 +1456,8 @@ display:
               authenticated: authenticated
               anonymous: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1439,6 +1497,8 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1481,6 +1541,8 @@ display:
               administrator: '0'
               site_builder: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
