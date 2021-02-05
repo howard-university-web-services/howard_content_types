@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_entity_browser
+  module:
+    - entity_browser_entity_form
+    - views
+_core:
+  default_config_hash: UoGZLPH_DEy28wDjCYqiBKYsKoHlf6l6deygJjqdgPc
+name: media_entity_browser
+label: 'Media Entity Browser'
+display: iframe
+display_configuration:
+  width: '1070'
+  height: '840'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  6586703a-6976-4124-8a49-cbb07ceaa3b1:
+    settings:
+      view: media_entity_browser
+      view_display: entity_browser_1
+      submit_text: 'Select entities'
+      auto_select: false
+    uuid: 6586703a-6976-4124-8a49-cbb07ceaa3b1
+    weight: 1
+    label: All
+    id: view
+  17595a15-6d68-477c-b864-4c8fb3f93718:
+    settings:
+      entity_type: media
+      bundle: image
+      form_mode: default
+      submit_text: 'Save entity'
+    uuid: 17595a15-6d68-477c-b864-4c8fb3f93718
+    weight: 2
+    label: 'Add Image'
+    id: entity_form
+  ce772712-b6b7-438d-a72e-5f9491d132ea:
+    settings:
+      entity_type: media
+      bundle: remote_video
+      form_mode: default
+      submit_text: 'Save entity'
+    uuid: ce772712-b6b7-438d-a72e-5f9491d132ea
+    weight: 3
+    label: 'Add Video'
+    id: entity_form
+  cfe6adcf-6df7-4120-91fb-bced9ce28b7e:
+    settings:
+      entity_type: media
+      bundle: file
+      form_mode: default
+      submit_text: 'Save entity'
+    uuid: cfe6adcf-6df7-4120-91fb-bced9ce28b7e
+    weight: 4
+    label: 'Add File'
+    id: entity_form
