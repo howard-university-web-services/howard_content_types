@@ -124,7 +124,7 @@ function _hc_standard_homepage_load_vimeo_video_background($node, $field) {
     $video = $node->get($field)->getValue();
     if ($video && !empty($video)) {
       $entity = Media::load($video[0]['target_id']);
-      if ($entity->hasField('field_media_oembed_video')) {
+      if ($entity !== NULL && $entity->hasField('field_media_oembed_video')) {
         // If remote video.
         $video_url = $entity->field_media_oembed_video->value;
         // If vimeo.
