@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.hc_full
+label: 'HC Full'
+targetEntityType: media
+cache: true

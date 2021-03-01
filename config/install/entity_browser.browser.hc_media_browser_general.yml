@@ -4,7 +4,10 @@ dependencies:
   config:
     - views.view.hc_media_browser
   module:
+    - entity_browser_entity_form
     - views
+_core:
+  default_config_hash: 0D5-EOdPyHalKVAkKeV-1UQpGY8VW_8ZNI2eZpTnlPE
 name: hc_media_browser_general
 label: 'HC Media Browser General'
 display: modal
@@ -28,3 +31,43 @@ widgets:
     weight: 1
     label: 'All Media'
     id: view
+  e797d4a0-6a12-4160-8415-382922760930:
+    settings:
+      entity_type: media
+      bundle: image
+      form_mode: default
+      submit_text: 'Add Image'
+    uuid: e797d4a0-6a12-4160-8415-382922760930
+    weight: 2
+    label: 'Add Image'
+    id: entity_form
+  be227995-23e5-4d08-a664-4e6bb1c9cb44:
+    settings:
+      entity_type: media
+      bundle: audio
+      form_mode: default
+      submit_text: 'Add Audio'
+    uuid: be227995-23e5-4d08-a664-4e6bb1c9cb44
+    weight: 3
+    label: 'Add Audio'
+    id: entity_form
+  6fcd10c2-c298-473a-96dd-f20d13a86a0b:
+    settings:
+      entity_type: media
+      bundle: file
+      form_mode: default
+      submit_text: 'Add File'
+    uuid: 6fcd10c2-c298-473a-96dd-f20d13a86a0b
+    weight: 4
+    label: 'Add File'
+    id: entity_form
+  7b38cd28-f299-4b3e-9c5a-c1a7bb6f9ed0:
+    settings:
+      entity_type: media
+      bundle: remote_video
+      form_mode: default
+      submit_text: 'Add Video'
+    uuid: 7b38cd28-f299-4b3e-9c5a-c1a7bb6f9ed0
+    weight: 5
+    label: 'Add Video'
+    id: entity_form

@@ -116,3 +116,10 @@ function howard_content_types_update_8007() {
 function howard_content_types_update_8008() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'howard_content_types');
 }
+
+/**
+ * Updates to make change display mode of media to use a custom display mode, that should not get overwritten.
+ */
+function howard_content_types_update_8009() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'howard_content_types');
+}
