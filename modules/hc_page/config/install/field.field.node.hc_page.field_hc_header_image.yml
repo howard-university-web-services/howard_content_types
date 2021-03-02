@@ -10,7 +10,7 @@ field_name: field_hc_header_image
 entity_type: node
 bundle: hc_page
 label: 'Header Image'
-description: '<em>Purpose:</em> A featured image that is vertically and horizontally centered.<br><br><em>Dimensions:</em> 1920x1080 pixels;<br><br><em>File Size:</em> < 300kb, if possible'
+description: '<em>Purpose:</em> A featured image that is vertically and horizontally centered.<br><br><em>Dimensions:</em> 1600x400 pixels;<br><br><em>File Size:</em> < 300kb, if possible'
 required: false
 translatable: true
 default_value: {  }

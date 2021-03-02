@@ -32,3 +32,10 @@ function hc_page_update_8003() {
 function hc_page_update_8004() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
 }
+
+/**
+ * Update help text for hero (https://trello.com/c/4Tfom459/507-update-help-text-for-hero-images-on-basic-pages).
+ */
+function hc_page_update_8005() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
+}
