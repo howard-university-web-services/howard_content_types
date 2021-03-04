@@ -79,16 +79,17 @@ third_party_settings:
         - field_hc_hide_for_nonhoward
       parent_name: ''
       weight: 13
-      format_type: fieldset
+      format_type: details
       region: content
       format_settings:
-        id: ''
-        classes: ''
         description: 'Options for advanced users. Use with caution.'
         required_fields: true
+        id: ''
+        classes: ''
+        open: false
       label: 'Advanced Options'
 _core:
-  default_config_hash: 5oPhvKusxY7vCm8RWM3oEmx00xY5ZacIpZnovTBExIY
+  default_config_hash: e3_w9SMkOBMQUafWdq300THH9smGNKvTlBi4TgqShbQ
 id: node.hc_page.default
 targetEntityType: node
 bundle: hc_page
