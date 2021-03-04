@@ -1,0 +1,3 @@
+services:
+  howard.auth:
+    class: Drupal\howard_content_types\Services\HowardAuthService

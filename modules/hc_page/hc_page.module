@@ -36,8 +36,11 @@ function hc_page_help($route_name, RouteMatchInterface $route_match) {
  */
 function hc_page_preprocess_node(&$variables) {
   $node = $variables['elements']['#node'];
+  $view_mode = $variables['view_mode'];
   $bundle = $node->bundle();
-  if ($bundle == 'hc_page') {
+  if ($view_mode == 'full' && $bundle == 'hc_page') {
+
+    // Check whether to show/hide sidebar.
     $variables['show_sidebar'] = TRUE;
     if ($node->hasField('field_hc_hide_sidebar')) {
       $value = $node->get('field_hc_hide_sidebar')->getValue();
@@ -45,5 +48,16 @@ function hc_page_preprocess_node(&$variables) {
         $variables['show_sidebar'] = FALSE;
       }
     }
+
+    // Check whether to require SAML auth to view the page or not.
+    if (\Drupal::currentUser()->isAnonymous()) {
+      if ($node->hasField('field_hc_hide_for_nonhoward')) {
+        $value = $node->get('field_hc_hide_for_nonhoward')->getValue();
+        if (isset($value[0]) && $value[0]['value'] == '1') {
+          \Drupal::service('howard.auth')->limitToHowardUsers();
+        }
+      }
+    }
+
   }
 }

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_hide_for_nonhoward
+    - node.type.hc_page
+id: node.hc_page.field_hc_hide_for_nonhoward
+field_name: field_hc_hide_for_nonhoward
+entity_type: node
+bundle: hc_page
+label: 'Require Howard University SAML login to view this page'
+description: '<strong>CAUTION!</strong> Choosing this option will require SAML login for users to view this page. It is recommended that some warning be given before linking to this page from within the site if chosen, as it will redirect to the ADFS login page.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

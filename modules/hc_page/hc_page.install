@@ -39,3 +39,10 @@ function hc_page_update_8004() {
 function hc_page_update_8005() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
 }
+
+/**
+ * Add new field for page auth functionality (https://trello.com/c/PjsVB5S3/500-ouc-request-form-authentication-page).
+ */
+function hc_page_update_8006() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
+}
