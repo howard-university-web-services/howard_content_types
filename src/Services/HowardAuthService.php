@@ -23,12 +23,15 @@ class HowardAuthService {
    * Public method to test if users are authenticated via SAML, and return username.
    */
   public function limitToHowardUsers() {
-
-      $as = new Simple('default-sp');
-      $as->requireAuth();
-      $attributes = $as->getAttributes();
-      return $attributes['sAMAccountName'][0];
-
+    // Workaround for acquia port:80 issue.
+    if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+      $_SERVER['SERVER_PORT'] = 443;
+      $_SERVER['HTTPS'] = 'true';
+    }
+    $as = new Simple('default-sp');
+    $as->requireAuth();
+    $attributes = $as->getAttributes();
+    return $attributes['sAMAccountName'][0];
   }
 
 }
