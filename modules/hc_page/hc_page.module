@@ -49,18 +49,5 @@ function hc_page_preprocess_node(&$variables) {
       }
     }
 
-    // Check whether to require SAML auth to view the page or not.
-    if (\Drupal::currentUser()->isAnonymous()) {
-      // Invalidate cache tags in order to not cache this page in varnish.
-      $cache_tags = $node->getCacheTags();
-      \Drupal\Core\Cache\Cache::invalidateTags($cache_tags);
-      if ($node->hasField('field_hc_hide_for_nonhoward')) {
-        $value = $node->get('field_hc_hide_for_nonhoward')->getValue();
-        if (isset($value[0]) && $value[0]['value'] == '1') {
-          \Drupal::service('howard.auth')->limitToHowardUsers();
-        }
-      }
-    }
-
   }
 }

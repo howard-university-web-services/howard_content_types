@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.storage.node.field_hc_ks_widgets
     - node.type.hc_page
+    - paragraphs.paragraphs_type.hp_alumni_featured
     - paragraphs.paragraphs_type.hp_announcements
     - paragraphs.paragraphs_type.hp_articles
     - paragraphs.paragraphs_type.hp_callout
@@ -39,7 +40,7 @@ dependencies:
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: B6XL3bQquaKt3qrV1DO5jSsoKGyCoq6dRpCKqZ6X6qI
+  default_config_hash: hxAcASr-V26NrPdf1jA51dprUrRYbbZPuCrzgeaKsQA
 id: node.hc_page.field_hc_ks_widgets
 field_name: field_hc_ks_widgets
 entity_type: node
@@ -84,10 +85,14 @@ settings:
       ip_webform_embed: ip_webform_embed
       hp_parallax: hp_parallax
       ip_views_embed: ip_views_embed
+      hp_alumni_featured: hp_alumni_featured
       hp_graph: hp_graph
       hp_timeline: hp_timeline
       hp_divider: hp_divider
     target_bundles_drag_drop:
+      hp_alumni_featured:
+        enabled: true
+        weight: 41
       hp_announcements:
         enabled: true
         weight: -68

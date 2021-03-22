@@ -1,3 +1,8 @@
 services:
   howard.auth:
     class: Drupal\howard_content_types\Services\HowardAuthService
+  howard.auth_event_subscriber:
+    class: Drupal\howard_content_types\EventSubscriber\HowardAuthSubscriber
+    tags:
+      - {name: event_subscriber}
+
