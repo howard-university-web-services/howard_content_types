@@ -54,3 +54,9 @@ function hc_page_update_8007() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
 }
 
+/**
+ * Switch KS field logic to widgets to "exclude" to allow for greater flexibility.
+ */
+function hc_page_update_8008() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
+}
