@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_article_source
+    - node.type.hc_article
+id: node.hc_article.field_hc_article_source
+field_name: field_hc_article_source
+entity_type: node
+bundle: hc_article
+label: Source
+description: 'Please add the source of the article. For example, "Washington Post", or "U.S. News".'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_article_dateline
+    - node.type.hc_article
+  module:
+    - datetime
+id: node.hc_article.field_hc_article_dateline
+field_name: field_hc_article_dateline
+entity_type: node
+bundle: hc_article
+label: Dateline
+description: 'Please add the dateline the article was published.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

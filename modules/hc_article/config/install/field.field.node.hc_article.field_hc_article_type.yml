@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_article_type
+    - node.type.hc_article
+  module:
+    - options
+id: node.hc_article.field_hc_article_type
+field_name: field_hc_article_type
+entity_type: node
+bundle: hc_article
+label: 'Article Type'
+description: "Please choose what type of Article this is:\r\n<ul>\r\n<li>Internal Article: This article exists locally on this site and is the source of truth.</li>\r\n<li>External Article: This is an article about Howard written on another site, and I wish to link to it</li>\r\n<ul>"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

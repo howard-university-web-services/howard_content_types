@@ -4,13 +4,20 @@ dependencies:
   config:
     - field.field.node.hc_article.body
     - field.field.node.hc_article.field_hc_article_category
+    - field.field.node.hc_article.field_hc_article_dateline
+    - field.field.node.hc_article.field_hc_article_link
+    - field.field.node.hc_article.field_hc_article_source
+    - field.field.node.hc_article.field_hc_article_type
     - field.field.node.hc_article.field_hc_featured_image
     - field.field.node.hc_article.field_hc_header_image
     - field.field.node.hc_article.field_hc_hide_header_image
     - field.field.node.hc_article.field_hc_metatags
     - node.type.hc_article
   module:
+    - datetime
+    - link
     - metatag
+    - options
     - text
     - user
 _core:
@@ -23,22 +30,63 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_hc_article_category:
-    weight: 106
-    label: above
+    type: entity_reference_label
+    weight: 11
+    region: content
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+  field_hc_article_dateline:
+    weight: 8
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    type: datetime_custom
+    region: content
+  field_hc_article_link:
+    weight: 9
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_hc_article_source:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hc_article_type:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
   field_hc_featured_image:
     type: entity_reference_entity_view
-    weight: 102
-    label: above
+    weight: 3
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -46,16 +94,16 @@ content:
     region: content
   field_hc_header_image:
     type: entity_reference_entity_view
-    weight: 103
-    label: above
+    weight: 4
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
     region: content
   field_hc_hide_header_image:
-    weight: 104
-    label: above
+    weight: 5
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -64,15 +112,15 @@ content:
     type: boolean
     region: content
   field_hc_metatags:
-    weight: 105
-    label: above
+    weight: 6
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   links:
-    weight: 100
+    weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_help().
@@ -35,8 +36,39 @@ function hc_article_help($route_name, RouteMatchInterface $route_match) {
  *
  */
 function hc_article_preprocess_node__hc_article(&$variables) {
+  // Convert pub date to display ready
   $node = $variables['elements']['#node'];
   $timestamp = new DateTime();
   $timestamp->setTimestamp($node->created->value);
   $variables['publish_date'] = $timestamp->format('F j, Y');
+
+  // Check whether an internal or external article type.
+  $variables['article_type'] = 'internal';
+  if ($node->hasField('field_hc_article_type')) {
+    $value = $node->get('field_hc_article_type')->getValue();
+    if (isset($value[0]) && $value[0]['value'] == 'external') {
+      $variables['article_type'] = 'external';
+    }
+  }
+}
+
+/**
+ * Implements hook_node_form_alter().
+ */
+function hc_article_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'node_hc_article_edit_form') {
+    // Assume any edit form that does not have a type choice, to be internal.
+    // This is to account for previously created articles.
+    if($form['field_hc_article_type']['widget']['#default_value'] == NULL) {
+      $form['field_hc_article_type']['widget']['#default_value'][0] = 'internal';
+    }
+  }
+  if ($form_id == 'node_hc_article_edit_form' || $form_id == 'node_hc_article_form') {
+    // Internal Article Fields
+    $form['body']['#states'] = ['visible' => ['select[name="field_hc_article_type"]' => ['value' => 'internal']]];
+    $form['group_header_media']['#states'] = ['visible' => ['select[name="field_hc_article_type"]' => ['value' => 'internal']]];
+    $form['group_featured_image']['#states'] = ['visible' => ['select[name="field_hc_article_type"]' => ['value' => 'internal']]];
+    // External Article Fields
+    $form['group_external_details']['#states'] = ['visible' => ['select[name="field_hc_article_type"]' => ['value' => 'external']]];
+  }
 }

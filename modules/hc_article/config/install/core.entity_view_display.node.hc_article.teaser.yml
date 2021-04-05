@@ -4,9 +4,15 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.hc_article.body
+    - field.field.node.hc_article.field_hc_article_category
+    - field.field.node.hc_article.field_hc_article_dateline
+    - field.field.node.hc_article.field_hc_article_link
+    - field.field.node.hc_article.field_hc_article_source
+    - field.field.node.hc_article.field_hc_article_type
     - field.field.node.hc_article.field_hc_featured_image
     - field.field.node.hc_article.field_hc_header_image
     - field.field.node.hc_article.field_hc_hide_header_image
+    - field.field.node.hc_article.field_hc_metatags
     - node.type.hc_article
   module:
     - text
@@ -26,12 +32,23 @@ content:
       trim_length: 600
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
     region: content
 hidden:
+  field_hc_article_category: true
+  field_hc_article_dateline: true
+  field_hc_article_link: true
+  field_hc_article_source: true
+  field_hc_article_type: true
   field_hc_featured_image: true
   field_hc_header_image: true
   field_hc_hide_header_image: true
+  field_hc_metatags: true

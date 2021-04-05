@@ -4,8 +4,8 @@ Holds the hc_article Content Type.
 
 This module contains markup only (no js or css), those should be provided in the client theme, loaded via the idfive Component Library:
 
- - [idfive Component Library](https://bitbucket.org/idfivellc/idfive-component-library)
- - [idfive Component Library D8 Theme](https://bitbucket.org/idfivellc/idfive-component-library-d8-theme)
+- [idfive Component Library](https://bitbucket.org/idfivellc/idfive-component-library)
+- [idfive Component Library D8 Theme](https://bitbucket.org/idfivellc/idfive-component-library-d8-theme)
 
 ## Markup Overrides
 
