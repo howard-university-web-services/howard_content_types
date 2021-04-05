@@ -46,3 +46,11 @@ function hc_page_update_8005() {
 function hc_page_update_8006() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
 }
+
+/**
+ * Add dsws only widgets (https://trello.com/c/jD0ImWRo/519-bot-hierarchy).
+ */
+function hc_page_update_8007() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
+}
+
