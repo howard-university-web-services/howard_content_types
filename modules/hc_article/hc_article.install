@@ -36,3 +36,10 @@ function _hc_article_remove_entity_and_content() {
     $vocab->delete();
   }
 }
+
+/**
+ * Add new external article fields.
+ */
+function hc_article_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_article');
+}
