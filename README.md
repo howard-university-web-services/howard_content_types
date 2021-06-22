@@ -26,6 +26,7 @@ The following sub-modules are available:
 - Announcements: Creates the "HC Announcement" Content Type.
 - Article: Creates the "HC Article" Content Type.
 - Page: Creates the "HC Basic Page" Content Type.
+- Person: Creates the "HC Person" Content Type.
 - Resource: Creates the "HC Resource" Content Type.
 - Standard Homepage: Creates the "HC Standard Homepage" Content Type.
 
