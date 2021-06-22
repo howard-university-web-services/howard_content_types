@@ -1,0 +1,11 @@
+name: 'Howard Content Types: HC Person'
+type: module
+description: Provides a content type for local people.
+version: '8.x-1.0'
+core: '8.x'
+core_version_requirement: ^8 || ^9
+
+package: Howard University
+dependencies:
+  - howard_content_types
+  - views

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_person_link
+    - node.type.hc_person
+  module:
+    - link
+id: node.hc_person.field_hc_person_link
+field_name: field_hc_person_link
+entity_type: node
+bundle: hc_person
+label: Link
+description: 'If you wish to link to a person''s website, event, etc, you may do so here.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

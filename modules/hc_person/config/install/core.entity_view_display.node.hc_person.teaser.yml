@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hc_person.body
+    - field.field.node.hc_person.field_hc_last_name
+    - field.field.node.hc_person.field_hc_person_category
+    - field.field.node.hc_person.field_hc_person_image
+    - field.field.node.hc_person.field_hc_person_link
+    - field.field.node.hc_person.field_hc_person_organization
+    - field.field.node.hc_person.field_hc_person_title
+    - node.type.hc_person
+  module:
+    - text
+    - user
+id: node.hc_person.teaser
+targetEntityType: node
+bundle: hc_person
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_hc_last_name: true
+  field_hc_person_category: true
+  field_hc_person_image: true
+  field_hc_person_link: true
+  field_hc_person_organization: true
+  field_hc_person_title: true

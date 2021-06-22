@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'HC Person Category'
+vid: hc_person_category
+description: 'This category is used for categorizing HC People.'
+weight: 0

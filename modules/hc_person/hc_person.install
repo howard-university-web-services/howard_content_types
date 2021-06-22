@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Hc_person install file.
+ */
+
+use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\Entity\Vocabulary;
+
+/**
+ * Implements hook_install().
+ *
+ * Creates default terms.
+ */
+function hc_person_install() {
+  _hc_person_create_person_terms();
+}
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Removes content type.
+ */
+function hc_person_uninstall() {
+  _hc_person_remove_entity_and_content();
+}
+
+/**
+ * Updates to media browser, taxonomies, etc.
+ */
+function _hc_person_create_person_terms() {
+  $categories = [
+    'Student',
+    'Alumni',
+    'Faculty & Staff',
+  ];
+  foreach ($categories as $category) {
+    $term = Term::create([
+      'parent' => [],
+      'name' => $category,
+      'vid' => 'hc_person_category',
+    ])->save();
+  }
+}
+
+/**
+ * Remove all resource nodes, remove content type, remove vocabulary.
+ */
+function _hc_person_remove_entity_and_content() {
+  // Delete hc_person nodes.
+  $storage_handler = \Drupal::entityTypeManager()
+    ->getStorage('node');
+  $nodes = $storage_handler->loadByProperties(['type' => 'hc_person']);
+  $storage_handler->delete($nodes);
+  // Delete hc_person content type.
+  $content_type = \Drupal::entityTypeManager()
+    ->getStorage('node_type')
+    ->load('hc_resource');
+  $content_type->delete();
+  // Delete hc_person_category vocabulary.
+  $vocab = Vocabulary::load('hc_person_category');
+  if ($vocab) {
+    $vocab->delete();
+  }
+}
