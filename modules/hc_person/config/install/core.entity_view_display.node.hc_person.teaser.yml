@@ -14,6 +14,8 @@ dependencies:
   module:
     - text
     - user
+_core:
+  default_config_hash: iIwcC1t8Bj9pRd5kbGzOOHjj4GF6iFc2GZfkr_wjPiA
 id: node.hc_person.teaser
 targetEntityType: node
 bundle: hc_person
@@ -22,14 +24,9 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 0
     settings:
       trim_length: 600
-    third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    settings: {  }
     third_party_settings: {  }
     region: content
 hidden:
@@ -39,3 +36,4 @@ hidden:
   field_hc_person_link: true
   field_hc_person_organization: true
   field_hc_person_title: true
+  links: true

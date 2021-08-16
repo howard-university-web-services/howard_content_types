@@ -64,3 +64,10 @@ function _hc_person_remove_entity_and_content() {
     $vocab->delete();
   }
 }
+
+/**
+ * Updates to allow hiding the sidebar.
+ */
+function hc_person_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_person');
+}
