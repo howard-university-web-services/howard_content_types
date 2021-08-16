@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Theme override for feed of articles.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{attributes.addClass(classes)}}>
+
+	{{ exposed }}
+
+	<div class="silc-grid">
+		{{ rows }}
+		{{ empty }}
+		{{ pager }}
+	</div>
+
+	{{ attachment_after }}
+	{{ more }}
+
+</div>

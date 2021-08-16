@@ -30,3 +30,19 @@ function hc_person_help($route_name, RouteMatchInterface $route_match)
   }
   return NULL;
 }
+
+/**
+ * Implements hook_theme().
+ * Lets us define our views templates in this module.
+ */
+function hc_person_theme($existing, $type, $theme, $path)
+{
+  return [
+    'views_view_fields__hc_person_feed' => [
+      'base hook' => 'views',
+    ],
+    'views_view__hc_person_feed' => [
+      'base hook' => 'views',
+    ],
+  ];
+}
