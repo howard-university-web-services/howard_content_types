@@ -10,18 +10,24 @@ dependencies:
     - field.field.node.hc_page.field_hc_ks_widgets_full
     - field.field.node.hc_page.field_hc_lead_in
     - field.field.node.hc_page.field_hc_metatags
+    - field.field.node.hc_page.field_hc_site_access
     - node.type.hc_page
   module:
     - entity_reference_revisions
     - metatag
     - user
 _core:
-  default_config_hash: '-jaygkNzk9dflqL2ChdvTGvXl8S6lvf_u5Nk8-Jlxxk'
+  default_config_hash: a13h16kGdTI_r-HolMIBp4G-1iakSPw0nQHAOxMuENo
 id: node.hc_page.default
 targetEntityType: node
 bundle: hc_page
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_hc_header_image:
     weight: 103
     label: hidden
@@ -32,7 +38,7 @@ content:
     region: content
   field_hc_hide_for_nonhoward:
     weight: 109
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -91,6 +97,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_hc_site_access:
+    weight: 110
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 100

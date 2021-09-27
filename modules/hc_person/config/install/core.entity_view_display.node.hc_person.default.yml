@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.hc_person.field_hc_person_link
     - field.field.node.hc_person.field_hc_person_organization
     - field.field.node.hc_person.field_hc_person_title
+    - field.field.node.hc_person.field_hc_site_access
     - image.style.hc_large_480_480_cropped
     - node.type.hc_person
   module:
@@ -16,6 +17,8 @@ dependencies:
     - media
     - text
     - user
+_core:
+  default_config_hash: Vh8ASckNXoHZj6VWSsRzhHKmBAN8VhMRyHKlWboP2OY
 id: node.hc_person.default
 targetEntityType: node
 bundle: hc_person
@@ -38,7 +41,7 @@ content:
     region: content
   field_hc_person_category:
     weight: 106
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -55,7 +58,7 @@ content:
     region: content
   field_hc_person_link:
     weight: 107
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -67,7 +70,7 @@ content:
     region: content
   field_hc_person_organization:
     weight: 105
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -75,11 +78,19 @@ content:
     region: content
   field_hc_person_title:
     weight: 104
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_hc_site_access:
+    weight: 108
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 100

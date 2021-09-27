@@ -18,11 +18,12 @@ dependencies:
     - field.field.node.hc_standard_homepage.field_hc_ks_widgets
     - field.field.node.hc_standard_homepage.field_hc_media_display_options
     - field.field.node.hc_standard_homepage.field_hc_metatags
+    - field.field.node.hc_standard_homepage.field_hc_site_access
     - node.type.hc_standard_homepage
   module:
     - user
 _core:
-  default_config_hash: gQoaKhpDrvOCmrdlaeu4lRLzwgcLVunN4q_shIfNbPg
+  default_config_hash: ukZLcsGuAttZVqImPoGXfOFhAbKBY0-zABM_7iDvuuA
 id: node.hc_standard_homepage.teaser
 targetEntityType: node
 bundle: hc_standard_homepage
@@ -49,3 +50,4 @@ hidden:
   field_hc_ks_widgets: true
   field_hc_media_display_options: true
   field_hc_metatags: true
+  field_hc_site_access: true

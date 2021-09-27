@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.hc_standard_homepage.field_hc_ks_widgets
     - field.field.node.hc_standard_homepage.field_hc_media_display_options
     - field.field.node.hc_standard_homepage.field_hc_metatags
+    - field.field.node.hc_standard_homepage.field_hc_site_access
     - node.type.hc_standard_homepage
   module:
     - entity_reference_revisions
@@ -25,14 +26,14 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: wJk8GO68rvFLXFWGGSOB_HSY_Bp10b76z1rpwiGfPiA
+  default_config_hash: q7oMFa1pUEWOSBVj99k4iO5JsV6kYwQjXkoKOmx5JLA
 id: node.hc_standard_homepage.default
 targetEntityType: node
 bundle: hc_standard_homepage
 mode: default
 content:
   field_hc_header_image:
-    weight: 107
+    weight: 5
     label: hidden
     settings:
       link: true
@@ -41,23 +42,33 @@ content:
     region: content
   field_hc_header_video:
     type: entity_reference_entity_view
-    weight: 110
-    label: above
+    weight: 8
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
     region: content
   field_hc_hero_display_options:
-    weight: 114
-    label: above
+    weight: 11
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
+  field_hc_hide_announcements:
+    type: boolean
+    weight: 16
+    region: content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
   field_hc_hide_intro_sidebar:
-    weight: 113
-    label: above
+    weight: 10
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -66,8 +77,8 @@ content:
     type: boolean
     region: content
   field_hc_hide_overlay:
-    weight: 117
-    label: above
+    weight: 14
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -77,7 +88,7 @@ content:
     region: content
   field_hc_intro_background_image:
     type: entity_reference_entity_view
-    weight: 108
+    weight: 6
     label: hidden
     settings:
       view_mode: default
@@ -85,21 +96,21 @@ content:
     third_party_settings: {  }
     region: content
   field_hc_intro_image_text:
-    weight: 116
-    label: above
+    weight: 13
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_hc_intro_sidebar_text:
-    weight: 105
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_hc_intro_sidebar_title:
-    weight: 104
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
@@ -107,14 +118,14 @@ content:
     type: string
     region: content
   field_hc_intro_text:
-    weight: 103
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_hc_intro_title:
-    weight: 102
+    weight: 1
     label: hidden
     settings:
       link_to_entity: false
@@ -123,7 +134,7 @@ content:
     region: content
   field_hc_ks_widgets:
     type: entity_reference_revisions_entity_view
-    weight: 109
+    weight: 7
     label: hidden
     settings:
       view_mode: default
@@ -131,23 +142,30 @@ content:
     third_party_settings: {  }
     region: content
   field_hc_media_display_options:
-    weight: 115
-    label: above
+    weight: 12
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_hc_metatags:
-    weight: 111
-    label: above
+    weight: 9
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
+  field_hc_site_access:
+    weight: 15
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_hc_hide_announcements: true
+hidden: {  }

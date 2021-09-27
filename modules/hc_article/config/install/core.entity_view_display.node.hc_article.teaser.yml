@@ -13,12 +13,13 @@ dependencies:
     - field.field.node.hc_article.field_hc_header_image
     - field.field.node.hc_article.field_hc_hide_header_image
     - field.field.node.hc_article.field_hc_metatags
+    - field.field.node.hc_article.field_hc_site_access
     - node.type.hc_article
   module:
     - text
     - user
 _core:
-  default_config_hash: 5JFVygaddeZDOWkCY4FwFO29Y8Ymn-L1Yox-fwHzl_o
+  default_config_hash: ozWh1xJQvdLvNr_mRVaPWPdvVQeHL0AdXeYJ1_ZK7B4
 id: node.hc_article.teaser
 targetEntityType: node
 bundle: hc_article
@@ -52,3 +53,4 @@ hidden:
   field_hc_header_image: true
   field_hc_hide_header_image: true
   field_hc_metatags: true
+  field_hc_site_access: true

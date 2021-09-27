@@ -60,3 +60,10 @@ function hc_page_update_8007() {
 function hc_page_update_8008() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
 }
+
+/**
+ * Updates to add moderation sections to all content types.
+ */
+function hc_page_update_8009() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
+}

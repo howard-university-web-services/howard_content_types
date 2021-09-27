@@ -16,8 +16,10 @@ dependencies:
     - field.field.node.hc_resource.field_hc_resource_documents
     - field.field.node.hc_resource.field_hc_resource_sidebar_title
     - field.field.node.hc_resource.field_hc_resources_related
+    - field.field.node.hc_resource.field_hc_site_access
     - node.type.hc_resource
   module:
+    - content_moderation
     - entity_browser
     - field_group
     - link_target
@@ -47,7 +49,7 @@ third_party_settings:
       children:
         - field_hc_resource_documents
       parent_name: ''
-      weight: 9
+      weight: 8
       format_type: details
       region: content
       format_settings:
@@ -61,7 +63,7 @@ third_party_settings:
       children:
         - field_hc_resource_cta_link
       parent_name: ''
-      weight: 8
+      weight: 7
       format_type: details
       region: content
       format_settings:
@@ -89,7 +91,7 @@ third_party_settings:
       children:
         - field_hc_resources_related
       parent_name: ''
-      weight: 10
+      weight: 9
       format_type: details
       region: content
       format_settings:
@@ -129,8 +131,23 @@ third_party_settings:
         open: false
         required_fields: true
       label: 'Kitchen Sink'
+    group_site_editing_access_schema:
+      children:
+        - field_hc_site_access
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        show_empty_fields: false
+        id: ''
+        classes: ''
+        description: 'Important: If using content moderation, you must assign this page a "section" from the list in order for someone to be able to access it after creation. Access to any given content within this site is based on an editor''s assigned section. If an instance of a page or other content type you''ve created is not assigned a section, then no one will have access to it.'
+        open: false
+        required_fields: true
+      label: 'Site Editing Access Schema'
 _core:
-  default_config_hash: Lw8s0BTn6-HRoC-wSdRJrJFC7Tp09Dt1Y0xbpZSYcT0
+  default_config_hash: Mby1yNDiZUeEB_aCsf8qr5pBplBdBU0GrtqzK_BxSGQ
 id: node.hc_resource.default
 targetEntityType: node
 bundle: hc_resource
@@ -148,7 +165,7 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -228,7 +245,11 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
-      link_target: ''
+      available_targets:
+        _self: 0
+        _blank: 0
+        parent: 0
+        top: 0
     third_party_settings: {  }
     type: link_target_field_widget
     region: content
@@ -264,9 +285,27 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_hc_site_access:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_site_section:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 16
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
-    weight: 15
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -274,26 +313,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 12
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 15
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 14
+    weight: 13
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 1
+    weight: 0
     region: content
     settings:
       size: 60
@@ -301,7 +340,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60

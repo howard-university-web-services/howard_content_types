@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'HC Site Editing Access Schema'
+vid: hc_site_editing_access_schema
+description: 'Provides a standardized vocabulary for enabling workbench access schemes, if required.'
+weight: 0

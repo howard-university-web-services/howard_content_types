@@ -4,22 +4,36 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.hc_announcement.field_hc_end_date
+    - field.field.node.hc_announcement.field_hc_featured
     - field.field.node.hc_announcement.field_hc_links
+    - field.field.node.hc_announcement.field_hc_site_access
     - field.field.node.hc_announcement.field_hc_start_date
+    - field.field.node.hc_announcement.field_hc_summary
     - node.type.hc_announcement
   module:
     - user
+_core:
+  default_config_hash: 9qCVl3W9fPNrYlSs1ubaroFOxIVu_LrUbqyuTfQfvFs
 id: node.hc_announcement.teaser
 targetEntityType: node
 bundle: hc_announcement
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_hc_summary:
+    type: basic_string
+    weight: 1
+    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+  links:
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_hc_end_date: true
+  field_hc_featured: true
   field_hc_links: true
+  field_hc_site_access: true
   field_hc_start_date: true

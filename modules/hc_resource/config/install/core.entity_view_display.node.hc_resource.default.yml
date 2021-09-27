@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.hc_resource.field_hc_resource_documents
     - field.field.node.hc_resource.field_hc_resource_sidebar_title
     - field.field.node.hc_resource.field_hc_resources_related
+    - field.field.node.hc_resource.field_hc_site_access
     - node.type.hc_resource
   module:
     - entity_reference_revisions
@@ -22,7 +23,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: TYsbMgsFtBUFVM2aX77onQxOSViVwoHfCMJK7stBKaw
+  default_config_hash: p1cfe04uGUlbEUNBKPoofucSZ6p3c0l38hG38xZq7f0
 id: node.hc_resource.default
 targetEntityType: node
 bundle: hc_resource
@@ -45,7 +46,7 @@ content:
     region: content
   field_hc_hide_header_image:
     weight: 113
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -80,9 +81,10 @@ content:
   field_hc_resource_contact_addres:
     weight: 109
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 600
     third_party_settings: {  }
-    type: basic_string
+    type: text_trimmed
     region: content
   field_hc_resource_contact_email:
     weight: 108
@@ -122,7 +124,7 @@ content:
     region: content
   field_hc_resource_sidebar_title:
     weight: 110
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -130,7 +132,15 @@ content:
     region: content
   field_hc_resources_related:
     weight: 112
-    label: above
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_hc_site_access:
+    weight: 114
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }

@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.hc_standard_homepage.field_hc_ks_widgets
     - field.field.node.hc_standard_homepage.field_hc_media_display_options
     - field.field.node.hc_standard_homepage.field_hc_metatags
+    - field.field.node.hc_standard_homepage.field_hc_site_access
     - node.type.hc_standard_homepage
   module:
     - content_moderation
@@ -66,7 +67,7 @@ third_party_settings:
       children:
         - field_hc_ks_widgets
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: details
       format_settings:
         open: true
@@ -81,7 +82,7 @@ third_party_settings:
         - group_introduction
         - group_header_media
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: details
       format_settings:
         open: true
@@ -123,7 +124,7 @@ third_party_settings:
       children:
         - field_hc_hide_announcements
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: details
       region: content
       format_settings:
@@ -133,8 +134,23 @@ third_party_settings:
         open: false
         required_fields: true
       label: 'Advanced Options'
+    group_site_editing_access_schema:
+      children:
+        - field_hc_site_access
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        show_empty_fields: false
+        id: ''
+        classes: ''
+        description: 'Important: If using content moderation, you must assign this page a "section" from the list in order for someone to be able to access it after creation. Access to any given content within this site is based on an editor''s assigned section. If an instance of a page or other content type you''ve created is not assigned a section, then no one will have access to it.'
+        open: false
+        required_fields: true
+      label: 'Site Editing Access Schema'
 _core:
-  default_config_hash: GZmUVLC9qIei6cjXjU3VUpAFEuZSK7pfjs5SUyMRb2A
+  default_config_hash: Z6phoBubdz6vB6oA1CEj7FoA3JfQU9iUDG0Bh_xs2JM
 id: node.hc_standard_homepage.default
 targetEntityType: node
 bundle: hc_standard_homepage
@@ -142,7 +158,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -274,21 +290,27 @@ content:
     type: options_select
     region: content
   field_hc_metatags:
-    weight: 10
+    weight: 11
     settings:
       sidebar: true
     third_party_settings: {  }
     type: metatag_firehose
     region: content
+  field_hc_site_access:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   moderation_state:
     type: moderation_state_default
-    weight: 11
+    weight: 12
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -296,21 +318,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 10
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     region: content
     third_party_settings: {  }
   title:
@@ -323,7 +345,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -331,3 +353,4 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
+hidden: {  }

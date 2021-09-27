@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_site_access
+    - node.type.hc_announcement
+    - taxonomy.vocabulary.hc_site_editing_access_schema
+id: node.hc_announcement.field_hc_site_access
+field_name: field_hc_site_access
+entity_type: node
+bundle: hc_announcement
+label: 'Site Access'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      hc_site_editing_access_schema: hc_site_editing_access_schema
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

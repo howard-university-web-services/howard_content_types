@@ -4,3 +4,10 @@
  * @file
  * Hc_announcements install file.
  */
+
+/**
+ * Updates to add moderation sections to all content types.
+ */
+function hc_announcements_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_announcements');
+}

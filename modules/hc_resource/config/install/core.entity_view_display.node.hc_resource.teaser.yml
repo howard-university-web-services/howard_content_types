@@ -5,6 +5,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.hc_resource.body
     - field.field.node.hc_resource.field_hc_header_image
+    - field.field.node.hc_resource.field_hc_hide_header_image
+    - field.field.node.hc_resource.field_hc_ks_widgets
     - field.field.node.hc_resource.field_hc_lead_in
     - field.field.node.hc_resource.field_hc_resource_category
     - field.field.node.hc_resource.field_hc_resource_contact_addres
@@ -13,9 +15,13 @@ dependencies:
     - field.field.node.hc_resource.field_hc_resource_cta_link
     - field.field.node.hc_resource.field_hc_resource_documents
     - field.field.node.hc_resource.field_hc_resource_sidebar_title
+    - field.field.node.hc_resource.field_hc_resources_related
+    - field.field.node.hc_resource.field_hc_site_access
     - node.type.hc_resource
   module:
     - user
+_core:
+  default_config_hash: 5AipkB0hlzns1vHlxroh69-e4wiAYTfUzOn5fOsgfS8
 id: node.hc_resource.teaser
 targetEntityType: node
 bundle: hc_resource
@@ -29,6 +35,8 @@ content:
 hidden:
   body: true
   field_hc_header_image: true
+  field_hc_hide_header_image: true
+  field_hc_ks_widgets: true
   field_hc_lead_in: true
   field_hc_resource_category: true
   field_hc_resource_contact_addres: true
@@ -37,3 +45,5 @@ hidden:
   field_hc_resource_cta_link: true
   field_hc_resource_documents: true
   field_hc_resource_sidebar_title: true
+  field_hc_resources_related: true
+  field_hc_site_access: true

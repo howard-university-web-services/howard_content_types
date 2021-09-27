@@ -64,3 +64,10 @@ function _hc_resources_remove_entity_and_content() {
     $vocab->delete();
   }
 }
+
+/**
+ * Updates to add moderation sections to all content types.
+ */
+function hc_resources_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_resources');
+}

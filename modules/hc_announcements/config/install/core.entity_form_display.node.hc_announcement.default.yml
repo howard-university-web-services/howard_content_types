@@ -5,10 +5,12 @@ dependencies:
     - field.field.node.hc_announcement.field_hc_end_date
     - field.field.node.hc_announcement.field_hc_featured
     - field.field.node.hc_announcement.field_hc_links
+    - field.field.node.hc_announcement.field_hc_site_access
     - field.field.node.hc_announcement.field_hc_start_date
     - field.field.node.hc_announcement.field_hc_summary
     - node.type.hc_announcement
   module:
+    - content_moderation
     - datetime
     - field_group
     - link_target
@@ -20,10 +22,9 @@ third_party_settings:
         - field_hc_start_date
         - field_hc_end_date
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: details
       format_settings:
-        label: Dates
         open: true
         required_fields: true
         id: ''
@@ -36,7 +37,7 @@ third_party_settings:
         - field_hc_summary
         - field_hc_links
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: details
       format_settings:
         id: ''
@@ -45,6 +46,23 @@ third_party_settings:
         required_fields: true
       label: Details
       region: content
+    group_site_editing_access_schema:
+      children:
+        - field_hc_site_access
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        show_empty_fields: false
+        id: ''
+        classes: ''
+        description: 'Important: If using content moderation, you must assign this page a "section" from the list in order for someone to be able to access it after creation. Access to any given content within this site is based on an editor''s assigned section. If an instance of a page or other content type you''ve created is not assigned a section, then no one will have access to it.'
+        open: false
+        required_fields: true
+      label: 'Site Editing Access Schema'
+_core:
+  default_config_hash: 8nEdnupPC1yZ4g6KbNuHVaHOiMvTb3VEn1HXZsNexMk
 id: node.hc_announcement.default
 targetEntityType: node
 bundle: hc_announcement
@@ -52,7 +70,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -74,9 +92,19 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
-      link_target: ''
+      available_targets:
+        _self: 0
+        _blank: 0
+        parent: 0
+        top: 0
     third_party_settings: {  }
     type: link_target_field_widget
+    region: content
+  field_hc_site_access:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
     region: content
   field_hc_start_date:
     weight: 9
@@ -92,9 +120,15 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 10
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -102,21 +136,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 6
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
@@ -129,11 +163,12 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
 hidden: {  }

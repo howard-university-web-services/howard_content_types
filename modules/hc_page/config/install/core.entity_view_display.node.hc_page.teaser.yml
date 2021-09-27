@@ -11,16 +11,22 @@ dependencies:
     - field.field.node.hc_page.field_hc_ks_widgets_full
     - field.field.node.hc_page.field_hc_lead_in
     - field.field.node.hc_page.field_hc_metatags
+    - field.field.node.hc_page.field_hc_site_access
     - node.type.hc_page
   module:
     - user
 _core:
-  default_config_hash: pWhU2Jqnn_g2-3h-L712103pw45SNkQTvUEBAB7ujqw
+  default_config_hash: 3-9AYoXfDSQ8Wh817CKOOe6DSFKlza9q-HlJ29i9ilk
 id: node.hc_page.teaser
 targetEntityType: node
 bundle: hc_page
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
@@ -35,3 +41,4 @@ hidden:
   field_hc_ks_widgets_full: true
   field_hc_lead_in: true
   field_hc_metatags: true
+  field_hc_site_access: true

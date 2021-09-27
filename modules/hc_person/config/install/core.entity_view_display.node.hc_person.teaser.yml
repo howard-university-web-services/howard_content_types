@@ -10,12 +10,13 @@ dependencies:
     - field.field.node.hc_person.field_hc_person_link
     - field.field.node.hc_person.field_hc_person_organization
     - field.field.node.hc_person.field_hc_person_title
+    - field.field.node.hc_person.field_hc_site_access
     - node.type.hc_person
   module:
     - text
     - user
 _core:
-  default_config_hash: iIwcC1t8Bj9pRd5kbGzOOHjj4GF6iFc2GZfkr_wjPiA
+  default_config_hash: 02lyq0BW1Jfg9a2mAutGohMCcopLoRyO7g9ZfTxKe7A
 id: node.hc_person.teaser
 targetEntityType: node
 bundle: hc_person
@@ -36,4 +37,5 @@ hidden:
   field_hc_person_link: true
   field_hc_person_organization: true
   field_hc_person_title: true
+  field_hc_site_access: true
   links: true

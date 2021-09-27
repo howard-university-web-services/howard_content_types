@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.hc_article.field_hc_header_image
     - field.field.node.hc_article.field_hc_hide_header_image
     - field.field.node.hc_article.field_hc_metatags
+    - field.field.node.hc_article.field_hc_site_access
     - node.type.hc_article
   module:
     - datetime
@@ -21,7 +22,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: tSo0yl_NQDXpRNl0-eS53nyc41ZL9OFG0V089qctpxM
+  default_config_hash: yN5Q6BFhJMKZPNsBL6JJBa6O8N2ck0wXOtnbfFYmZ9E
 id: node.hc_article.default
 targetEntityType: node
 bundle: hc_article
@@ -117,6 +118,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_hc_site_access:
+    weight: 12
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 1
