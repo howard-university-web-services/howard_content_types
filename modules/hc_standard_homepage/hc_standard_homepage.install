@@ -65,3 +65,11 @@ function hc_standard_homepage_update_8007() {
 function hc_standard_homepage_update_8008() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
 }
+
+/**
+ * Updates to switch logic of KS widgets, to allow for local additions.
+ *
+ */
+function hc_standard_homepage_update_8009() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
+}
