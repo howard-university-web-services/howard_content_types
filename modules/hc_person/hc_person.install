@@ -78,3 +78,10 @@ function hc_person_update_8001() {
 function hc_person_update_8002() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_person');
 }
+
+/**
+ * Updates to add add contextual filter into view.
+ */
+function hc_person_update_8003() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_person');
+}
