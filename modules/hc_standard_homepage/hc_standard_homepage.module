@@ -101,10 +101,10 @@ function hc_standard_homepage_preprocess_node(&$variables) {
       }
     }
 
-    // Homepage school wide announcements.
-    $variables['announcements'] = \Drupal::service('howard.news')->getAnnouncements();
+    // Homepage school wide notifications.
+    $variables['announcements'] = \Drupal::service('howard.news')->getNotifications();
 
-    // Adds ability to hide school wide announcements.
+    // Adds ability to hide school wide notifications.
     $variables['show_announcements'] = TRUE;
     if ($node->hasField('field_hc_hide_announcements')) {
       $value = $node->get('field_hc_hide_announcements')->getValue();
