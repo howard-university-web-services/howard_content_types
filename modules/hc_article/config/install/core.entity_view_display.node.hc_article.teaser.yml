@@ -16,39 +16,74 @@ dependencies:
     - field.field.node.hc_article.field_hc_site_access
     - node.type.hc_article
   module:
+    - datetime
+    - link
+    - options
     - text
     - user
 _core:
-  default_config_hash: ozWh1xJQvdLvNr_mRVaPWPdvVQeHL0AdXeYJ1_ZK7B4
+  default_config_hash: kW_DTyJkMV-MbMg3g47kdwLqfJkEbISxkBGvzMBssGQ
 id: node.hc_article.teaser
 targetEntityType: node
 bundle: hc_article
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 2
     region: content
   content_moderation_control:
-    weight: -20
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
+  field_hc_article_dateline:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_hc_article_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_hc_article_source:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_hc_article_type:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   field_hc_article_category: true
-  field_hc_article_dateline: true
-  field_hc_article_link: true
-  field_hc_article_source: true
-  field_hc_article_type: true
   field_hc_featured_image: true
   field_hc_header_image: true
   field_hc_hide_header_image: true

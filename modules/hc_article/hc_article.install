@@ -50,3 +50,10 @@ function hc_article_update_8001() {
 function hc_article_update_8002() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_article');
 }
+
+/**
+ * Updates to fix teaser display of articles.
+ */
+function hc_article_update_8003() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_article');
+}
