@@ -75,6 +75,8 @@ function howard_content_types_preprocess_views_view(&$variables) {
  */
 function howard_content_types_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['#attached']['library'][] = 'howard_content_types/admin';
+  // Remove preview from all
+  $form['actions']['preview']['#access'] = FALSE;
   if (preg_match('/node_hc_/', $form_id)) {
     if (isset($form['promote'])) {
       unset($form['promote']);
