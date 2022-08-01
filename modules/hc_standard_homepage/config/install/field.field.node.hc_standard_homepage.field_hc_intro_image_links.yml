@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_intro_image_links
+    - node.type.hc_standard_homepage
+  module:
+    - link
+id: node.hc_standard_homepage.field_hc_intro_image_links
+field_name: field_hc_intro_image_links
+entity_type: node
+bundle: hc_standard_homepage
+label: 'Image/Video Links'
+description: 'If you wish to add CTA links to the image or video hero, you may add them here.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link
