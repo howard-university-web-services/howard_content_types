@@ -10,7 +10,9 @@ dependencies:
     - field.field.node.hc_standard_homepage.field_hc_hide_intro_sidebar
     - field.field.node.hc_standard_homepage.field_hc_hide_overlay
     - field.field.node.hc_standard_homepage.field_hc_intro_background_image
+    - field.field.node.hc_standard_homepage.field_hc_intro_image_links
     - field.field.node.hc_standard_homepage.field_hc_intro_image_text
+    - field.field.node.hc_standard_homepage.field_hc_intro_links
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_text
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_title
     - field.field.node.hc_standard_homepage.field_hc_intro_text
@@ -23,16 +25,16 @@ dependencies:
   module:
     - user
 _core:
-  default_config_hash: ukZLcsGuAttZVqImPoGXfOFhAbKBY0-zABM_7iDvuuA
+  default_config_hash: wC3shnKYbYb6yKECijssH8n90cuUFYpah_1BQihVsn4
 id: node.hc_standard_homepage.teaser
 targetEntityType: node
 bundle: hc_standard_homepage
 mode: teaser
 content:
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   field_hc_header_image: true
@@ -42,7 +44,9 @@ hidden:
   field_hc_hide_intro_sidebar: true
   field_hc_hide_overlay: true
   field_hc_intro_background_image: true
+  field_hc_intro_image_links: true
   field_hc_intro_image_text: true
+  field_hc_intro_links: true
   field_hc_intro_sidebar_text: true
   field_hc_intro_sidebar_title: true
   field_hc_intro_text: true

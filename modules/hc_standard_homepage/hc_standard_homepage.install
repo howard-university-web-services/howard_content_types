@@ -73,3 +73,11 @@ function hc_standard_homepage_update_8008() {
 function hc_standard_homepage_update_8009() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
 }
+
+/**
+ * Updates to allow optional CTA links in the hero of the homepage.
+ *
+ */
+function hc_standard_homepage_update_8010() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
+}

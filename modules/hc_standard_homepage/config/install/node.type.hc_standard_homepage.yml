@@ -8,6 +8,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
+_core:
+  default_config_hash: 7gAADmatd4KKx18QJO-7gtG8GII1mo6QfJ2FnyVF1EQ
 name: 'HC Standard Homepage'
 type: hc_standard_homepage
 description: 'The standard Homepage for Howard.edu Sites.'

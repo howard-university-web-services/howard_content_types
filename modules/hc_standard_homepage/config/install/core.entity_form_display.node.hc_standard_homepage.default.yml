@@ -10,7 +10,9 @@ dependencies:
     - field.field.node.hc_standard_homepage.field_hc_hide_intro_sidebar
     - field.field.node.hc_standard_homepage.field_hc_hide_overlay
     - field.field.node.hc_standard_homepage.field_hc_intro_background_image
+    - field.field.node.hc_standard_homepage.field_hc_intro_image_links
     - field.field.node.hc_standard_homepage.field_hc_intro_image_text
+    - field.field.node.hc_standard_homepage.field_hc_intro_links
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_text
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_title
     - field.field.node.hc_standard_homepage.field_hc_intro_text
@@ -24,6 +26,7 @@ dependencies:
     - content_moderation
     - entity_browser
     - field_group
+    - link
     - metatag
     - paragraphs
     - path
@@ -34,123 +37,125 @@ third_party_settings:
       children:
         - field_hc_media_display_options
         - field_hc_intro_image_text
+        - field_hc_intro_image_links
         - field_hc_header_image
         - field_hc_header_video
         - group_advanced
+      label: 'Option 2: Full Width Image or Background Video'
+      region: content
       parent_name: group_hero_area
       weight: 43
       format_type: details
       format_settings:
-        required_fields: true
-        id: ''
         classes: ''
+        id: ''
         open: false
-      label: 'Option 2: Full Width Image or Background Video'
-      region: content
+        required_fields: true
     group_introduction:
       children:
         - field_hc_intro_background_image
         - field_hc_intro_title
         - field_hc_intro_text
+        - field_hc_intro_links
         - group_sidebar
+      label: 'Option 1: Introduction'
+      region: content
       parent_name: group_hero_area
       weight: 42
       format_type: details
       format_settings:
-        required_fields: true
-        id: ''
         classes: ''
+        id: ''
         open: false
-      label: 'Option 1: Introduction'
-      region: content
+        required_fields: true
     group_kitchen_sink:
       children:
         - field_hc_ks_widgets
+      label: 'Kitchen Sink'
+      region: content
       parent_name: ''
       weight: 3
       format_type: details
       format_settings:
+        classes: ''
+        id: ''
         open: true
         required_fields: true
-        id: ''
-        classes: ''
-      label: 'Kitchen Sink'
-      region: content
     group_hero_area:
       children:
         - field_hc_hero_display_options
         - group_introduction
         - group_header_media
+      label: 'Hero Area'
+      region: content
       parent_name: ''
       weight: 2
       format_type: details
       format_settings:
+        classes: ''
+        id: ''
         open: true
         required_fields: true
-        id: ''
-        classes: ''
-      label: 'Hero Area'
-      region: content
     group_sidebar:
       children:
         - field_hc_hide_intro_sidebar
         - field_hc_intro_sidebar_title
         - field_hc_intro_sidebar_text
+      label: Sidebar
+      region: content
       parent_name: group_introduction
       weight: 53
       format_type: fieldset
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         description: 'Optionally, you may show more content in a sidebar.'
         required_fields: true
-      label: Sidebar
-      region: content
     group_advanced:
       children:
         - field_hc_hide_overlay
+      label: Advanced
+      region: content
       parent_name: group_header_media
       weight: 55
       format_type: details
-      region: content
       format_settings:
+        classes: ''
+        id: ''
+        open: false
         description: ''
         required_fields: true
-        id: ''
-        classes: ''
-        open: false
-      label: Advanced
     group_advanced_options:
       children:
         - field_hc_hide_announcements
+      label: 'Advanced Options'
+      region: content
       parent_name: ''
       weight: 4
       format_type: details
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         open: false
+        description: ''
         required_fields: true
-      label: 'Advanced Options'
     group_site_editing_access_schema:
       children:
         - field_hc_site_access
+      label: 'Site Editing Access Schema'
+      region: content
       parent_name: ''
       weight: 1
       format_type: details
-      region: content
       format_settings:
+        classes: ''
         show_empty_fields: false
         id: ''
-        classes: ''
-        description: 'Important: If using content moderation, you must assign this page a "section" from the list in order for someone to be able to access it after creation. Access to any given content within this site is based on an editor''s assigned section. If an instance of a page or other content type you''ve created is not assigned a section, then no one will have access to it.'
         open: false
+        description: 'Important: If using content moderation, you must assign this page a "section" from the list in order for someone to be able to access it after creation. Access to any given content within this site is based on an editor''s assigned section. If an instance of a page or other content type you''ve created is not assigned a section, then no one will have access to it.'
         required_fields: true
-      label: 'Site Editing Access Schema'
 _core:
-  default_config_hash: Z6phoBubdz6vB6oA1CEj7FoA3JfQU9iUDG0Bh_xs2JM
+  default_config_hash: xg1tMrGRVmL6D-_68SZEIxoBOIS-SIETMDtWb0abuN0
 id: node.hc_standard_homepage.default
 targetEntityType: node
 bundle: hc_standard_homepage
@@ -163,39 +168,39 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_hc_header_image:
+    type: entity_browser_entity_reference
     weight: 53
+    region: content
     settings:
       entity_browser: hc_media_browser_image
       field_widget_display: label
       field_widget_edit: true
       field_widget_remove: true
-      selection_mode: selection_append
       field_widget_replace: false
       open: false
       field_widget_display_settings: {  }
+      selection_mode: selection_append
     third_party_settings: {  }
-    type: entity_browser_entity_reference
-    region: content
   field_hc_header_video:
+    type: entity_browser_entity_reference
     weight: 54
+    region: content
     settings:
       entity_browser: hc_media_browser_video
       field_widget_display: label
       field_widget_edit: true
       field_widget_remove: true
-      selection_mode: selection_append
       field_widget_replace: false
       open: false
       field_widget_display_settings: {  }
+      selection_mode: selection_append
     third_party_settings: {  }
-    type: entity_browser_entity_reference
-    region: content
   field_hc_hero_display_options:
+    type: options_select
     weight: 41
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_hc_hide_announcements:
     type: boolean_checkbox
     weight: 12
@@ -204,76 +209,93 @@ content:
       display_label: true
     third_party_settings: {  }
   field_hc_hide_intro_sidebar:
-    weight: 44
+    type: boolean_checkbox
+    weight: 12
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_hc_hide_overlay:
+    type: boolean_checkbox
     weight: 52
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_hc_intro_background_image:
+    type: entity_browser_entity_reference
     weight: 49
+    region: content
     settings:
       entity_browser: hc_media_browser_image
       field_widget_display: label
       field_widget_edit: true
       field_widget_remove: true
-      selection_mode: selection_append
       field_widget_replace: false
       open: false
       field_widget_display_settings: {  }
+      selection_mode: selection_append
     third_party_settings: {  }
-    type: entity_browser_entity_reference
-    region: content
-  field_hc_intro_image_text:
-    weight: 51
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
-    region: content
-  field_hc_intro_sidebar_text:
-    weight: 47
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
-  field_hc_intro_sidebar_title:
-    weight: 46
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_hc_intro_text:
+  field_hc_intro_image_links:
+    type: link_default
     weight: 52
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_hc_intro_image_text:
+    type: string_textarea
+    weight: 51
+    region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
+  field_hc_intro_links:
+    type: link_default
+    weight: 52
     region: content
-  field_hc_intro_title:
-    weight: 51
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_hc_intro_sidebar_text:
+    type: text_textarea
+    weight: 14
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_hc_intro_sidebar_title:
+    type: string_textfield
+    weight: 13
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+  field_hc_intro_text:
+    type: string_textarea
+    weight: 51
     region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_hc_intro_title:
+    type: string_textfield
+    weight: 50
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_hc_ks_widgets:
     type: entity_reference_paragraphs
     weight: 10
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -282,31 +304,31 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
-    region: content
   field_hc_media_display_options:
+    type: options_select
     weight: 50
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_hc_metatags:
+    type: metatag_firehose
     weight: 11
+    region: content
     settings:
       sidebar: true
+      use_details: true
     third_party_settings: {  }
-    type: metatag_firehose
-    region: content
   field_hc_site_access:
+    type: options_buttons
     weight: 13
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
-    region: content
   moderation_state:
     type: moderation_state_default
     weight: 12
-    settings: {  }
     region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -316,24 +338,24 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 7
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 10
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 8
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -346,11 +368,11 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 5
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
 hidden: {  }

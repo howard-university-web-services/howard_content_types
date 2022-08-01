@@ -9,7 +9,9 @@ dependencies:
     - field.field.node.hc_standard_homepage.field_hc_hide_intro_sidebar
     - field.field.node.hc_standard_homepage.field_hc_hide_overlay
     - field.field.node.hc_standard_homepage.field_hc_intro_background_image
+    - field.field.node.hc_standard_homepage.field_hc_intro_image_links
     - field.field.node.hc_standard_homepage.field_hc_intro_image_text
+    - field.field.node.hc_standard_homepage.field_hc_intro_links
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_text
     - field.field.node.hc_standard_homepage.field_hc_intro_sidebar_title
     - field.field.node.hc_standard_homepage.field_hc_intro_text
@@ -21,151 +23,176 @@ dependencies:
     - node.type.hc_standard_homepage
   module:
     - entity_reference_revisions
+    - link
     - metatag
     - options
     - text
     - user
 _core:
-  default_config_hash: q7oMFa1pUEWOSBVj99k4iO5JsV6kYwQjXkoKOmx5JLA
+  default_config_hash: z8OgJKvnMnqadFrn64_tBe_QgX6NGVE5vUOkvLeWedc
 id: node.hc_standard_homepage.default
 targetEntityType: node
 bundle: hc_standard_homepage
 mode: default
 content:
   field_hc_header_image:
-    weight: 5
+    type: entity_reference_label
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 5
     region: content
   field_hc_header_video:
     type: entity_reference_entity_view
-    weight: 8
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 8
     region: content
   field_hc_hero_display_options:
-    weight: 11
+    type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    weight: 11
     region: content
   field_hc_hide_announcements:
     type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
     weight: 16
     region: content
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
   field_hc_hide_intro_sidebar:
-    weight: 10
+    type: boolean
     label: hidden
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
+    weight: 10
     region: content
   field_hc_hide_overlay:
-    weight: 14
+    type: boolean
     label: hidden
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
+    weight: 14
     region: content
   field_hc_intro_background_image:
     type: entity_reference_entity_view
-    weight: 6
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 6
+    region: content
+  field_hc_intro_image_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 18
     region: content
   field_hc_intro_image_text:
-    weight: 13
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 13
+    region: content
+  field_hc_intro_links:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 17
     region: content
   field_hc_intro_sidebar_text:
-    weight: 4
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 4
     region: content
   field_hc_intro_sidebar_title:
-    weight: 3
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 3
     region: content
   field_hc_intro_text:
-    weight: 2
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 2
     region: content
   field_hc_intro_title:
-    weight: 1
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 1
     region: content
   field_hc_ks_widgets:
     type: entity_reference_revisions_entity_view
-    weight: 7
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 7
     region: content
   field_hc_media_display_options:
-    weight: 12
+    type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    weight: 12
     region: content
   field_hc_metatags:
-    weight: 9
+    type: metatag_empty_formatter
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: metatag_empty_formatter
+    weight: 9
     region: content
   field_hc_site_access:
-    weight: 15
+    type: entity_reference_label
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 15
     region: content
   links:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden: {  }
