@@ -184,3 +184,10 @@ function hc_resources_update_8008()
 function hc_resources_update_8009() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_resources');
 }
+
+/**
+ * Updates to allow resources view to accept multiple values, https://trello.com/c/WTNRqiiA/916-resources-widget-concatenation-of-multiple-resources-when-limited-by-category.
+ */
+function hc_resources_update_8010() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_resources');
+}
