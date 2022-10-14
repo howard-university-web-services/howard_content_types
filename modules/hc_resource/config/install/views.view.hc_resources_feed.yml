@@ -12,7 +12,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: M9akbC0_ygAnZOD5nHlMZDxgw32sf2yL_hNIUE7NPgw
+  default_config_hash: JOnagHmoFOiL8IoqRljgwfoT1vCFVOtRwQsZN3cT670
 id: hc_resources_feed
 label: 'HC Resources Feed'
 module: views
@@ -530,7 +530,7 @@ display:
             type: none
             fail: 'not found'
           validate_options: {  }
-          break_phrase: false
+          break_phrase: true
           not: false
       defaults:
         arguments: false
