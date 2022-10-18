@@ -74,3 +74,10 @@ function hc_page_update_8009() {
 function hc_page_update_8010() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
 }
+
+/**
+ * Updates to make "hide header image" the default.
+ */
+function hc_page_update_8011() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
+}
