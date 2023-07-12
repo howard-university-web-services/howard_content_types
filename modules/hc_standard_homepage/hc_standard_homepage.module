@@ -96,7 +96,7 @@ function hc_standard_homepage_preprocess_node(&$variables) {
       if ($home_hero_image && !empty($home_hero_image)) {
         $entity = Media::load($home_hero_image[0]['target_id']);
         if (isset($entity) && $entity->field_media_image->entity !== NULL && $entity->field_media_image->entity->getFileUri() !== NULL) {
-          $variables['home_hero_image'] = file_create_url($entity->field_media_image->entity->getFileUri());
+          $variables['home_hero_image'] = \Drupal::service('file_url_generator')->generateAbsoluteString($entity->field_media_image->entity->getFileUri());
         }
       }
     }
