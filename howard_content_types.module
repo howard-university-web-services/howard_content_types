@@ -9,6 +9,8 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\media\Entity\Media;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
 
 /**
  * Implements hook_help().
@@ -84,5 +86,20 @@ function howard_content_types_form_alter(&$form, FormStateInterface $form_state,
     if (isset($form['sticky'])) {
       unset($form['sticky']);
     }
+  }
+}
+
+/**
+ * Removes field_hc_hide_for_nonhoward from HC Page CT
+ */
+function howard_content_types_update_8013() {
+  // Deleting field.
+  if (FieldConfig::loadByName('node', 'hc_page', 'field_hc_hide_for_nonhoward') !== NULL ) {
+    FieldConfig::loadByName('node', 'hc_page', 'field_hc_hide_for_nonhoward')->delete();
+  }
+
+  // Deleting field storage.
+  if (FieldStorageConfig::loadByName('node', 'field_hc_hide_for_nonhoward') !== NULL ) {
+    FieldStorageConfig::loadByName('node', 'field_hc_hide_for_nonhoward')->delete();
   }
 }
