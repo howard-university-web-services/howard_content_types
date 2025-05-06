@@ -8,7 +8,6 @@
 use Drupal\taxonomy\Entity\Term;
 use Drupal\taxonomy\Entity\Vocabulary;
 
-
 /**
  * Implements hook_install().
  *
@@ -67,18 +66,16 @@ function _hc_resources_remove_entity_and_content() {
 }
 
 /**
- * Change display form to close ks widgets
+ * Change display form to close ks widgets.
  */
-function hc_resources_update_8007()
-{
+function hc_resources_update_8007() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_resources');
 }
 
 /**
- * Enable paragraph types by default and improve form, view
+ * Enable paragraph types by default and improve form, view.
  */
-function hc_resources_update_8008()
-{
+function hc_resources_update_8008() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_resources');
 }
 

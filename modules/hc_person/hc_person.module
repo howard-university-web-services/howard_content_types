@@ -12,14 +12,14 @@ use Drupal\Core\Routing\RouteMatchInterface;
  *
  * @inheritdoc
  */
-function hc_person_help($route_name, RouteMatchInterface $route_match)
-{
+function hc_person_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
     case 'help.page.hc_person':
       $text = file_get_contents(dirname(__FILE__) . "/README.md");
       if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
         return '<pre>' . $text . '</pre>';
-      } else {
+      }
+      else {
         // Use the Markdown filter to render the README.
         $filter_manager = \Drupal::service('plugin.manager.filter');
         $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
@@ -33,10 +33,10 @@ function hc_person_help($route_name, RouteMatchInterface $route_match)
 
 /**
  * Implements hook_theme().
+ *
  * Lets us define our views templates in this module.
  */
-function hc_person_theme($existing, $type, $theme, $path)
-{
+function hc_person_theme($existing, $type, $theme, $path) {
   return [
     'views_view_fields__hc_person_feed' => [
       'base hook' => 'views',

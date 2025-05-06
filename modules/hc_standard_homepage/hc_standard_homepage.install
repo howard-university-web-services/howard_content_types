@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Howard_standard_homepage install file.
+ */
+
 use Drupal\field\Entity\FieldConfig;
 
 /**
@@ -30,17 +35,17 @@ function hc_standard_homepage_update_8004() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
 }
 
- /**
+/**
  * Add boolean to show or hide announcements, remove some old fields.
  */
 function hc_standard_homepage_update_8005() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
   // Deleting old hide intro field on some sites.
-  if (FieldConfig::loadByName('node', 'hc_standard_homepage', 'field_hc_hide_intro_section') !== NULL ) {
+  if (FieldConfig::loadByName('node', 'hc_standard_homepage', 'field_hc_hide_intro_section') !== NULL) {
     FieldConfig::loadByName('node', 'hc_standard_homepage', 'field_hc_hide_intro_section')->delete();
   }
   // Remove hide hero field from homepage on some sites.
-  if (FieldConfig::loadByName('node', 'hc_standard_homepage', 'field_hc_hide_header_image') !== NULL ) {
+  if (FieldConfig::loadByName('node', 'hc_standard_homepage', 'field_hc_hide_header_image') !== NULL) {
     FieldConfig::loadByName('node', 'hc_standard_homepage', 'field_hc_hide_header_image')->delete();
   }
 }
@@ -68,7 +73,6 @@ function hc_standard_homepage_update_8008() {
 
 /**
  * Updates to switch logic of KS widgets, to allow for local additions.
- *
  */
 function hc_standard_homepage_update_8009() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
@@ -76,7 +80,6 @@ function hc_standard_homepage_update_8009() {
 
 /**
  * Updates to allow optional CTA links in the hero of the homepage.
- *
  */
 function hc_standard_homepage_update_8010() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');

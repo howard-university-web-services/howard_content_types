@@ -1,7 +1,7 @@
 name: 'Howard Content Types: HC Standard Homepage'
 type: module
 description: Provides a content type for the Standard Homepage.
-version: '11.x-1.0'
+version: '11.0.0'
 
 core_version_requirement: ^10 || ^11
 

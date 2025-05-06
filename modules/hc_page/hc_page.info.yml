@@ -1,7 +1,7 @@
 name: 'Howard Content Types: HC Page'
 type: module
 description: Provides a content type for Kitchen Sink pages.
-version: '11.x-1.0'
+version: '11.0.0'
 
 core_version_requirement: ^10 || ^11
 

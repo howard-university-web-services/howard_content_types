@@ -33,10 +33,10 @@ function hc_article_help($route_name, RouteMatchInterface $route_match) {
 }
 
 /**
- *
+ * Implements preprocess_node().
  */
 function hc_article_preprocess_node__hc_article(&$variables) {
-  // Convert pub date to display ready
+  // Convert pub date to display ready.
   $node = $variables['elements']['#node'];
   $timestamp = new DateTime();
   $timestamp->setTimestamp($node->created->value);
@@ -59,16 +59,16 @@ function hc_article_form_alter(&$form, FormStateInterface $form_state, $form_id)
   if ($form_id == 'node_hc_article_edit_form') {
     // Assume any edit form that does not have a type choice, to be internal.
     // This is to account for previously created articles.
-    if($form['field_hc_article_type']['widget']['#default_value'] == NULL) {
+    if ($form['field_hc_article_type']['widget']['#default_value'] == NULL) {
       $form['field_hc_article_type']['widget']['#default_value'][0] = 'internal';
     }
   }
   if ($form_id == 'node_hc_article_edit_form' || $form_id == 'node_hc_article_form') {
-    // Internal Article Fields
+    // Internal Article Fields.
     $form['body']['#states'] = ['visible' => ['select[name="field_hc_article_type"]' => ['value' => 'internal']]];
     $form['group_header_media']['#states'] = ['visible' => ['select[name="field_hc_article_type"]' => ['value' => 'internal']]];
     $form['group_featured_image']['#states'] = ['visible' => ['select[name="field_hc_article_type"]' => ['value' => 'internal']]];
-    // External Article Fields
+    // External Article Fields.
     $form['group_external_details']['#states'] = ['visible' => ['select[name="field_hc_article_type"]' => ['value' => 'external']]];
   }
 }

@@ -23,7 +23,8 @@ function howard_content_types_help($route_name, RouteMatchInterface $route_match
       $text = file_get_contents(dirname(__FILE__) . "/README.md");
       if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
         return '<pre>' . $text . '</pre>';
-      } else {
+      }
+      else {
         // Use the Markdown filter to render the README.
         $filter_manager = \Drupal::service('plugin.manager.filter');
         $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
@@ -77,29 +78,26 @@ function howard_content_types_preprocess_views_view(&$variables) {
  */
 function howard_content_types_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['#attached']['library'][] = 'howard_content_types/admin';
-  // Remove preview from all
+  // Remove preview from all.
   $form['actions']['preview']['#access'] = FALSE;
   if (preg_match('/node_hc_/', $form_id)) {
     if (isset($form['promote'])) {
       unset($form['promote']);
     }
-    // if (isset($form['sticky'])) {
-    //   unset($form['sticky']);
-    // }
   }
 }
 
 /**
- * Removes field_hc_hide_for_nonhoward from HC Page CT
+ * Removes field_hc_hide_for_nonhoward from HC Page CT.
  */
 function howard_content_types_update_8013() {
   // Deleting field.
-  if (FieldConfig::loadByName('node', 'hc_page', 'field_hc_hide_for_nonhoward') !== NULL ) {
+  if (FieldConfig::loadByName('node', 'hc_page', 'field_hc_hide_for_nonhoward') !== NULL) {
     FieldConfig::loadByName('node', 'hc_page', 'field_hc_hide_for_nonhoward')->delete();
   }
 
   // Deleting field storage.
-  if (FieldStorageConfig::loadByName('node', 'field_hc_hide_for_nonhoward') !== NULL ) {
+  if (FieldStorageConfig::loadByName('node', 'field_hc_hide_for_nonhoward') !== NULL) {
     FieldStorageConfig::loadByName('node', 'field_hc_hide_for_nonhoward')->delete();
   }
 }
