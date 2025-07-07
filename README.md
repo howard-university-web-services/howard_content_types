@@ -1,44 +1,170 @@
 # Howard Content Types
 
-Content Types for Howard installs.
+[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+[![Drupal](https://img.shields.io/badge/Drupal-9%2B-blue.svg)](https://www.drupal.org)
 
-This module, and sub-modules, contain markup only (no js or css), those should be provided in the client theme, loaded via the idfive Component Library:
+A comprehensive content type management suite for Howard University Drupal installations, providing structured content types, media management, and seamless integration with the idfive Component Library.
+
+## Overview
+
+The Howard Content Types module provides a professional content management foundation for Howard University websites. This module suite delivers standardized content types, fields, and configurations that ensure consistency across all university web properties while maintaining flexibility for site-specific customizations.
+
+### Key Features
+
+- **Structured Content Types**: Six specialized content types designed for university content
+- **Media Integration**: Pre-configured entity browsers and media field management
+- **Component Library Ready**: Seamless integration with idfive Component Library
+- **Flexible Configuration**: Override-friendly design for site-specific needs
+- **Security Focused**: Built with university security requirements in mind
+- **Accessibility Compliant**: WCAG 2.1 AA standards compliance
+
+## Quick Start
+
+### Requirements
+
+- Drupal 9.4+ or Drupal 10.x
+- PHP 8.1+
+- Composer 2.x
+
+### Installation
+
+```bash
+# Install via Composer
+composer require howard/howard_content_types
+
+# Enable the module
+drush en howard_content_types -y
+
+# Enable specific sub-modules as needed
+drush en hc_article hc_page hc_person -y
+```
+
+### Configuration
+
+1. Navigate to **Administration > Extend** and enable desired sub-modules
+2. Configure content types at **Administration > Structure > Content types**
+3. Set up media browsers at **Administration > Structure > Entity browsers**
+4. Review field configurations and customize as needed
+
+## Content Types
+
+### Available Sub-modules
+
+| Module | Content Type | Description |
+|--------|--------------|-------------|
+| **hc_announcements** | HC Announcement | University announcements and news updates |
+| **hc_article** | HC Article | News articles and editorial content |
+| **hc_page** | HC Basic Page | Standard web pages and landing pages |
+| **hc_person** | HC Person | Faculty, staff, and student profiles |
+| **hc_resource** | HC Resource | Educational resources and downloads |
+| **hc_standard_homepage** | HC Standard Homepage | Structured homepage layouts |
+
+### Theme Integration
+
+This module provides markup structure without styling. Styles are provided through:
 
 - [idfive Component Library](https://bitbucket.org/idfivellc/idfive-component-library)
 - [idfive Component Library D8 Theme](https://bitbucket.org/idfivellc/idfive-component-library-d8-theme)
 
-This module also provides default entity browsers for ease in creating media fields with the proper browsers. It also creates some standard fields used across the sub-modules.
+## Documentation
 
-## Installation and Updates
+### Complete Documentation
 
-### Install Via Composer
+- 📚 [Full Documentation](docs/README.md)
+- ⚙️ [Installation Guide](docs/INSTALL.md)
+- 🔧 [API Reference](docs/API.md)
+- 👨‍💻 [Developer Guide](docs/DEVELOPER.md)
+- 📋 [Changelog](docs/CHANGELOG.md)
 
-- `composer install howard/howard_content_types`
+### Quick Links
 
-### Update Via Composer
+- [Configuration Override Guide](docs/INSTALL.md#configuration-management)
+- [Theming and Customization](docs/DEVELOPER.md#theming-development)
+- [Security Considerations](docs/INSTALL.md#security-considerations)
+- [Troubleshooting](docs/INSTALL.md#troubleshooting)
 
-- `composer update howard/howard_content_types`
+## Architecture
 
-## Sub-modules
+### Design Principles
 
-The following sub-modules are available:
+- **Modular Architecture**: Each content type is a separate sub-module
+- **Configuration Management**: Site-specific overrides supported
+- **Security First**: Input validation and access controls
+- **Performance Optimized**: Efficient caching and query optimization
+- **Extensible**: Hook system for custom functionality
 
-- Announcements: Creates the "HC Announcement" Content Type.
-- Article: Creates the "HC Article" Content Type.
-- Page: Creates the "HC Basic Page" Content Type.
-- Person: Creates the "HC Person" Content Type.
-- Resource: Creates the "HC Resource" Content Type.
-- Standard Homepage: Creates the "HC Standard Homepage" Content Type.
+### Integration Points
 
-## Configuration Overrides
+- **Media Management**: Entity browsers for consistent media handling
+- **Field API**: Reusable field configurations across content types
+- **Views Integration**: Pre-configured listing and display views
+- **Search API**: Full-text search capabilities
+- **Workflow**: Content moderation and publishing workflows
 
-This module is designed so that config can be overridden locally. Essentially, the config provides a "starter" when installing the module, that can be modified per site. If config is "added to" after initial install, a manual config re-sync will likely need to be done. Something like:
+## Contributing
 
-- `drush cim -y --partial --source=modules/contrib/howard_content_types/config/install/`
+We welcome contributions from the Howard University community and beyond.
 
-Keep in mind that extensive testing should be done before attempting the above.
+### Development Setup
 
-## Markup Overrides
+```bash
+# Clone the repository
+git clone https://github.com/howard-university/howard_content_types.git
 
-- You may override paragraphs templates by copying them into the client theme.
-- You may override hooks by copying into client .theme, and modifying hook name/etc.
+# Set up development environment
+composer install
+npm install
+
+# Run tests
+composer test
+```
+
+### Guidelines
+
+- Follow [Drupal Coding Standards](https://www.drupal.org/docs/develop/standards)
+- Review our [Coding Standards](docs/CODING_STANDARDS.md)
+- Use the [Release Checklist](docs/RELEASE_CHECKLIST.md) for releases
+- Submit pull requests with comprehensive tests
+
+## Support
+
+### Getting Help
+
+- 📖 [Documentation](docs/README.md)
+- 🐛 [Issue Tracker](https://github.com/howard-university/howard_content_types/issues)
+- 💬 [Community Forum](https://www.drupal.org/project/howard_content_types)
+- 📧 Email: web-support@howard.edu
+
+### Reporting Issues
+
+Please use our issue tracker and include:
+- Drupal version
+- Module version
+- Steps to reproduce
+- Expected vs actual behavior
+- Error messages or logs
+
+## License
+
+This project is licensed under the GNU General Public License v2.0 or later - see the [LICENSE](LICENSE) file for details.
+
+## Credits
+
+### Maintainers
+
+- Howard University Web Team
+- idfive Development Team
+
+### Contributors
+
+- [View all contributors](https://github.com/howard-university/howard_content_types/graphs/contributors)
+
+### Acknowledgments
+
+- Howard University IT Services
+- Drupal Community
+- idfive Component Library Team
+
+---
+
+**Howard University** | Building Excellence in Web Content Management

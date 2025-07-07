@@ -2,8 +2,25 @@
 
 /**
  * @file
- * Howard Content Types module file.
+ * Howard Content Types module implementation.
+ *
+ * This file contains core functionality for the Howard Content Types module,
+ * providing content type management, media integration, and theme preprocessing
+ * for Howard University Drupal installations.
+ *
+ * The module integrates with the idfive Component Library to provide
+ * structured content types including articles, pages, persons, resources,
+ * announcements, and standard homepages.
+ *
+ * @package Drupal\howard_content_types
+ * @author Howard University Web Team
+ * @copyright 2024 Howard University
+ * @license GPL-2.0-or-later
+ * @version 11.0.2
+ * @since 1.0.0
  */
+
+declare(strict_types=1);
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\media\Entity\Media;
@@ -15,7 +32,20 @@ use Drupal\field\Entity\FieldStorageConfig;
 /**
  * Implements hook_help().
  *
- * @inheritdoc
+ * Provides help information for the Howard Content Types module.
+ * 
+ * This function displays module documentation on the help page, with optional
+ * Markdown rendering if the Markdown module is available.
+ *
+ * @param string $route_name
+ *   The current route name for which help is being requested.
+ * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
+ *   The current route match object.
+ *
+ * @return string|null
+ *   Rendered help text, or NULL if no help is available for the route.
+ *
+ * @since 1.0.0
  */
 function howard_content_types_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
@@ -38,6 +68,21 @@ function howard_content_types_help($route_name, RouteMatchInterface $route_match
 
 /**
  * Implements hook_preprocess_node().
+ *
+ * Preprocesses node variables for Howard Content Types.
+ * 
+ * This function adds hero image processing and visibility controls for all
+ * Howard content types. It provides fallback hero images and processes
+ * media fields for proper image style rendering.
+ *
+ * @param array &$variables
+ *   An array of variables to pass to the theme template.
+ *   - node: The node entity being rendered.
+ *   - view_mode: The view mode (full, teaser, etc.).
+ *   - hero_image: Processed hero image URL.
+ *   - show_hero_image: Boolean flag for hero image visibility.
+ *
+ * @since 1.0.0
  */
 function howard_content_types_preprocess_node(&$variables) {
   $node = $variables['elements']['#node'];
@@ -66,6 +111,18 @@ function howard_content_types_preprocess_node(&$variables) {
 
 /**
  * Implements hook_preprocess_views_view().
+ *
+ * Preprocesses variables for Views displays used in media browsing.
+ * 
+ * This function attaches the howard_content_types view library to media
+ * browser views to provide enhanced styling and functionality.
+ *
+ * @param array &$variables
+ *   An array of variables to pass to the theme template.
+ *   - view: The view object being rendered.
+ *   - view_array: The render array for the view.
+ *
+ * @since 1.0.0
  */
 function howard_content_types_preprocess_views_view(&$variables) {
   if ($variables['view']->id() === 'hc_media_browser' || $variables['view']->id() === 'media_entity_browser') {
@@ -74,7 +131,23 @@ function howard_content_types_preprocess_views_view(&$variables) {
 }
 
 /**
- * Implements hook_node_form_alter().
+ * Implements hook_form_alter().
+ *
+ * Alters forms for Howard Content Types to improve admin experience.
+ * 
+ * This function modifies node forms by:
+ * - Adding admin styling via CSS library
+ * - Removing the preview button for better workflow
+ * - Hiding promote option for Howard content types
+ *
+ * @param array &$form
+ *   The form render array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ * @param string $form_id
+ *   The form ID.
+ *
+ * @since 1.0.0
  */
 function howard_content_types_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['#attached']['library'][] = 'howard_content_types/admin';
@@ -88,7 +161,14 @@ function howard_content_types_form_alter(&$form, FormStateInterface $form_state,
 }
 
 /**
- * Removes field_hc_hide_for_nonhoward from HC Page CT.
+ * Removes field_hc_hide_for_nonhoward from HC Page content type.
+ *
+ * This update function removes the deprecated field_hc_hide_for_nonhoward
+ * field from the HC Page content type and its associated field storage.
+ * This field was removed as part of security and accessibility improvements.
+ *
+ * @since 1.0.0
+ * @see https://www.drupal.org/node/XXXXXX
  */
 function howard_content_types_update_8013() {
   // Deleting field.

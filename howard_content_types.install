@@ -2,22 +2,54 @@
 
 /**
  * @file
- * Howard_content_types install file.
+ * Installation and update hooks for Howard Content Types module.
+ *
+ * This file contains installation procedures, database updates, and
+ * configuration management for the Howard Content Types module. It handles
+ * initial setup of media browser terms, image styles, and various
+ * configuration updates across module versions.
+ *
+ * @package Drupal\howard_content_types
+ * @author Howard University Web Team
+ * @copyright 2024 Howard University
+ * @license GPL-2.0-or-later
+ * @version 11.0.2
+ * @since 1.0.0
  */
+
+declare(strict_types=1);
 
 use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_install().
  *
- * Creates stock media browser terms.
+ * Performs initial setup tasks when the module is installed.
+ * 
+ * This function creates essential media browser taxonomy terms that are
+ * required for proper media categorization and browsing functionality
+ * throughout the Howard content types.
+ *
+ * @since 1.0.0
  */
 function howard_content_types_install() {
   _howard_content_types_create_media_browser_terms();
 }
 
 /**
- * Updates to media browser, taxonomies, etc.
+ * Creates default media browser taxonomy terms.
+ * 
+ * This helper function creates a predefined set of taxonomy terms for the
+ * HC Media Category vocabulary. These terms are used to categorize media
+ * items in the media browser for better organization and discoverability.
+ * 
+ * The terms cover common university content categories including:
+ * - People categories (Students, Alumni, Faculty & Staff)
+ * - Event types (Homecoming, Commencement, etc.)
+ * - Academic divisions (Undergraduate, Graduate/Professional)
+ * - Campus and community elements
+ *
+ * @since 1.0.0
  */
 function _howard_content_types_create_media_browser_terms() {
   $categories = [

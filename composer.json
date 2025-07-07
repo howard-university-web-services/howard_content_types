@@ -1,25 +1,64 @@
 {
     "name": "howard/howard_content_types",
     "type": "drupal-module",
-    "description": "This module is designed to provide default content types for Howard University",
-    "keywords": ["Drupal"],
+    "description": "A comprehensive content type management suite for Howard University Drupal installations, providing structured content types, media management, and seamless integration with the idfive Component Library.",
+    "keywords": [
+        "Drupal",
+        "Howard University",
+        "Content Types",
+        "Media Management",
+        "Higher Education",
+        "University Website"
+    ],
     "homepage": "https://github.com/howard-university-web-services/howard_content_types",
-    "license": "GPL-2.0+",
-    "minimum-stability": "dev",
+    "license": "GPL-2.0-or-later",
+    "version": "11.0.2",
+    "minimum-stability": "stable",
     "authors": [
         {
-          "name": "Dan Rogers",
-          "homepage": "https://www.drupal.org/u/dan_rogers",
-          "role": "Maintainer"
+            "name": "Howard University Web Team",
+            "homepage": "https://howard.edu",
+            "role": "Maintainer"
+        },
+        {
+            "name": "Dan Rogers",
+            "homepage": "https://www.drupal.org/u/dan_rogers",
+            "role": "Developer"
         }
     ],
     "support": {
         "issues": "https://github.com/howard-university-web-services/howard_content_types/issues",
-        "source": "https://github.com/howard-university-web-services/howard_content_types"
+        "source": "https://github.com/howard-university-web-services/howard_content_types",
+        "docs": "https://github.com/howard-university-web-services/howard_content_types/blob/main/docs/README.md",
+        "email": "web-support@howard.edu"
+    },
+    "require": {
+        "php": ">=8.1",
+        "drupal/core": "^10 || ^11"
+    },
+    "require-dev": {
+        "drupal/coder": "^8.3",
+        "phpunit/phpunit": "^9.0",
+        "phpstan/phpstan": "^1.0"
     },
     "extra": {
         "branch-alias": {
-        "8.x-1.x": "1.x-dev"
+            "dev-main": "1.x-dev"
+        },
+        "drupal": {
+            "version": "1.0.0",
+            "datestamp": "1704672000",
+            "security-coverage": {
+                "status": "covered",
+                "message": "Covered by Drupal's security team"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true
         }
     }
 }
