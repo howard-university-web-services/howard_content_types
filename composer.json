@@ -12,7 +12,6 @@
     ],
     "homepage": "https://github.com/howard-university-web-services/howard_content_types",
     "license": "GPL-2.0-or-later",
-    "version": "11.0.2",
     "minimum-stability": "stable",
     "authors": [
         {
@@ -45,14 +44,6 @@
     "extra": {
         "branch-alias": {
             "dev-main": "1.x-dev"
-        },
-        "drupal": {
-            "version": "1.0.0",
-            "datestamp": "1704672000",
-            "security-coverage": {
-                "status": "covered",
-                "message": "Covered by Drupal's security team"
-            }
         }
     },
     "config": {

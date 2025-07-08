@@ -7,9 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [11.0.3] - 2025-07-08
+
+### Changed
+
+- Updated module metadata to reflect custom Packagist distribution
+- Removed drupal.org-specific project information from info.yml
+- Removed drupal.org-specific metadata from composer.json
+- Updated version field handling to follow Packagist best practices
+
+### Technical
+
+- Prepared module for distribution via Packagist instead of drupal.org
+- Cleaned up composer.json to follow Packagist recommendations
+- Enhanced module identification as custom package
+
 ## [11.0.2] - 2025-07-07
 
 ### Added
+
+- Comprehensive documentation structure with professional-grade docs
 - Comprehensive documentation structure with professional-grade docs
 - Developer guide with testing and debugging information
 - API documentation with technical specifications
