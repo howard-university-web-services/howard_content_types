@@ -103,7 +103,7 @@ function howard_content_types_preprocess_node(&$variables) {
   $variables['show_hero_image'] = TRUE;
   if ($node->hasField('field_hc_hide_header_image')) {
     $value = $node->get('field_hc_hide_header_image')->getValue();
-    if ($value[0]['value'] == '1') {
+    if (!empty($value) && isset($value[0]['value']) && $value[0]['value'] == '1') {
       $variables['show_hero_image'] = FALSE;
     }
   }

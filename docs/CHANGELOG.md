@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [11.0.4] - 2025-12-05
+
+### Fixed
+
+- Fixed PHP warnings in howard_content_types_preprocess_node() function
+- Added proper array validation before accessing field values to prevent "Undefined array key 0" and "Trying to access array offset on null" warnings
+- Improved error handling for field_hc_hide_header_image field value checking
+
 ## [11.0.3] - 2025-07-08
 
 ### Changed

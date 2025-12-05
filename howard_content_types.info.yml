@@ -1,7 +1,7 @@
 name: 'Howard Content Types'
 type: module
 description: 'A comprehensive content type management suite for Howard University Drupal installations, providing structured content types, media management, and seamless integration with the idfive Component Library.'
-version: '11.0.3'
+version: '11.0.4'
 core_version_requirement: ^10 || ^11
 
 package: 'Howard University'
