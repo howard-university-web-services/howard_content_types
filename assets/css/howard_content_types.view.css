@@ -28,7 +28,7 @@
   /* 600px */
   .view-media-entity-browser .views-row,
   .view-hc-media-browser .views-row {
-    width: 20%;
+    /* width: 20%; */
     height: 120px;
     float: left;
     overflow: hidden;
