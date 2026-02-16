@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [11.0.6] - 2026-02-16
+
+### Fixed
+
+- Minor maintenance updates and improvements
+
+## [11.0.5] - 2026-02-16
+
+### Removed
+
+- Removed unused admin CSS library and associated styles
+- Cleaned up howard_content_types.libraries.yml configuration
+
 ## [11.0.4] - 2025-12-05
 
 ### Fixed
