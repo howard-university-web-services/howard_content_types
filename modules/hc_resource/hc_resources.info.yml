@@ -8,4 +8,4 @@ core_version_requirement: ^10 || ^11
 package: Howard University
 dependencies:
   - howard_content_types
-  - views
+  - drupal:views

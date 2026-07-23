@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [11.0.7] - 2026-07-23
+
+### Fixed
+
+- **`howard_content_types.info.yml`**: Removed duplicate `media` dependency entry — `drupal:media` was already declared; bare `media` was redundant.
+- **`hc_person.info.yml`**: Corrected `views` dependency to `drupal:views` (Drupal core module requires the `drupal:` namespace prefix).
+- **`hc_resources.info.yml`**: Corrected `views` dependency to `drupal:views` (same as above).
+
 ## [11.0.6] - 2026-02-16
 
 ### Fixed
