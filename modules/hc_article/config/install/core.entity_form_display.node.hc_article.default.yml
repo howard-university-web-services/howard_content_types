@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.hc_media_browser_image
     - field.field.node.hc_article.body
     - field.field.node.hc_article.field_hc_article_category
     - field.field.node.hc_article.field_hc_article_dateline
@@ -17,9 +16,9 @@ dependencies:
     - node.type.hc_article
     - workflows.workflow.editorial
   module:
+    - media_library
     - content_moderation
     - datetime
-    - entity_browser
     - field_group
     - link
     - metatag
@@ -156,33 +155,21 @@ content:
     type: options_select
     region: content
   field_hc_featured_image:
+    type: media_library_widget
     weight: 9
-    settings:
-      entity_browser: hc_media_browser_image
-      field_widget_display: label
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_replace: false
-      open: false
-      field_widget_display_settings: {  }
-    third_party_settings: {  }
-    type: entity_browser_entity_reference
     region: content
+    settings:
+      media_types:
+        - image
+    third_party_settings: {  }
   field_hc_header_image:
+    type: media_library_widget
     weight: 12
-    settings:
-      entity_browser: hc_media_browser_image
-      field_widget_display: label
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_replace: false
-      open: false
-      field_widget_display_settings: {  }
-    third_party_settings: {  }
-    type: entity_browser_entity_reference
     region: content
+    settings:
+      media_types:
+        - image
+    third_party_settings: {  }
   field_hc_hide_header_image:
     weight: 11
     settings:

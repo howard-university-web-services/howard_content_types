@@ -180,7 +180,7 @@ Processes views for media browsers:
  */
 function howard_content_types_preprocess_views_view(&$variables) {
   if ($variables['view']->id() === 'hc_media_browser' || 
-      $variables['view']->id() === 'media_entity_browser') {
+      $variables['view']->id() === 'media_library') {
     $variables['view_array']['#attached']['library'][] = 'howard_content_types/view';
   }
 }
@@ -283,20 +283,19 @@ $field->save();
 
 ## Media Integration
 
-### Media Browser Integration
+### Media Library Integration
 
-The module integrates with Entity Browser for media management:
+The module uses core Media Library for media management:
 
 ```php
-// Media browser configuration
-$browser_config = [
-  'target_type' => 'media',
-  'selection_handler' => 'default:media',
-  'selection_handler_settings' => [
-    'target_bundles' => ['image'],
-    'sort' => ['field' => 'created', 'direction' => 'DESC'],
-  ],
-];
+// Media Library widget configuration (in form display)
+$display->setComponent('field_hc_image', [
+  'type'     => 'media_library_widget',
+  'weight'   => 1,
+  'region'   => 'content',
+  'settings' => ['media_types' => ['image']],
+]);
+$display->save();
 ```
 
 ### Media Categories

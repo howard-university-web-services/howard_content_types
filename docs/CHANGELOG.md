@@ -7,7 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [11.0.7] - 2026-07-23
+## [11.0.8] - 2026-07-27
+
+### Changed
+
+- **Media widget migration**: Migrated all node media fields from `entity_browser_entity_reference` to core `media_library_widget` across `hc_article`, `hc_standard_homepage`, `hc_page`, `hc_person`, and `hc_resource` content types.
+- **`howard_content_types.info.yml`**: Removed `entity_browser`, `entity_browser_entity_form`, and `media_entity_browser` dependencies; added `drupal:media_library`.
+
+### Added
+
+- **`howard_content_types_update_8014`**: Database update hook to migrate existing sites — scans all active node form displays and converts any `entity_browser_entity_reference` widget to `media_library_widget` with appropriate `media_types` based on the original browser used (`hc_media_browser_image` → `[image]`, `hc_media_browser_video` → `[video, remote_video]`, `hc_media_browser_file` → `[file]`, `hc_media_browser_general` → all types).
 
 ### Fixed
 

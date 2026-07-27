@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.hc_media_browser_image
     - field.field.node.hc_person.body
     - field.field.node.hc_person.field_hc_last_name
     - field.field.node.hc_person.field_hc_person_category
@@ -13,8 +12,8 @@ dependencies:
     - field.field.node.hc_person.field_hc_site_access
     - node.type.hc_person
   module:
+    - media_library
     - content_moderation
-    - entity_browser
     - field_group
     - link
     - path
@@ -74,19 +73,13 @@ content:
     type: options_buttons
     region: content
   field_hc_person_image:
+    type: media_library_widget
     weight: 6
-    settings:
-      entity_browser: hc_media_browser_image
-      field_widget_display: label
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_replace: false
-      open: false
-      field_widget_display_settings: {  }
-    third_party_settings: {  }
-    type: entity_browser_entity_reference
     region: content
+    settings:
+      media_types:
+        - image
+    third_party_settings: {  }
   field_hc_person_link:
     weight: 5
     settings:

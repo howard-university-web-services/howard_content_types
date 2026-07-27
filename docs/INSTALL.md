@@ -48,8 +48,7 @@ For optimal functionality, install these additional modules:
 
 ```bash
 # Enhanced media management
-- media_entity_browser
-- entity_browser
+- media_library (core — enable via Drupal admin)
 
 # Content management
 - pathauto
@@ -231,22 +230,20 @@ The module creates several media browser categories:
 - Academic Programs
 - Research
 
-### Entity Browser Setup
+### Media Library Setup
 
-1. **Configure entity browsers:**
+1. **Enable the core Media Library module:**
    ```bash
-   # Navigate to entity browser configuration
-   admin/config/content/entity_browser
+   drush pm:enable media_library
    ```
 
-2. **Default browsers available:**
-   - `hc_media_browser` - General media selection
-   - `media_entity_browser` - Enhanced media management
+2. **Media Library is now the default widget** for all image, video, and file
+   fields in Howard content types. No additional browser configuration is needed.
 
-3. **Customize browser settings:**
-   - Upload settings and file types
-   - Display modes and sorting
-   - Access permissions
+3. **Media types available by default:**
+   - `image` — for header/featured images
+   - `video` / `remote_video` — for video fields (homepage)
+   - `file` — for document fields (resources)
 
 ### Image Style Configuration
 
