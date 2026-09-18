@@ -84,3 +84,21 @@ function hc_standard_homepage_update_8009() {
 function hc_standard_homepage_update_8010() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_standard_homepage');
 }
+
+/**
+ * Excludes hp_statistics_item from KS widgets so it can't be added directly.
+ */
+function hc_standard_homepage_update_8011() {
+  $field = FieldConfig::loadByName('node', 'hc_standard_homepage', 'field_hc_ks_widgets');
+  if ($field !== NULL) {
+    $settings = $field->getSettings();
+    $settings['handler_settings']['target_bundles']['hp_statistics_item'] = 'hp_statistics_item';
+    $settings['handler_settings']['target_bundles_drag_drop']['hp_statistics_item'] = [
+      'weight' => 90,
+      'enabled' => TRUE,
+    ];
+    $field->set('settings', $settings);
+    $field->calculateDependencies();
+    $field->save();
+  }
+}

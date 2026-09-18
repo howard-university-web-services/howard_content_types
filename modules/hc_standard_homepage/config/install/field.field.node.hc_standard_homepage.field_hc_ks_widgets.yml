@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.hp_carousel_with_modal_slide
     - paragraphs.paragraphs_type.hp_facebook_feed
     - paragraphs.paragraphs_type.hp_graph_field
+    - paragraphs.paragraphs_type.hp_statistics_item
     - paragraphs.paragraphs_type.hp_timeline_field
     - paragraphs.paragraphs_type.ip_accordion_item
   module:
@@ -37,6 +38,7 @@ settings:
       ip_accordion_item: ip_accordion_item
       hp_graph_field: hp_graph_field
       hp_timeline_field: hp_timeline_field
+      hp_statistics_item: hp_statistics_item
     target_bundles_drag_drop:
       hp_alumni_featured:
         weight: 41
@@ -158,4 +160,7 @@ settings:
       ip_webform_embed:
         weight: 53
         enabled: false
+      hp_statistics_item:
+        weight: 90
+        enabled: true
 field_type: entity_reference_revisions

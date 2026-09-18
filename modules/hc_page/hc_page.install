@@ -5,6 +5,8 @@
  * Hc_page install file.
  */
 
+use Drupal\field\Entity\FieldConfig;
+
 /**
  * Updates to allow hiding the sidebar.
  */
@@ -80,4 +82,24 @@ function hc_page_update_8010() {
  */
 function hc_page_update_8011() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'hc_page');
+}
+
+/**
+ * Excludes hp_statistics_item from KS widgets so it can't be added directly.
+ */
+function hc_page_update_8012() {
+  foreach (['field_hc_ks_widgets'] as $field_name) {
+    $field = FieldConfig::loadByName('node', 'hc_page', $field_name);
+    if ($field !== NULL) {
+      $settings = $field->getSettings();
+      $settings['handler_settings']['target_bundles']['hp_statistics_item'] = 'hp_statistics_item';
+      $settings['handler_settings']['target_bundles_drag_drop']['hp_statistics_item'] = [
+        'weight' => 90,
+        'enabled' => TRUE,
+      ];
+      $field->set('settings', $settings);
+      $field->calculateDependencies();
+      $field->save();
+    }
+  }
 }
